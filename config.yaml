@@ -1,0 +1,13 @@
+# Configuration for data pipeline
+
+data_source: "synthetic"  # or path to CSV/Parquet
+output_path: "output/curated_training_data.csv"
+schema:
+  - column: "feature1"
+    type: "float"
+  - column: "label"
+    type: "int"
+sampling:
+  strategy: "stratified"
+  by: "label"
+  n: 1000 
