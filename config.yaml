@@ -1,13 +1,95 @@
-# Configuration for data pipeline
+# Enterprise Data Pipeline Configuration
 
-data_source: "synthetic"  # or path to CSV/Parquet
-output_path: "output/curated_training_data.csv"
-schema:
-  - column: "feature1"
-    type: "float"
-  - column: "label"
-    type: "int"
+# Data Sources
+data_source:
+  type: "synthetic"  # synthetic, csv, parquet, kafka, bigquery
+  path: null  # for file-based sources
+  kafka:
+    bootstrap_servers: ["localhost:9092"]
+    topic: "privacy-intent-data"
+    group_id: "data-pipeline-consumer"
+  bigquery:
+    project_id: "your-project-id"
+    dataset: "privacy_intent"
+    table: "raw_data"
+
+# Processing Configuration
+processing:
+  engine: "spark"  # spark, beam, ray, pandas
+  distributed:
+    enabled: true
+    num_workers: 4
+    memory_per_worker: "2g"
+  streaming:
+    enabled: false
+    checkpoint_location: "checkpoints/"
+    watermark_delay: "1 minute"
+
+# Data Validation
+validation:
+  schema:
+    - column: "text"
+      type: "string"
+      nullable: false
+    - column: "intent"
+      type: "string"
+      nullable: false
+      allowed_values: ["privacy_request", "data_deletion", "opt_out", "other"]
+    - column: "confidence"
+      type: "float"
+      nullable: false
+      min_value: 0.0
+      max_value: 1.0
+    - column: "timestamp"
+      type: "datetime"
+      nullable: false
+  
+  quality_checks:
+    - check_type: "completeness"
+      threshold: 0.95
+    - check_type: "uniqueness"
+      threshold: 0.99
+    - check_type: "validity"
+      threshold: 0.98
+    - check_type: "consistency"
+      threshold: 0.95
+
+# Sampling & Balancing
 sampling:
   strategy: "stratified"
-  by: "label"
-  n: 1000 
+  by: "intent"
+  n: 10000
+  balance_classes: true
+  oversampling_method: "smote"
+
+# Partitioning
+partitioning:
+  enabled: true
+  strategy: "date"  # date, hash, range
+  column: "timestamp"
+  format: "YYYY-MM-DD"
+
+# Output Configuration
+output:
+  format: "parquet"  # csv, parquet, bigquery
+  path: "output/curated_training_data.parquet"
+  compression: "snappy"
+  bigquery:
+    project_id: "your-project-id"
+    dataset: "privacy_intent"
+    table: "curated_data"
+    write_disposition: "WRITE_TRUNCATE"
+
+# Monitoring & Logging
+monitoring:
+  log_level: "INFO"
+  metrics_enabled: true
+  mlflow:
+    tracking_uri: "http://localhost:5000"
+    experiment_name: "privacy-intent-pipeline"
+  
+# Performance Tuning
+performance:
+  batch_size: 10000
+  cache_intermediates: true
+  optimize_joins: true 

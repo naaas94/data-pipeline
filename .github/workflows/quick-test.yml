@@ -1,0 +1,44 @@
+# Quick Test Workflow
+# Fast testing for pull requests and development
+
+name: Quick Test
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ develop ]
+
+jobs:
+  quick-test:
+    name: 🚀 Quick Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 📦 Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-3.9-${{ hashFiles('**/requirements.txt') }}
+        
+    - name: 🔧 Install core dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy scikit-learn pytest
+        
+    - name: 🧪 Run core tests
+      run: |
+        python -m pytest tests/test_pipeline.py::TestEnterpriseDataPipeline::test_pipeline_initialization -v
+        python -m pytest tests/test_pipeline.py::TestEnterpriseDataPipeline::test_synthetic_data_generation -v
+        
+    - name: ✅ Quick validation
+      run: |
+        python src/data_pipeline.py --config config.yaml --validate-only 

@@ -1,0 +1,67 @@
+# Dependabot configuration for automated dependency updates
+# Keeps your dependencies secure and up-to-date
+
+version: 2
+updates:
+  # Python dependencies
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "@your-username"
+    assignees:
+      - "@your-username"
+    commit-message:
+      prefix: "pip"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "python"
+    ignore:
+      # Ignore major version updates for critical dependencies
+      - dependency-name: "pyspark"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "apache-beam"
+        update-types: ["version-update:semver-major"]
+
+  # Docker dependencies
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "@your-username"
+    assignees:
+      - "@your-username"
+    commit-message:
+      prefix: "docker"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "docker"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "@your-username"
+    assignees:
+      - "@your-username"
+    commit-message:
+      prefix: "github-actions"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions" 
