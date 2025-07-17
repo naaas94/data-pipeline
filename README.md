@@ -1,4 +1,4 @@
-# 🚀 Enterprise Data Pipeline for Privacy Intent Classification
+# Enterprise Data Pipeline for Privacy Intent Classification
 
 A **production-ready, enterprise-grade data pipeline** for generating, validating, and curating training datasets for privacy intent classification. Built with **distributed processing**, **streaming capabilities**, **advanced validation**, and **cloud integration**.
 
