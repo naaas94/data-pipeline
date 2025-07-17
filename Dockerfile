@@ -2,7 +2,7 @@
 # Multi-stage build for optimized production image
 
 # Base stage with Python and system dependencies
-FROM python:3.9-slim as base
+FROM python:3.13-slim as base
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
