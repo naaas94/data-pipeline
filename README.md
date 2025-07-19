@@ -2,29 +2,29 @@
 
 A **production-ready, enterprise-grade data pipeline** for generating, validating, and curating training datasets for privacy intent classification. Built with **distributed processing**, **streaming capabilities**, **advanced validation**, and **cloud integration**.
 
-## 🏗️ **Enterprise Architecture**
+## **Enterprise Architecture**
 
-### **✅ Distributed Processing**
+### **Distributed Processing**
 - **Apache Spark**: Large-scale data processing with SQL, MLlib, and Streaming
 - **Apache Beam**: Portable, unified batch and streaming processing
 - **Ray**: Distributed computing for ML workloads and data processing
 
-### **✅ Streaming Capabilities**
+### **Streaming Capabilities**
 - **Apache Kafka**: Real-time data streaming and event processing
 - **Apache Pulsar**: Multi-tenant, high-performance messaging
 - **Apache Flink**: Stateful stream processing with exactly-once semantics
 
-### **✅ Data Validation**
+### **Data Validation**
 - **Pandera**: Statistical data validation with pandas
 - **Great Expectations**: Data quality monitoring and validation
 - **Pydantic**: Data validation using Python type annotations
 
-### **✅ Partitioning & Cloud Integration**
+### **Partitioning & Cloud Integration**
 - **BigQuery**: Serverless, highly scalable data warehouse
 - **dbt**: Data transformation and modeling
 - **Dagster**: Data orchestration and pipeline management
 
-## 🚀 **Quick Start**
+## **Quick Start**
 
 ### **1. Local Development**
 ```bash
@@ -70,7 +70,7 @@ kubectl apply -f k8s/
 kubectl get pods -n data-pipeline
 ```
 
-## 📊 **Pipeline Features**
+## **Pipeline Features**
 
 ### **Data Sources**
 - **Synthetic Data Generation**: Realistic privacy intent data for testing
@@ -103,7 +103,7 @@ kubectl get pods -n data-pipeline
 - **BigQuery**: Cloud data warehouse
 - **Custom Sinks**: Extensible output formats
 
-## 🔧 **Configuration**
+## **Configuration**
 
 ### **Basic Configuration**
 ```yaml
@@ -158,7 +158,7 @@ partitioning:
   column: "timestamp"
 ```
 
-## 📈 **Monitoring & Observability**
+## **Monitoring & Observability**
 
 ### **MLflow Integration**
 - **Experiment Tracking**: Log parameters, metrics, and artifacts
@@ -180,7 +180,7 @@ partitioning:
 - **Log Levels**: DEBUG, INFO, WARNING, ERROR
 - **Context Tracking**: Request tracing and correlation
 
-## 🧪 **Testing**
+## **Testing**
 
 ### **Unit Tests**
 ```bash
@@ -217,7 +217,7 @@ pytest tests/test_performance.py -v
 pytest tests/test_load.py -v
 ```
 
-## 🚀 **Deployment Options**
+## **Deployment Options**
 
 ### **Docker**
 ```bash
@@ -251,7 +251,7 @@ kubectl scale deployment data-pipeline --replicas=3
 - **Amazon Web Services**: EMR, Kinesis, Lambda
 - **Microsoft Azure**: Databricks, Event Hubs, Functions
 
-## 📚 **API Reference**
+## **API Reference**
 
 ### **Pipeline Configuration**
 ```python
@@ -294,7 +294,7 @@ checker = DataQualityChecker(config)
 quality_results = checker.check_quality(df)
 ```
 
-## 🔒 **Security & Compliance**
+## **Security & Compliance**
 
 ### **Data Security**
 - **Encryption**: Data encryption at rest and in transit
@@ -308,7 +308,7 @@ quality_results = checker.check_quality(df)
 - **SOC 2**: Security and availability controls
 - **ISO 27001**: Information security management
 
-## 🤝 **Contributing**
+## **Contributing**
 
 ### **Development Setup**
 ```bash
@@ -345,19 +345,8 @@ mypy src/
 pytest tests/ -v
 ```
 
-## 📄 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 **Support**
-
-- **Documentation**: [Wiki](wiki-url)
-- **Issues**: [GitHub Issues](issues-url)
-- **Discussions**: [GitHub Discussions](discussions-url)
-- **Email**: support@company.com
 
 ---
 
-**Built with ❤️ by the ML Engineering Team**
 
  
