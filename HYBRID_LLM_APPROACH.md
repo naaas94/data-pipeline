@@ -45,3 +45,14 @@ def generate_hybrid_data(self, n_samples: int = 10000) -> pd.DataFrame:
 THIS APPROACH COMBINES THE BEST OF BOTH METHODS:
 - LLM CREATIVITY AND DIVERSITY
 - RULE-BASED RELIABILITY AND CONTROL 
+
+## FINAL CONSIDERATIONS FOR USING OPEN-SOURCE MODELS
+
+- **Model Selection**: Choose open-source models that balance performance and computational cost, such as LLAMA or MISTRAL.
+- **Infrastructure**: Utilize cloud-based solutions with auto-scaling capabilities to handle computational loads efficiently.
+- **Data Management**: Implement efficient storage solutions and a robust data pipeline for managing large volumes of generated data.
+- **Quality Assurance**: Develop a validation framework to ensure the quality and consistency of generated conversations.
+- **Experimentation**: Conduct A/B testing and iterative development to refine the generation process.
+- **Monitoring and Logging**: Set up performance monitoring and comprehensive logging for debugging and optimization.
+- **Cost Management**: Track computational and storage costs, optimizing resource usage to stay within budget.
+- **Security and Compliance**: Ensure data security and compliance with relevant data protection regulations. 
