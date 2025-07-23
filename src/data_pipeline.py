@@ -170,31 +170,43 @@ class EnterpriseDataPipeline:
     
     def load_data(self) -> Union[pd.DataFrame, Any]:
         """Load data from configured source."""
+        self.logger.info("Starting data loading")
+        
         data_source = self.config.get('data_source', {})
         source_type = data_source.get('type', 'synthetic')
         
         with self.logger.time_operation("data_loading"):
             if source_type == 'synthetic':
                 n_samples = self.config.get('sampling', {}).get('n', 10000)
-                return self.generate_synthetic_data(n_samples)
+                df = self.generate_synthetic_data(n_samples)
+                self.logger.info("Loaded synthetic data")
+                return df
             
             elif source_type == 'csv':
                 path = data_source.get('path')
                 if not path:
                     raise ValueError("CSV path not specified in config")
-                return pd.read_csv(path)
+                df = pd.read_csv(path)
+                self.logger.info("Loaded CSV data")
+                return df
             
             elif source_type == 'parquet':
                 path = data_source.get('path')
                 if not path:
                     raise ValueError("Parquet path not specified in config")
-                return pd.read_parquet(path)
+                df = pd.read_parquet(path)
+                self.logger.info("Loaded Parquet data")
+                return df
             
             elif source_type == 'kafka' and KAFKA_AVAILABLE:
-                return self._load_from_kafka(data_source)
+                df = self._load_from_kafka(data_source)
+                self.logger.info("Loaded data from Kafka")
+                return df
             
             elif source_type == 'bigquery' and BIGQUERY_AVAILABLE:
-                return self._load_from_bigquery(data_source)
+                df = self._load_from_bigquery(data_source)
+                self.logger.info("Loaded data from BigQuery")
+                return df
             
             else:
                 raise ValueError(f"Unsupported data source type: {source_type}")
@@ -284,15 +296,20 @@ class EnterpriseDataPipeline:
     
     def _process_with_pandas(self, df: pd.DataFrame) -> pd.DataFrame:
         """Process data using pandas."""
+        self.logger.info("Starting pandas processing")
+        
         # Basic cleaning
         processed_df = df.copy()
         processed_df = processed_df.dropna(subset=['text'])
         processed_df = processed_df[processed_df['text'].str.len() > 0]
+        self.logger.info("Completed basic cleaning")
         
         # Add derived features
         processed_df['text_length'] = processed_df['text'].str.len()
         processed_df['word_count'] = processed_df['text'].str.split().str.len()
+        self.logger.info("Added derived features")
         
+        self.logger.info("Pandas processing completed")
         return processed_df
     
     def validate_data(self, df: Union[pd.DataFrame, Any]) -> Dict[str, Any]:

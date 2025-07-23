@@ -6,8 +6,8 @@ Supports comprehensive quality monitoring, outlier detection, and automated repo
 import pandas as pd
 import numpy as np
 from great_expectations.core.batch import RuntimeBatchRequest
-from great_expectations.data_context import BaseDataContext
-from great_expectations.data_context.types.resource_identifiers import GeCloudIdentifier
+from great_expectations.data_context import FileDataContext
+from great_expectations.data_context.types.resource_identifiers import GXCloudIdentifier
 from typing import Any, Dict, List, Optional, Tuple
 import warnings
 from scipy import stats
@@ -26,7 +26,7 @@ class DataQualityChecker:
         
         # Initialize Great Expectations context
         try:
-            self.ge_context = BaseDataContext(project_config_dir="./great_expectations")
+            self.ge_context = FileDataContext(project_config_dir="./great_expectations")
         except:
             self.ge_context = None
             warnings.warn("Great Expectations context not available. Using basic quality checks only.")

@@ -106,7 +106,7 @@ class AdvancedSampler:
         
         return pd.concat(sampled_dfs, ignore_index=True)
     
-    def balance_classes(self, df: pd.DataFrame, target_column: str) -> pd.DataFrame:
+    def balance_classes_method(self, df: pd.DataFrame, target_column: str) -> pd.DataFrame:
         """Balance classes using various techniques."""
         if target_column not in df.columns:
             raise ValueError(f"Target column '{target_column}' not found")
@@ -238,7 +238,7 @@ class AdvancedSampler:
             if self.oversampling_method in ['smote', 'adasyn', 'smoteenn', 'smotetomek']:
                 sampled_df = self.apply_smote(sampled_df, by, text_column='text')
             else:
-                sampled_df = self.balance_classes(sampled_df, by)
+                sampled_df = self.balance_classes_method(sampled_df, by)
         
         return sampled_df
     

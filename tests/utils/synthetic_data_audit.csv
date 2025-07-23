@@ -1,0 +1,1001 @@
+text,intent,confidence,timestamp
+Remove me from your mailing list,data_deletion,0.9098449148747113,2025-04-15 03:21:58.080259
+I want to opt out of data collection please,opt_out,0.5418973441197821,2024-10-20 10:33:58.080259
+I want to know what data you have about me,opt_out,0.8954255830454979,2025-01-14 19:54:58.080259
+Delete all my personal information,data_deletion,0.8866066625705743,2025-07-03 02:06:58.080259
+I want to know what data you have about me urgently,privacy_request,0.634098731033201,2024-11-01 20:10:58.080259
+I need technical support,other,0.13245016529751533,2025-05-31 01:41:58.080259
+Please remove my information from your database urgently,privacy_request,0.9549739085585965,2025-01-15 03:24:58.081258
+Please remove my information from your database,data_deletion,0.7772670917987973,2025-01-16 22:04:58.081258
+I want to delete my personal data immediately,privacy_request,0.8226120344293522,2025-05-04 03:10:58.081258
+I want to opt out of data collection,opt_out,0.5592374321758644,2025-01-04 03:33:58.081258
+I don't want my data to be processed,data_deletion,0.3744625417478434,2024-12-09 05:58:58.081258
+I want to delete my personal data immediately,opt_out,0.6715074319119764,2024-12-28 20:19:58.081258
+I request the deletion of my account,privacy_request,0.7149157993428912,2024-12-04 22:30:58.081258
+Delete all my personal information,opt_out,0.5891139861660142,2024-10-13 09:03:58.081258
+I'm interested in your services,other,0.22145511779712515,2025-03-17 12:17:58.081258
+I want to delete my personal data urgently,data_deletion,0.5709609428435513,2024-12-03 08:06:58.081258
+I want to know what data you have about me please,privacy_request,0.952802447222681,2025-04-18 11:04:58.081258
+I want to delete my personal data,data_deletion,0.838903193855906,2025-04-02 05:56:58.081258
+Thank you for your service,other,0.7641860315956577,2025-03-20 08:52:58.081938
+Please stop collecting my data,data_deletion,0.5831989576588201,2025-03-22 18:07:58.081938
+Delete all my personal information immediately,data_deletion,0.5011743164740048,2024-08-31 19:16:58.081938
+I need technical support please,other,0.008450352705052951,2025-01-05 15:04:58.081938
+I don't want my data to be processed please,opt_out,0.2873801802182925,2025-03-01 18:48:58.081938
+I want to delete my personal data,data_deletion,0.9292981733567127,2025-06-16 12:36:58.081938
+I request the deletion of my account,privacy_request,0.61671678543678,2025-05-09 18:37:58.081938
+Remove me from your mailing list immediately,opt_out,0.9955780004768111,2025-02-20 16:59:58.081938
+Please stop collecting my data,data_deletion,0.9903338488698156,2024-09-22 14:49:58.081938
+I don't want my data to be processed,opt_out,0.8172165290674835,2025-07-01 21:15:58.081938
+Can you help me with my account?,other,0.3714854297431698,2024-09-09 19:26:58.081938
+I want to delete my personal data,opt_out,0.3208229605653554,2025-06-07 14:39:58.081938
+I want to know what data you have about me,data_deletion,0.6396032991947451,2025-03-29 14:13:58.081938
+Can you help me with my account?,other,0.07959089468567054,2025-05-27 08:05:58.081938
+Please remove my information from your database,privacy_request,0.5635170984498654,2024-09-27 12:57:58.081938
+Please provide a copy of my personal data,opt_out,0.2600039714158399,2025-07-11 03:48:58.081938
+Delete all my personal information,opt_out,0.6468392116394369,2025-04-23 09:43:58.081938
+Please stop collecting my data,data_deletion,0.9513674656989871,2025-02-23 12:56:58.081938
+Please stop collecting my data please,privacy_request,0.5519331409421773,2025-07-19 04:41:58.081938
+I need technical support please,other,0.7001079767326253,2024-10-27 16:45:58.082953
+I request the deletion of my account urgently,opt_out,0.9208038623955229,2024-09-08 12:36:58.082953
+I want to delete my personal data asap,opt_out,0.9467916843895317,2025-03-27 19:20:58.082953
+I want to opt out of data collection,opt_out,0.7811143068910716,2025-05-08 18:54:58.082953
+I want to know what data you have about me asap,opt_out,0.9855534494594189,2024-11-27 15:40:58.082953
+Please provide a copy of my personal data,data_deletion,0.8143987358275618,2024-11-16 00:51:58.083233
+Please remove my information from your database,opt_out,0.9940284067750532,2025-04-19 09:49:58.083233
+Delete all my personal information,opt_out,0.5544499668136174,2024-08-17 11:33:58.083233
+I want to delete my personal data,data_deletion,0.7028047187582529,2024-09-04 10:12:58.083233
+Please remove my information from your database,opt_out,0.6296854049895926,2025-04-25 08:54:58.083233
+Delete all my personal information,privacy_request,0.7322061881292642,2024-12-18 13:48:58.083233
+I want to opt out of data collection,data_deletion,0.8417193483168501,2025-04-18 11:22:58.083233
+What are your business hours?,other,0.09538032293315825,2024-08-03 02:15:58.083233
+I need technical support urgently,other,0.39245413057532186,2025-05-09 02:38:58.083233
+I need technical support,other,0.39639895874877196,2025-04-15 23:20:58.083233
+I want to opt out of data collection,opt_out,0.9677812036751053,2024-12-13 06:10:58.083233
+I have a question about your products,other,0.5632747396015401,2024-11-13 05:38:58.083928
+Remove me from your mailing list,data_deletion,0.20744243646030672,2024-09-05 12:53:58.083976
+I don't want my data to be processed,privacy_request,0.5863730278971516,2024-10-21 22:51:58.084018
+Please provide a copy of my personal data urgently,opt_out,0.9575141003013095,2024-07-28 04:44:58.084018
+I want to know what data you have about me,opt_out,0.8315339636348509,2025-03-29 04:47:58.084231
+I want to opt out of data collection urgently,privacy_request,0.9489843471829772,2025-07-09 20:14:58.084231
+How do I contact customer service? please,other,0.2985369720050661,2024-08-27 19:37:58.084231
+Remove me from your mailing list,data_deletion,0.39492264940610033,2025-01-27 06:04:58.084231
+Please stop collecting my data,privacy_request,0.8982623181269835,2024-12-15 19:16:58.084231
+I request the deletion of my account,privacy_request,0.5109389845855118,2024-07-24 05:50:58.084231
+Please stop collecting my data urgently,data_deletion,0.5015967559963429,2024-10-14 12:46:58.084231
+Thank you for your service,other,0.6507677874413664,2025-01-08 06:07:58.084231
+I want to update my information,other,0.5928161754764038,2025-02-28 14:31:58.084231
+I want to delete my personal data,privacy_request,0.6212328385426369,2024-08-10 03:06:58.084231
+Please remove my information from your database,opt_out,0.5764776803466561,2025-05-30 23:40:58.084231
+I want to know what data you have about me,privacy_request,0.403823268946947,2025-05-09 16:06:58.084231
+Please remove my information from your database,privacy_request,0.8945743268909617,2024-08-10 16:11:58.084231
+Please stop collecting my data,data_deletion,0.8046068315340436,2024-10-12 07:35:58.084231
+Can you explain your privacy policy? asap,other,0.4880870138239322,2025-06-01 09:32:58.084231
+I request the deletion of my account,privacy_request,0.21551931337381078,2024-07-29 06:49:58.084231
+I request the deletion of my account,data_deletion,0.6203043798674255,2025-06-02 16:24:58.084231
+Please provide a copy of my personal data,privacy_request,0.7718272967232171,2024-09-26 02:19:58.084231
+I want to know what data you have about me please,opt_out,0.4777200661258118,2025-05-23 18:19:58.084231
+Please send me more details,other,0.5628473945279137,2025-06-25 12:31:58.084231
+Please provide a copy of my personal data,data_deletion,0.7794715146481672,2025-04-03 11:59:58.085240
+Please remove my information from your database,opt_out,0.9349630670485348,2025-01-03 03:48:58.085240
+How do I contact customer service?,other,0.829599324073181,2024-12-24 07:35:58.085240
+Please remove my information from your database,opt_out,0.5638140733304974,2025-05-02 01:04:58.085240
+Delete all my personal information,data_deletion,0.48094861424862334,2024-07-24 05:08:58.085240
+What are your business hours? asap,other,0.08588889796632725,2024-08-07 10:50:58.085240
+Can you help me with my account?,other,0.4308361852811302,2024-12-13 05:43:58.085240
+Delete all my personal information,opt_out,0.8047599099461484,2025-06-27 16:00:58.085240
+Please stop collecting my data please,opt_out,0.558850974247273,2025-04-01 22:58:58.085240
+Please stop collecting my data asap,opt_out,0.4352631158987674,2025-07-14 06:22:58.085240
+Please remove my information from your database urgently,data_deletion,0.5509484597584862,2024-08-28 18:36:58.085240
+Remove me from your mailing list,opt_out,0.6746893219353044,2024-08-23 13:49:58.085240
+I have a question about your products,other,0.07868832350572491,2025-05-25 03:34:58.085240
+I request the deletion of my account,opt_out,0.7507070286574602,2024-11-29 01:20:58.085240
+Remove me from your mailing list,opt_out,0.7138216240452198,2024-08-04 12:30:58.085240
+I want to delete my personal data,opt_out,0.3674699633938239,2025-01-07 05:42:58.085240
+Remove me from your mailing list,opt_out,0.9421603835959301,2024-10-07 15:15:58.085240
+I need technical support please,other,0.6707248976793002,2025-04-29 09:35:58.085240
+Please provide a copy of my personal data please,data_deletion,0.6598397182414218,2024-07-23 10:53:58.085240
+Remove me from your mailing list,data_deletion,0.47965404267852546,2024-11-23 07:09:58.085240
+I want to opt out of data collection,opt_out,0.24732073170152571,2025-03-12 03:22:58.086238
+Please provide a copy of my personal data,data_deletion,0.990525762692437,2024-08-01 19:41:58.086238
+I want to opt out of data collection,opt_out,0.9795779869427843,2025-06-02 21:05:58.086238
+I want to update my information,other,0.11785226881910084,2025-07-22 12:50:58.086238
+I want to opt out of data collection urgently,privacy_request,0.44772846563169977,2025-03-29 02:10:58.086238
+I want to know what data you have about me immediately,data_deletion,0.2875394693436209,2025-01-25 13:21:58.086238
+Delete all my personal information,opt_out,0.014791995291438214,2025-05-22 00:23:58.086238
+Please remove my information from your database,privacy_request,0.8058830545790417,2025-05-22 02:56:58.086238
+I don't want my data to be processed,privacy_request,0.6013977986820663,2025-02-15 18:00:58.086238
+Remove me from your mailing list,data_deletion,0.295660106656713,2025-04-01 17:15:58.086238
+Delete all my personal information,opt_out,0.5811022208093808,2024-10-09 01:35:58.086238
+I have a question about your products please,other,0.14143383642994323,2024-11-11 02:51:58.086238
+I want to opt out of data collection asap,data_deletion,0.7869204192038155,2024-10-05 11:31:58.086238
+Delete all my personal information,opt_out,0.22851606152800258,2025-04-29 15:57:58.086238
+Delete all my personal information,privacy_request,0.38233379434679693,2025-01-07 15:34:58.086238
+Please remove my information from your database,privacy_request,0.7509396966790363,2024-12-09 14:01:58.086238
+Please provide a copy of my personal data,privacy_request,0.9109790260273064,2025-03-25 21:22:58.086238
+I want to delete my personal data,opt_out,0.8476629098683057,2025-01-03 13:23:58.086238
+I need technical support,other,0.03859046202375042,2025-06-12 07:04:58.086238
+I want to delete my personal data,privacy_request,0.8409762179730399,2025-03-29 01:23:58.086238
+I want to know what data you have about me,privacy_request,0.7580741065598019,2025-01-31 18:19:58.086238
+Please provide a copy of my personal data,data_deletion,0.6292695259503207,2025-01-11 15:52:58.087240
+Please provide a copy of my personal data,opt_out,0.7592991101979902,2025-05-29 20:21:58.087240
+What are your business hours?,other,0.30439582185143016,2024-12-08 15:02:58.087240
+I have a question about your products,other,0.8632207619768614,2025-05-24 00:05:58.087240
+I don't want my data to be processed immediately,data_deletion,0.9393342767814192,2025-04-13 09:33:58.087240
+I want to delete my personal data,data_deletion,0.18802026982555534,2025-02-24 18:22:58.087240
+Please stop collecting my data,opt_out,0.37319516940985153,2025-05-26 02:00:58.087240
+Please provide a copy of my personal data,opt_out,0.8010610605870616,2025-01-29 02:55:58.087240
+Please remove my information from your database,data_deletion,0.9928174978396027,2025-04-11 18:31:58.087240
+I request the deletion of my account,opt_out,0.5105002451275515,2024-07-25 04:30:58.087240
+I need technical support,other,0.1585044424840301,2025-07-07 22:03:58.087240
+I have a question about your products,other,0.013725101450799465,2025-06-14 20:53:58.087240
+I want to delete my personal data,privacy_request,0.840913320229468,2024-11-29 19:48:58.087240
+I want to know what data you have about me,opt_out,0.9983796164759452,2025-02-15 17:41:58.087800
+I want to opt out of data collection,opt_out,0.9008815111938411,2025-05-11 19:56:58.087800
+Delete all my personal information,data_deletion,0.8391959172686146,2025-02-21 03:53:58.087800
+Remove me from your mailing list,privacy_request,0.5726463308733667,2024-08-28 00:11:58.087800
+I want to know what data you have about me,data_deletion,0.976642971584781,2025-01-28 02:10:58.087800
+I want to delete my personal data,opt_out,0.6612444157389876,2025-05-22 18:21:58.088117
+Can you help me with my account?,other,0.11570170516428771,2025-04-17 00:04:58.088117
+I want to know what data you have about me immediately,data_deletion,0.1642625452512178,2025-06-14 06:34:58.088117
+Remove me from your mailing list please,privacy_request,0.2966791032109548,2025-05-03 17:05:58.088117
+Can you help me with my account?,other,0.49140967553626147,2024-08-10 22:00:58.088412
+Remove me from your mailing list,opt_out,0.558168706034602,2024-07-25 22:20:58.088412
+I need technical support immediately,other,0.2136965134599562,2025-06-08 16:14:58.088412
+Can you explain your privacy policy?,other,0.4639382866252183,2025-05-07 23:06:58.088412
+I want to delete my personal data,privacy_request,0.9230776575772544,2024-08-13 22:10:58.088412
+I request the deletion of my account,privacy_request,0.8277059291245011,2024-12-14 06:16:58.088412
+Delete all my personal information,opt_out,0.9851026998679872,2025-07-06 23:23:58.088412
+Please stop collecting my data,opt_out,0.6453672836734867,2024-10-11 23:09:58.088412
+Delete all my personal information asap,opt_out,0.9373125764130666,2025-05-05 16:34:58.088412
+Please provide a copy of my personal data,opt_out,0.9339783312735161,2024-10-25 12:16:58.088412
+Delete all my personal information immediately,opt_out,0.2644064249919547,2025-06-27 08:28:58.088412
+Please send me more details,other,0.2710125815589011,2024-11-09 05:30:58.088412
+I request the deletion of my account,opt_out,0.7134070485670384,2024-10-25 23:29:58.088412
+I want to know what data you have about me,data_deletion,0.5357020234272745,2024-08-08 22:52:58.088412
+Can you explain your privacy policy?,other,0.29166005849554233,2024-12-30 04:28:58.088412
+Delete all my personal information,opt_out,0.8730101692520458,2025-03-29 09:21:58.088412
+I want to delete my personal data,data_deletion,0.9449526353816375,2025-04-20 05:13:58.088412
+I want to know what data you have about me urgently,opt_out,0.7701798091351243,2025-05-08 21:13:58.088412
+Please stop collecting my data,privacy_request,0.6610778385404426,2024-11-24 10:43:58.088412
+I want to know what data you have about me immediately,data_deletion,0.72641413108848,2025-04-24 20:47:58.088412
+I have a question about your products,other,0.02628517159429593,2024-09-10 07:46:58.088412
+Please stop collecting my data,privacy_request,0.616026394493381,2024-08-09 14:58:58.088412
+I want to update my information,other,0.19341036157642558,2025-07-02 08:04:58.088412
+Please remove my information from your database,privacy_request,0.3797316817521114,2025-05-03 05:27:58.088412
+I want to opt out of data collection,opt_out,0.225636562279101,2025-01-02 16:10:58.088412
+Please stop collecting my data,privacy_request,0.7210610820313528,2025-07-19 23:25:58.088412
+Please remove my information from your database,data_deletion,0.6386656310855426,2025-03-29 09:09:58.088412
+I have a question about your products,other,0.6736681396508727,2025-07-02 20:12:58.088412
+Remove me from your mailing list,privacy_request,0.3300169683261345,2025-07-09 21:43:58.088412
+I want to opt out of data collection,privacy_request,0.7468587098681736,2024-12-04 15:43:58.088412
+I want to delete my personal data urgently,privacy_request,0.20253811881922856,2024-11-05 10:05:58.088412
+Delete all my personal information asap,opt_out,0.9546462165103065,2025-04-22 01:33:58.088412
+Thank you for your service,other,0.20174008040876298,2024-09-13 13:25:58.088412
+I want to opt out of data collection,data_deletion,0.663100631908461,2024-12-29 05:01:58.088412
+Delete all my personal information,data_deletion,0.7126101752612001,2025-07-04 09:50:58.088412
+I want to opt out of data collection urgently,privacy_request,0.9712256998667269,2024-11-23 10:46:58.088412
+Please remove my information from your database,privacy_request,0.390366387341163,2025-01-20 20:02:58.088412
+Please stop collecting my data,data_deletion,0.7600951397040437,2025-03-16 12:37:58.088412
+Please stop collecting my data,privacy_request,0.7698906071798381,2024-09-15 12:19:58.088412
+Please remove my information from your database urgently,data_deletion,0.6474443019053459,2024-09-25 07:12:58.088412
+I want to opt out of data collection,opt_out,0.5574811343040146,2025-01-13 05:36:58.088412
+I'm interested in your services,other,0.48805536695285384,2025-04-12 21:41:58.088412
+Please stop collecting my data,opt_out,0.6711076072107619,2024-07-24 00:44:58.088412
+Please stop collecting my data,privacy_request,0.3311344134791331,2024-09-11 09:56:58.088412
+I request the deletion of my account,data_deletion,0.9796931472533661,2025-04-04 21:35:58.088412
+I want to know what data you have about me asap,opt_out,0.834213665001438,2025-02-20 23:40:58.088412
+I want to opt out of data collection,data_deletion,0.6643022074320913,2024-08-15 04:59:58.088412
+I want to opt out of data collection urgently,opt_out,0.5213213159412133,2025-03-04 13:26:58.088412
+Delete all my personal information,privacy_request,0.8598248837678613,2024-11-27 08:37:58.088412
+Delete all my personal information,data_deletion,0.3423500485346057,2024-11-02 23:35:58.088412
+I don't want my data to be processed please,opt_out,0.7445890215192367,2025-06-17 15:41:58.088412
+Please stop collecting my data,privacy_request,0.25320897635926976,2025-03-27 14:23:58.088412
+Please provide a copy of my personal data,opt_out,0.649593240230744,2025-03-21 01:37:58.088412
+I want to delete my personal data,opt_out,0.6206338961939972,2025-01-02 17:26:58.088412
+I want to delete my personal data please,opt_out,0.8465162340753679,2024-12-10 09:50:58.088412
+Please stop collecting my data asap,data_deletion,0.6854174680552139,2025-05-08 09:10:58.088412
+Please remove my information from your database,opt_out,0.7263950937230411,2024-11-25 00:06:58.088412
+I request the deletion of my account urgently,data_deletion,0.17562474023137928,2024-08-05 07:42:58.088412
+I want to delete my personal data urgently,data_deletion,0.8861789683044926,2024-09-11 08:45:58.088412
+What are your business hours?,other,0.060195544092974014,2024-08-16 05:43:58.088412
+I have a question about your products,other,0.12834994119363904,2025-03-30 03:23:58.088412
+Delete all my personal information,opt_out,0.9065623034251425,2025-02-15 12:29:58.088412
+Remove me from your mailing list please,privacy_request,0.4568826263477634,2025-03-31 02:51:58.088412
+Please send me more details please,other,0.33717140224536307,2024-12-05 09:52:58.088412
+How do I contact customer service? immediately,other,0.2315365921565792,2025-03-31 22:43:58.088412
+Please remove my information from your database,data_deletion,0.7788901262442034,2025-01-08 16:50:58.088412
+Please stop collecting my data,privacy_request,0.3626060731282665,2025-07-11 19:56:58.088412
+Please remove my information from your database immediately,privacy_request,0.7745546637964796,2025-07-10 02:30:58.088412
+Please remove my information from your database,data_deletion,0.9324431045731515,2024-11-10 01:20:58.088412
+Please stop collecting my data,opt_out,0.5790593941921851,2025-06-28 21:52:58.088412
+I want to opt out of data collection,privacy_request,0.6994262856784318,2025-07-11 22:14:58.088412
+Please remove my information from your database,data_deletion,0.9936445941758539,2025-02-22 16:14:58.088412
+I request the deletion of my account,privacy_request,0.8275176806139831,2025-01-26 11:30:58.088412
+Can you help me with my account?,other,0.17916525785114862,2024-11-06 04:05:58.088412
+I want to update my information,other,0.193064671317877,2024-12-04 17:08:58.088412
+Can you help me with my account?,other,0.10861378365128488,2025-01-22 09:18:58.088412
+Please stop collecting my data immediately,data_deletion,0.47463136643102993,2025-05-19 22:24:58.088412
+What are your business hours?,other,0.3349287885813706,2024-11-09 11:52:58.088412
+Delete all my personal information,data_deletion,0.755800675508809,2024-12-09 02:16:58.088412
+Please stop collecting my data,data_deletion,0.9568639586849913,2025-03-17 08:45:58.088412
+I want to delete my personal data,privacy_request,0.9748777528333644,2024-10-19 23:50:58.088412
+Please stop collecting my data please,opt_out,0.8447387763997313,2025-04-28 06:37:58.088412
+I want to know what data you have about me,privacy_request,0.8105857580806568,2025-02-21 18:40:58.088412
+Remove me from your mailing list,data_deletion,0.2367894704440777,2025-06-25 16:02:58.088412
+I want to opt out of data collection asap,data_deletion,0.3264777600037107,2025-04-03 19:17:58.088412
+Please send me more details asap,other,0.7763107349024976,2024-09-02 21:04:58.088412
+Please provide a copy of my personal data,opt_out,0.6631982951139761,2025-02-09 23:18:58.088412
+How do I contact customer service? asap,other,0.27897930076267935,2024-10-25 18:05:58.088412
+I want to know what data you have about me,opt_out,0.8405833530347891,2025-03-31 12:53:58.088412
+I want to opt out of data collection,privacy_request,0.24779521287040873,2024-12-13 12:06:58.088412
+I'm interested in your services asap,other,0.11676719774458137,2024-09-25 02:59:58.088412
+Please stop collecting my data urgently,opt_out,0.38344867376324737,2024-10-13 17:14:58.088412
+I don't want my data to be processed,data_deletion,0.7039287777572704,2025-01-16 09:49:58.088412
+Please stop collecting my data,opt_out,0.8389677289619831,2025-04-04 03:03:58.088412
+Remove me from your mailing list,opt_out,0.6679982129207237,2025-04-11 08:13:58.088412
+I have a question about your products urgently,other,0.044624291908772526,2025-04-02 22:36:58.088412
+Please stop collecting my data,opt_out,0.5489281583659142,2025-07-10 08:52:58.088412
+I request the deletion of my account,data_deletion,0.9200769582449414,2025-03-13 15:35:58.088412
+Can you help me with my account? immediately,other,0.03761280074544247,2025-01-03 04:59:58.088412
+I want to know what data you have about me,data_deletion,0.3653888142451674,2024-12-06 18:47:58.088412
+Delete all my personal information,opt_out,0.31766179090569985,2025-02-14 15:56:58.088412
+I request the deletion of my account,opt_out,0.5421687574780832,2025-01-12 15:57:58.088412
+I don't want my data to be processed,data_deletion,0.8100749197088796,2025-04-01 20:34:58.088412
+Please stop collecting my data asap,opt_out,0.3010208658558577,2025-06-06 20:45:58.088412
+I want to know what data you have about me,data_deletion,0.9596106211830167,2025-03-07 17:42:58.088412
+I want to delete my personal data,privacy_request,0.6501129258669953,2025-06-18 21:19:58.088412
+What are your business hours?,other,0.11809687560362216,2024-08-02 05:19:58.088412
+I don't want my data to be processed please,privacy_request,0.6767158000621458,2024-07-25 01:15:58.093971
+I don't want my data to be processed please,privacy_request,0.2233629006132057,2025-01-23 01:20:58.093971
+I want to know what data you have about me please,opt_out,0.31224124480359433,2025-01-27 10:18:58.093971
+Please remove my information from your database please,data_deletion,0.6747247506847697,2025-01-05 14:03:58.093971
+Please send me more details,other,0.0936342152754986,2024-08-12 14:33:58.093971
+I want to know what data you have about me,data_deletion,0.2881072384868683,2024-08-30 12:50:58.093971
+Remove me from your mailing list asap,data_deletion,0.6261467714117214,2025-04-17 10:35:58.093971
+Please remove my information from your database please,privacy_request,0.8848664210902981,2025-03-21 04:23:58.093971
+Remove me from your mailing list,privacy_request,0.4525344571250812,2025-06-22 04:24:58.093971
+Delete all my personal information urgently,privacy_request,0.528241034859218,2025-05-05 12:53:58.093971
+I'm interested in your services immediately,other,0.27302196010198404,2025-06-10 10:03:58.093971
+Please stop collecting my data,data_deletion,0.8860428881344304,2025-01-07 16:34:58.093971
+Please provide a copy of my personal data,privacy_request,0.8073248641415182,2025-06-06 19:57:58.093971
+I have a question about your products,other,0.1617174141391118,2024-11-02 19:42:58.093971
+Please remove my information from your database,data_deletion,0.9804431136821837,2025-01-29 00:08:58.093971
+Please stop collecting my data immediately,data_deletion,0.2040349897726124,2024-09-24 12:29:58.093971
+I want to update my information,other,0.03420587495723609,2025-03-18 06:20:58.093971
+Delete all my personal information urgently,privacy_request,0.6582425132362303,2024-10-31 15:07:58.093971
+I request the deletion of my account,data_deletion,0.32412259743940325,2024-07-24 23:36:58.093971
+Please remove my information from your database asap,data_deletion,0.8682285869291466,2025-01-15 10:24:58.093971
+Please remove my information from your database,data_deletion,0.7521874095844389,2024-10-17 19:23:58.093971
+I request the deletion of my account please,opt_out,0.5297272801107363,2025-03-22 10:37:58.093971
+I request the deletion of my account,privacy_request,0.5661291026781514,2025-01-13 14:10:58.093971
+I want to opt out of data collection,opt_out,0.6250833579722352,2024-08-24 20:27:58.093971
+Please stop collecting my data please,opt_out,0.6990623101697762,2025-06-08 05:31:58.093971
+Please send me more details please,other,0.033425792148801224,2024-08-13 21:19:58.093971
+How do I contact customer service?,other,0.6146013274468317,2024-10-22 02:17:58.093971
+I don't want my data to be processed,privacy_request,0.8138647641575808,2025-03-26 04:52:58.093971
+Remove me from your mailing list,data_deletion,0.9921678358195064,2024-09-18 21:34:58.093971
+I want to know what data you have about me,privacy_request,0.594801759400834,2024-07-27 21:23:58.093971
+I want to update my information please,other,0.4922743464070075,2025-06-18 23:59:58.093971
+What are your business hours? urgently,other,0.029585994021510804,2024-09-03 08:28:58.093971
+I want to delete my personal data asap,privacy_request,0.7555793858039374,2025-05-08 20:58:58.093971
+I request the deletion of my account,privacy_request,0.5998003521539136,2025-02-16 16:41:58.093971
+Delete all my personal information,opt_out,0.8282130093577549,2025-01-10 11:11:58.093971
+I want to know what data you have about me,data_deletion,0.9581356477294211,2024-10-29 05:19:58.093971
+Can you help me with my account?,other,0.15195471358829865,2024-11-25 08:05:58.093971
+Delete all my personal information immediately,data_deletion,0.9956852238094698,2024-08-05 04:24:58.093971
+Please provide a copy of my personal data,data_deletion,0.13088467917914837,2025-06-16 18:04:58.093971
+What are your business hours?,other,0.10855415210672828,2025-02-27 00:32:58.093971
+Thank you for your service,other,0.22577356809509508,2025-04-05 22:57:58.093971
+Please provide a copy of my personal data,privacy_request,0.9386646419475215,2025-03-19 07:27:58.093971
+Remove me from your mailing list immediately,privacy_request,0.9309034493025199,2025-06-13 04:43:58.093971
+I want to know what data you have about me urgently,opt_out,0.8084873675322505,2025-06-15 08:25:58.093971
+I want to opt out of data collection,opt_out,0.9681911188159573,2024-10-01 09:28:58.093971
+I request the deletion of my account,opt_out,0.25011375584862744,2025-03-18 12:21:58.093971
+I want to opt out of data collection,opt_out,0.7322987400321826,2025-05-11 14:07:58.093971
+Please remove my information from your database immediately,opt_out,0.3394602414201304,2025-06-05 13:09:58.093971
+Remove me from your mailing list,data_deletion,0.4429965752836626,2025-01-09 05:49:58.093971
+Delete all my personal information,opt_out,0.9966079080014453,2025-03-19 23:56:58.093971
+I want to opt out of data collection,privacy_request,0.0778491609031926,2024-09-06 06:56:58.093971
+I want to opt out of data collection,privacy_request,0.7198542720263535,2024-12-01 15:55:58.093971
+I want to opt out of data collection asap,data_deletion,0.4381072905289545,2025-03-22 06:10:58.093971
+I need technical support urgently,other,0.8706353435049072,2025-04-05 19:23:58.093971
+I want to opt out of data collection urgently,data_deletion,0.7022792201892213,2024-08-14 16:42:58.093971
+I request the deletion of my account,data_deletion,0.8642903949248104,2024-09-02 16:44:58.093971
+Remove me from your mailing list,opt_out,0.581786521762344,2024-08-20 03:23:58.093971
+Please provide a copy of my personal data urgently,opt_out,0.4870273346955523,2025-03-01 06:09:58.093971
+What are your business hours?,other,0.47486683943587554,2025-07-18 17:49:58.093971
+Please provide a copy of my personal data,privacy_request,0.6958190639521709,2025-01-22 07:07:58.093971
+Remove me from your mailing list,data_deletion,0.3776980032636195,2024-11-23 17:54:58.093971
+I have a question about your products,other,0.11536366109622224,2024-08-29 02:53:58.093971
+I want to delete my personal data asap,privacy_request,0.6889984333744515,2024-09-04 06:32:58.093971
+I want to update my information,other,0.0033836357877023637,2024-09-28 14:29:58.093971
+I'm interested in your services,other,0.1921340076879799,2024-09-24 08:26:58.093971
+Please provide a copy of my personal data,privacy_request,0.4433546136312108,2025-07-22 20:08:58.093971
+Remove me from your mailing list,privacy_request,0.7385397459920697,2025-02-10 08:43:58.093971
+I don't want my data to be processed immediately,privacy_request,0.6095785722398417,2025-05-13 08:31:58.097338
+I have a question about your products,other,0.003719585996894235,2025-05-19 03:28:58.097338
+Please provide a copy of my personal data,data_deletion,0.5472399051455819,2024-10-07 04:42:58.097338
+Please send me more details,other,0.6121729727016487,2025-06-01 04:44:58.097338
+I want to opt out of data collection,data_deletion,0.775849730808583,2025-05-11 01:09:58.097338
+Delete all my personal information,opt_out,0.6002831809911258,2025-05-31 11:30:58.097338
+Delete all my personal information asap,opt_out,0.7643034493841319,2024-11-18 09:34:58.097338
+I want to delete my personal data,privacy_request,0.9998766800699576,2025-02-19 17:13:58.097338
+I want to delete my personal data immediately,opt_out,0.6376224055196965,2025-02-11 23:41:58.097338
+I request the deletion of my account,opt_out,0.5981337270144791,2025-01-26 06:28:58.097338
+Please provide a copy of my personal data urgently,opt_out,0.71401677792256,2024-11-30 22:08:58.097338
+Thank you for your service please,other,0.3832804310099212,2024-12-24 23:08:58.097338
+I want to opt out of data collection,privacy_request,0.9326138002094481,2024-12-08 23:04:58.097338
+I want to know what data you have about me,privacy_request,0.6073373958141073,2025-02-07 23:51:58.097338
+Thank you for your service urgently,other,0.7704545066819538,2024-12-20 03:38:58.097338
+I request the deletion of my account please,privacy_request,0.7356457632965624,2025-07-03 00:10:58.097338
+I want to delete my personal data urgently,opt_out,0.3831510934223597,2025-05-10 21:32:58.097338
+Remove me from your mailing list,data_deletion,0.9868963132133819,2025-04-12 18:33:58.097338
+Remove me from your mailing list asap,opt_out,0.5842354883763905,2024-12-06 10:25:58.097338
+I want to delete my personal data,data_deletion,0.9926207041443545,2024-12-14 02:11:58.097338
+I don't want my data to be processed,privacy_request,0.8297629637678577,2025-07-16 14:48:58.098348
+I want to opt out of data collection,data_deletion,0.9875144066545871,2024-12-10 12:20:58.098348
+Please stop collecting my data,privacy_request,0.4300410336308312,2025-02-17 09:11:58.098348
+I don't want my data to be processed,data_deletion,0.9170226598721739,2024-08-26 20:13:58.098348
+I want to know what data you have about me,privacy_request,0.7996807960595631,2025-06-28 00:46:58.098348
+I want to opt out of data collection,opt_out,0.7522683040223185,2025-01-29 15:07:58.098348
+I want to know what data you have about me urgently,privacy_request,0.5867040413394673,2025-07-18 14:53:58.098348
+Remove me from your mailing list asap,privacy_request,0.22660364725599264,2025-05-22 13:27:58.098348
+I request the deletion of my account immediately,data_deletion,0.7647050729961726,2025-04-07 10:28:58.098348
+I have a question about your products,other,0.5264677428356308,2025-07-04 11:50:58.098348
+Please remove my information from your database,privacy_request,0.9100331314911694,2025-05-26 09:28:58.098348
+What are your business hours?,other,0.6633811283305238,2025-04-21 10:02:58.098348
+Delete all my personal information,opt_out,0.6027910907375267,2025-03-09 06:35:58.098348
+Please provide a copy of my personal data immediately,opt_out,0.40209730248626674,2024-08-09 08:01:58.098348
+Please provide a copy of my personal data,opt_out,0.9335897791452572,2025-06-19 16:44:58.098348
+I don't want my data to be processed,privacy_request,0.15620755627236918,2025-04-23 21:28:58.098348
+Delete all my personal information,opt_out,0.2822730561780135,2025-04-01 09:47:58.098348
+I need technical support urgently,other,0.22455744943777964,2024-10-19 08:49:58.098348
+Delete all my personal information,privacy_request,0.7486534958719397,2025-04-15 23:19:58.098348
+I want to update my information,other,0.34659899756880264,2025-03-29 22:16:58.098348
+I request the deletion of my account,privacy_request,0.9728674883811705,2024-09-02 20:10:58.098348
+I request the deletion of my account,data_deletion,0.569190035809812,2025-01-23 10:53:58.099348
+I want to opt out of data collection,data_deletion,0.8267321492700599,2024-11-16 13:39:58.099348
+Please provide a copy of my personal data,privacy_request,0.6399197396552422,2024-08-15 20:41:58.099445
+How do I contact customer service?,other,0.5640464038470338,2024-08-14 17:15:58.099445
+I want to know what data you have about me,data_deletion,0.6576659523411928,2024-12-08 04:29:58.099445
+I want to opt out of data collection,opt_out,0.8195739943596466,2024-10-10 01:35:58.099445
+Please remove my information from your database please,privacy_request,0.9812394772855194,2025-06-05 14:58:58.099445
+I want to opt out of data collection,opt_out,0.735052607357427,2025-06-03 07:28:58.099445
+Please send me more details,other,0.11469209588413022,2024-09-13 18:11:58.099445
+I'm interested in your services,other,0.17715856671409755,2025-07-20 17:56:58.099445
+I don't want my data to be processed,opt_out,0.2431101568820152,2024-08-18 23:53:58.099445
+Please provide a copy of my personal data please,privacy_request,0.5630231538961977,2024-09-11 16:39:58.099445
+I want to delete my personal data please,data_deletion,0.13734604891449115,2024-09-07 08:26:58.099445
+Please provide a copy of my personal data,data_deletion,0.7833133824466532,2025-07-21 11:23:58.099445
+I want to opt out of data collection,opt_out,0.42673744402911473,2025-01-25 16:53:58.099445
+I want to delete my personal data,opt_out,0.7691691500054759,2024-10-13 23:28:58.099445
+What are your business hours? please,other,0.5867243028914713,2025-07-04 13:40:58.099445
+I don't want my data to be processed,privacy_request,0.5902348974303573,2025-05-05 12:31:58.099445
+Please stop collecting my data,opt_out,0.9949542162512922,2025-01-02 18:43:58.099445
+What are your business hours? please,other,0.7257708061196546,2024-12-16 18:33:58.099445
+I request the deletion of my account,privacy_request,0.8216365862081607,2025-07-01 23:50:58.099445
+Please stop collecting my data,privacy_request,0.42044687828189287,2025-05-01 07:58:58.099445
+I want to opt out of data collection,opt_out,0.7579726237181336,2025-04-15 09:16:58.099445
+I request the deletion of my account,privacy_request,0.7752774993700103,2025-02-23 15:57:58.099445
+Remove me from your mailing list please,privacy_request,0.9027861139506931,2025-07-16 18:36:58.099445
+I want to delete my personal data,data_deletion,0.6830823343473728,2024-10-09 04:57:58.099445
+Please provide a copy of my personal data,opt_out,0.5425344146948161,2024-10-26 07:16:58.099445
+Please provide a copy of my personal data,data_deletion,0.8479479150969383,2025-06-13 00:55:58.099445
+Remove me from your mailing list urgently,opt_out,0.5867236535368057,2025-05-15 23:57:58.099445
+I have a question about your products,other,0.35288830190240783,2024-08-19 18:50:58.100775
+How do I contact customer service?,other,0.6631334386564041,2024-07-31 09:50:58.100775
+Remove me from your mailing list,opt_out,0.7749301131887235,2025-04-08 03:56:58.100862
+Thank you for your service,other,0.3891397912584363,2024-07-26 04:47:58.100862
+Please remove my information from your database asap,data_deletion,0.4894081599485428,2025-05-21 13:34:58.100862
+Delete all my personal information urgently,opt_out,0.9149545783800211,2024-09-16 08:31:58.100862
+I want to know what data you have about me urgently,privacy_request,0.9648606048450987,2025-01-02 13:55:58.100862
+I need technical support urgently,other,0.2778633987136795,2024-09-07 15:21:58.100862
+I don't want my data to be processed,opt_out,0.6355265267611305,2025-04-05 00:56:58.100862
+I don't want my data to be processed,data_deletion,0.9161871185654099,2025-06-14 13:04:58.100862
+Can you explain your privacy policy?,other,0.7776107318949894,2024-09-13 13:36:58.100862
+I want to opt out of data collection,privacy_request,0.8746428140400418,2024-11-19 03:24:58.100862
+Please stop collecting my data,opt_out,0.7337781749145812,2024-12-27 00:13:58.100862
+Can you explain your privacy policy?,other,0.23779729020040175,2024-12-30 03:50:58.100862
+I request the deletion of my account,privacy_request,0.48424174356741323,2024-07-26 01:58:58.100862
+I want to delete my personal data,opt_out,0.9665125887248599,2025-03-04 13:44:58.100862
+I want to delete my personal data,opt_out,0.45098246409538634,2024-08-13 18:38:58.100862
+Please provide a copy of my personal data urgently,privacy_request,0.7342908222080957,2025-02-03 08:30:58.100862
+Can you explain your privacy policy?,other,0.13290420882966592,2025-03-25 11:44:58.100862
+Please stop collecting my data,data_deletion,0.5048828390354327,2024-08-18 16:43:58.100862
+I request the deletion of my account,data_deletion,0.8781081698565503,2025-02-27 15:57:58.100862
+Remove me from your mailing list urgently,privacy_request,0.279413847875178,2025-06-04 22:27:58.100862
+Please stop collecting my data,data_deletion,0.35273591066015,2024-12-15 08:26:58.100862
+Remove me from your mailing list,privacy_request,0.5283469284538207,2025-04-08 00:43:58.100862
+I want to delete my personal data please,opt_out,0.49750763664754216,2024-12-28 19:20:58.100862
+I want to know what data you have about me,opt_out,0.7209872882266014,2024-12-27 08:08:58.100862
+I don't want my data to be processed,privacy_request,0.841440536541898,2024-12-21 08:24:58.100862
+Delete all my personal information,opt_out,0.8346345653755116,2024-10-29 13:29:58.100862
+I want to know what data you have about me,privacy_request,0.9380271392742516,2025-01-01 01:01:58.100862
+I want to delete my personal data,opt_out,0.5211148785109064,2025-05-23 04:48:58.100862
+Please stop collecting my data,privacy_request,0.8867744214390353,2025-02-17 13:47:58.100862
+Delete all my personal information,privacy_request,0.38772338562297687,2024-07-31 15:33:58.100862
+Remove me from your mailing list urgently,privacy_request,0.890582038421899,2025-04-19 08:30:58.100862
+Remove me from your mailing list,opt_out,0.907252467301432,2024-11-11 04:05:58.100862
+Please remove my information from your database,opt_out,0.8914164273909122,2024-11-10 04:57:58.100862
+Can you explain your privacy policy?,other,0.0007903564566305997,2024-10-05 15:34:58.100862
+I request the deletion of my account urgently,data_deletion,0.9760697605015609,2024-10-05 13:07:58.100862
+Remove me from your mailing list,privacy_request,0.6906865439890829,2024-08-03 08:29:58.100862
+Please provide a copy of my personal data,data_deletion,0.9732991601729957,2025-07-05 00:43:58.100862
+I want to know what data you have about me,opt_out,0.47540749849766917,2025-01-08 05:54:58.100862
+Please remove my information from your database,data_deletion,0.21018864028524717,2025-07-10 00:13:58.100862
+Please remove my information from your database,data_deletion,0.5522063685226962,2024-08-15 01:46:58.100862
+I want to know what data you have about me,opt_out,0.6069355801770945,2024-08-31 07:44:58.100862
+Please stop collecting my data please,privacy_request,0.9687872206222689,2025-05-26 00:30:58.100862
+How do I contact customer service?,other,0.5194187659886226,2025-04-24 22:32:58.100862
+I want to delete my personal data,opt_out,0.7115744359310152,2025-02-23 15:37:58.100862
+Please provide a copy of my personal data,privacy_request,0.6027323033445088,2025-03-01 21:02:58.100862
+Remove me from your mailing list,privacy_request,0.6174051895387249,2024-12-24 06:03:58.100862
+I don't want my data to be processed,opt_out,0.22679160526628586,2024-10-21 03:52:58.100862
+Thank you for your service,other,0.4633743935552464,2025-05-13 22:47:58.100862
+Delete all my personal information immediately,privacy_request,0.48295089448771017,2025-05-01 08:08:58.100862
+Remove me from your mailing list asap,opt_out,0.8274867693548895,2025-06-14 18:09:58.100862
+Delete all my personal information please,opt_out,0.40278588970664403,2025-02-07 10:49:58.100862
+Please remove my information from your database,privacy_request,0.9353676219898257,2024-10-31 02:59:58.100862
+I don't want my data to be processed,data_deletion,0.830798503931083,2024-09-13 12:03:58.100862
+Please remove my information from your database,privacy_request,0.8216908565260053,2025-04-08 20:30:58.100862
+I don't want my data to be processed,data_deletion,0.4701086854523574,2024-12-17 14:27:58.100862
+I want to know what data you have about me,data_deletion,0.16866958425047074,2024-10-02 06:46:58.100862
+Remove me from your mailing list,opt_out,0.7509632203401703,2025-03-14 04:37:58.100862
+Please stop collecting my data immediately,data_deletion,0.21062689442040253,2025-03-14 21:51:58.100862
+How do I contact customer service?,other,0.16747084449503655,2025-06-22 08:35:58.100862
+I want to delete my personal data,data_deletion,0.8741810202174806,2024-09-19 02:14:58.100862
+Please provide a copy of my personal data,privacy_request,0.885170705213411,2024-10-20 15:32:58.100862
+Delete all my personal information asap,privacy_request,0.8577897071343076,2024-08-29 17:18:58.100862
+Remove me from your mailing list,privacy_request,0.6020385646314912,2025-01-15 18:50:58.100862
+Please remove my information from your database,data_deletion,0.4217874670860409,2024-12-14 21:15:58.100862
+I want to opt out of data collection,data_deletion,0.45939772285229297,2025-05-31 11:53:58.100862
+I want to know what data you have about me immediately,privacy_request,0.5928244803914683,2024-08-27 09:29:58.100862
+I want to delete my personal data,privacy_request,0.4188268176350993,2025-04-08 03:03:58.100862
+I don't want my data to be processed urgently,data_deletion,0.5458161306271611,2024-12-22 14:05:58.100862
+How do I contact customer service? urgently,other,0.1130159636339123,2024-12-08 16:34:58.104436
+I want to opt out of data collection,privacy_request,0.4258869107980425,2025-02-17 18:39:58.104436
+Please stop collecting my data,opt_out,0.8129464795485752,2025-01-28 00:09:58.104436
+I need technical support,other,0.7454343659241984,2025-01-16 21:26:58.104436
+I request the deletion of my account,data_deletion,0.9263595464974059,2025-04-17 23:37:58.104436
+I have a question about your products please,other,0.7638830497319807,2025-01-20 23:14:58.104436
+I want to know what data you have about me immediately,privacy_request,0.912412455281811,2024-10-13 18:56:58.104436
+I want to know what data you have about me,privacy_request,0.8404051220899839,2024-08-06 17:25:58.104436
+Delete all my personal information asap,opt_out,0.9445838826169494,2025-02-24 14:56:58.104436
+What are your business hours? immediately,other,0.6860630575280866,2024-11-15 20:53:58.104436
+I want to know what data you have about me,opt_out,0.7040757852940835,2025-07-05 14:17:58.104436
+Please send me more details,other,0.3719456958674819,2024-08-12 14:56:58.104436
+I want to opt out of data collection,privacy_request,0.7761325485037828,2025-07-22 10:05:58.104436
+I don't want my data to be processed urgently,privacy_request,0.6194526537667845,2024-12-16 02:06:58.104436
+What are your business hours?,other,0.13924950356999968,2024-09-06 00:51:58.104436
+Thank you for your service,other,0.06558472089148695,2025-01-14 20:28:58.104436
+Please provide a copy of my personal data,data_deletion,0.45760114088251436,2025-07-09 20:37:58.104436
+How do I contact customer service? please,other,0.5210923043562149,2025-02-11 05:40:58.104436
+Thank you for your service immediately,other,0.17151161253034142,2024-11-23 17:41:58.104436
+I don't want my data to be processed,opt_out,0.9378430475614273,2024-11-26 23:10:58.104436
+I request the deletion of my account,privacy_request,0.9832406862227923,2025-03-01 04:02:58.104436
+Can you help me with my account?,other,0.41524374449477447,2024-11-27 07:05:58.104436
+Delete all my personal information please,privacy_request,0.4022612810312904,2024-10-26 00:14:58.104436
+I have a question about your products,other,0.6226308910042296,2025-03-20 19:10:58.104436
+Please stop collecting my data,privacy_request,0.8147081762872844,2025-01-31 12:40:58.104436
+Remove me from your mailing list,privacy_request,0.7929874702674236,2025-07-18 01:27:58.104436
+Please provide a copy of my personal data immediately,privacy_request,0.3411228775325619,2025-04-09 00:02:58.104436
+I need technical support please,other,0.17417229206438686,2024-12-21 11:39:58.104436
+I want to delete my personal data please,data_deletion,0.4679320293828245,2025-05-08 12:31:58.104436
+I want to delete my personal data urgently,opt_out,0.8361049010031981,2025-01-30 05:58:58.104436
+I don't want my data to be processed,data_deletion,0.5135651422367403,2024-12-30 00:48:58.104436
+I don't want my data to be processed please,opt_out,0.9610334490861878,2024-12-10 01:10:58.104436
+I want to opt out of data collection,privacy_request,0.32019317741544223,2025-05-31 00:29:58.104436
+Please remove my information from your database,opt_out,0.45434634156088954,2024-07-24 23:58:58.104436
+Please provide a copy of my personal data,privacy_request,0.932361598839136,2025-05-13 03:58:58.104436
+Remove me from your mailing list,data_deletion,0.8517485642385296,2024-10-04 14:37:58.104436
+I need technical support,other,0.42633393446719653,2025-02-22 19:31:58.104436
+Delete all my personal information,opt_out,0.04900783393271748,2024-10-21 22:03:58.104436
+I want to opt out of data collection asap,privacy_request,0.8802205363423888,2024-09-08 07:43:58.104436
+Please remove my information from your database asap,data_deletion,0.8183199765152178,2025-01-24 14:58:58.104436
+I don't want my data to be processed,privacy_request,0.4291245502269281,2024-08-22 15:36:58.104436
+Please remove my information from your database,data_deletion,0.57680739077969,2024-09-27 09:32:58.104436
+Can you explain your privacy policy? immediately,other,0.3552132126183383,2025-02-10 14:14:58.104436
+I want to opt out of data collection,privacy_request,0.5618327990103446,2024-08-05 19:29:58.104436
+I want to opt out of data collection urgently,privacy_request,0.9314616203705444,2025-07-20 04:19:58.104436
+I want to delete my personal data,data_deletion,0.7101533226220788,2025-04-06 16:19:58.104436
+Please remove my information from your database,privacy_request,0.3329190758789956,2024-10-13 17:51:58.104436
+Please remove my information from your database please,opt_out,0.16353517778303067,2024-09-29 03:12:58.104436
+I want to know what data you have about me,opt_out,0.9484071447548967,2024-11-28 12:48:58.104436
+I'm interested in your services asap,other,0.7254660313013714,2025-01-04 01:13:58.104436
+I need technical support,other,0.5557547974047753,2025-02-09 10:51:58.104436
+I want to know what data you have about me asap,privacy_request,0.7342520429063867,2024-07-31 17:21:58.104436
+Please provide a copy of my personal data,data_deletion,0.9538240381621604,2025-07-01 21:29:58.104436
+Please send me more details please,other,0.29771274615185483,2024-07-23 18:46:58.104436
+What are your business hours? asap,other,0.21536560599290389,2024-08-20 22:22:58.104436
+I don't want my data to be processed,opt_out,0.7587350608505498,2024-11-04 22:18:58.104436
+Remove me from your mailing list,data_deletion,0.7947391725256872,2024-11-21 08:28:58.104436
+Please stop collecting my data,opt_out,0.7907044470637156,2024-09-02 02:50:58.104436
+I don't want my data to be processed,data_deletion,0.6414714311150875,2025-05-30 19:10:58.104436
+Can you help me with my account?,other,0.7548545923365031,2024-09-01 03:16:58.104436
+I want to delete my personal data,opt_out,0.8205989311460805,2024-12-31 15:00:58.104436
+I don't want my data to be processed please,privacy_request,0.633192284811871,2025-04-28 14:58:58.104436
+Please stop collecting my data,opt_out,0.9316577564406143,2024-08-11 18:54:58.104436
+I want to know what data you have about me,data_deletion,0.8789371455015627,2025-07-13 05:11:58.104436
+Please stop collecting my data,data_deletion,0.6711634483430987,2025-05-20 08:05:58.104436
+Delete all my personal information asap,data_deletion,0.5696164364331044,2024-07-30 21:33:58.104436
+I want to opt out of data collection,data_deletion,0.7578521522525307,2024-10-27 12:51:58.104436
+Please stop collecting my data,data_deletion,0.8768640339910483,2024-12-20 22:22:58.104436
+I want to know what data you have about me,data_deletion,0.9677072009280724,2025-02-09 21:31:58.104436
+I want to delete my personal data,privacy_request,0.6877848594180694,2024-11-19 14:47:58.104436
+I don't want my data to be processed urgently,privacy_request,0.5538614102951248,2025-02-05 01:35:58.104436
+Please remove my information from your database urgently,privacy_request,0.37748175209917706,2025-03-13 23:51:58.104436
+I want to delete my personal data please,privacy_request,0.5947607483296561,2024-11-12 11:26:58.104436
+Delete all my personal information please,privacy_request,0.7839950755755478,2024-08-02 19:46:58.104436
+Delete all my personal information,data_deletion,0.5308815947825601,2025-06-15 02:41:58.104436
+Please stop collecting my data immediately,privacy_request,0.813073536321523,2024-11-13 09:47:58.104436
+Can you explain your privacy policy? asap,other,0.14005651032559988,2025-07-05 06:27:58.104436
+I want to opt out of data collection,opt_out,0.8424117850649614,2024-08-25 12:16:58.104436
+I want to opt out of data collection,privacy_request,0.5183716134984689,2024-10-23 08:38:58.104436
+How do I contact customer service?,other,0.19613404233490328,2024-12-26 06:56:58.104436
+Remove me from your mailing list,data_deletion,0.4729653691222166,2025-06-28 11:48:58.104436
+I don't want my data to be processed please,privacy_request,0.35373979274987355,2024-12-21 06:03:58.104436
+Please provide a copy of my personal data,privacy_request,0.8372374510457313,2025-03-22 20:42:58.104436
+I request the deletion of my account,privacy_request,0.6953744235686941,2025-03-23 14:58:58.104436
+I want to opt out of data collection,data_deletion,0.5640483396740811,2025-01-09 19:36:58.104436
+I want to opt out of data collection,opt_out,0.6772923341543695,2024-09-20 23:20:58.104436
+Please provide a copy of my personal data immediately,privacy_request,0.6917763004747706,2025-02-03 04:58:58.104436
+I want to know what data you have about me urgently,opt_out,0.9409156203260168,2025-04-22 15:49:58.104436
+I want to know what data you have about me,data_deletion,0.9650859145511103,2024-09-25 08:57:58.104436
+Please send me more details,other,0.6163336931515916,2024-08-20 09:35:58.104436
+Please remove my information from your database,data_deletion,0.5155042065820307,2025-04-03 12:34:58.104436
+I want to update my information,other,0.13758732141584074,2025-06-02 23:50:58.104436
+Remove me from your mailing list,opt_out,0.8099626842795651,2024-08-10 10:26:58.104436
+Delete all my personal information,data_deletion,0.5124903576764344,2024-08-14 13:23:58.104436
+I request the deletion of my account immediately,privacy_request,0.9410098074684812,2024-12-21 14:19:58.104436
+I'm interested in your services,other,0.5355770946883834,2024-08-05 22:02:58.104436
+I want to delete my personal data,data_deletion,0.7536260274780923,2025-04-26 15:58:58.104436
+Please provide a copy of my personal data,privacy_request,0.7157066012149838,2024-09-13 14:19:58.104436
+I want to delete my personal data,data_deletion,0.8426126724164117,2025-06-26 02:43:58.104436
+Please remove my information from your database,privacy_request,0.9690314089870121,2024-09-05 03:42:58.104436
+I request the deletion of my account,privacy_request,0.9788335203703269,2024-08-13 22:10:58.104436
+I need technical support,other,0.3344720948974218,2024-12-14 16:22:58.104436
+Please stop collecting my data asap,data_deletion,0.6598773140574112,2024-08-21 23:05:58.104436
+Please remove my information from your database,privacy_request,0.9882101047589089,2025-06-15 01:35:58.104436
+Delete all my personal information,data_deletion,0.9683545368949997,2025-07-09 07:05:58.104436
+I want to know what data you have about me,opt_out,0.4472245169395426,2024-11-04 15:30:58.104436
+Please remove my information from your database,opt_out,0.9750473955163577,2025-01-16 02:37:58.104436
+I want to know what data you have about me immediately,opt_out,0.3325266242610511,2025-03-15 12:49:58.104436
+I want to update my information,other,0.8921569887598693,2024-12-29 16:40:58.104436
+I want to know what data you have about me,opt_out,0.8515687227075,2025-03-24 04:17:58.104436
+Please stop collecting my data please,privacy_request,0.8250955726192508,2025-01-13 06:26:58.104436
+I request the deletion of my account,data_deletion,0.6298566939344605,2025-06-18 12:31:58.104436
+Please stop collecting my data,privacy_request,0.9852168478076859,2025-03-01 19:51:58.104436
+Remove me from your mailing list,privacy_request,0.707798870161245,2025-07-17 01:11:58.104436
+Please stop collecting my data,privacy_request,0.22997418500910174,2024-08-20 21:21:58.104436
+I request the deletion of my account,privacy_request,0.9957586253487412,2025-01-28 13:51:58.104436
+Remove me from your mailing list,opt_out,0.809446212124548,2024-08-31 02:00:58.104436
+Remove me from your mailing list immediately,opt_out,0.7593752504383068,2025-07-22 19:07:58.104436
+I don't want my data to be processed,privacy_request,0.6209081914218988,2025-01-27 07:08:58.104436
+I want to delete my personal data please,data_deletion,0.7600766310206621,2024-10-26 19:14:58.104436
+Remove me from your mailing list,privacy_request,0.6096024690257819,2024-08-22 20:39:58.104436
+Please remove my information from your database please,data_deletion,0.13422857260442078,2024-08-05 14:56:58.104436
+Please remove my information from your database,privacy_request,0.8683535816658358,2025-04-16 16:51:58.104436
+I don't want my data to be processed urgently,data_deletion,0.7180481155730071,2024-07-31 21:20:58.104436
+Delete all my personal information please,opt_out,0.815031259369367,2024-09-20 18:02:58.104436
+Please provide a copy of my personal data please,data_deletion,0.6697391869027759,2025-07-07 16:04:58.104436
+I want to know what data you have about me please,opt_out,0.9217227143029771,2024-08-15 13:23:58.104436
+How do I contact customer service?,other,0.3753614926486192,2025-03-14 07:27:58.104436
+I want to delete my personal data asap,privacy_request,0.9571806124892905,2024-09-08 19:11:58.104436
+Please provide a copy of my personal data,privacy_request,0.828369297774183,2025-02-03 04:03:58.104436
+I have a question about your products,other,0.8269095654071859,2024-09-13 07:42:58.104436
+I have a question about your products,other,0.8406026010653264,2025-06-01 17:02:58.104436
+Please provide a copy of my personal data,privacy_request,0.997647526673811,2025-01-20 16:39:58.104436
+Remove me from your mailing list asap,data_deletion,0.8804126587387499,2024-10-10 13:34:58.104436
+Can you help me with my account?,other,0.17557860109730816,2025-04-02 16:50:58.104436
+How do I contact customer service?,other,0.14163130566341534,2025-05-27 23:11:58.104436
+Thank you for your service immediately,other,0.6206977151453786,2024-12-16 13:52:58.104436
+Please stop collecting my data,privacy_request,0.38049178102579506,2025-01-17 12:38:58.104436
+I don't want my data to be processed,privacy_request,0.37801924931521635,2024-12-29 21:29:58.104436
+I request the deletion of my account,privacy_request,0.2913780539514139,2024-07-27 15:44:58.104436
+I want to opt out of data collection urgently,privacy_request,0.6218931883492238,2024-10-17 12:19:58.104436
+Please provide a copy of my personal data,privacy_request,0.9620725043568362,2025-03-15 11:47:58.104436
+I don't want my data to be processed,privacy_request,0.8413196697391123,2025-06-18 20:42:58.104436
+Please remove my information from your database,privacy_request,0.723860391911704,2025-06-11 04:04:58.104436
+Delete all my personal information asap,data_deletion,0.14928926645605875,2025-02-16 07:24:58.104436
+I want to delete my personal data,data_deletion,0.7374826277868218,2024-12-28 02:13:58.104436
+I want to delete my personal data,data_deletion,0.7118318841020005,2025-03-19 06:55:58.104436
+I'm interested in your services asap,other,0.4819360029357652,2025-06-12 22:21:58.104436
+Remove me from your mailing list,privacy_request,0.8487968066377994,2024-08-05 11:36:58.104436
+I want to delete my personal data,data_deletion,0.5536362107641609,2024-07-23 18:27:58.104436
+Delete all my personal information,opt_out,0.6754396426407507,2025-02-17 07:27:58.104436
+Remove me from your mailing list,data_deletion,0.9154813627496011,2024-11-18 16:19:58.104436
+I'm interested in your services,other,0.3701738278119767,2025-01-24 08:43:58.104436
+Can you help me with my account?,other,0.23557842919128527,2025-05-30 08:37:58.104436
+I want to opt out of data collection,opt_out,0.8596379298971278,2025-01-15 13:44:58.104436
+Please provide a copy of my personal data,privacy_request,0.7020075634539212,2025-02-25 19:38:58.104436
+Please provide a copy of my personal data,opt_out,0.7415003751806043,2024-09-25 15:42:58.104436
+Can you explain your privacy policy?,other,0.8043826550773499,2024-10-27 21:21:58.104436
+Please provide a copy of my personal data asap,opt_out,0.09796142897133134,2025-04-27 20:32:58.104436
+Please remove my information from your database,opt_out,0.6420088057970625,2025-04-14 21:29:58.104436
+Please stop collecting my data please,data_deletion,0.8205659833558941,2025-03-22 13:15:58.104436
+Remove me from your mailing list please,data_deletion,0.6428560127937635,2025-03-11 06:34:58.104436
+I request the deletion of my account,privacy_request,0.5593483924904848,2024-10-26 08:16:58.104436
+Please provide a copy of my personal data,privacy_request,0.4425968372180762,2025-06-18 12:31:58.104436
+Please provide a copy of my personal data urgently,privacy_request,0.6472868730040388,2025-07-13 18:28:58.104436
+I request the deletion of my account,opt_out,0.428319875475863,2025-03-25 07:27:58.104436
+Please remove my information from your database urgently,opt_out,0.5608629456082097,2024-09-19 23:48:58.104436
+I want to know what data you have about me,opt_out,0.2085674187638712,2025-04-03 03:09:58.104436
+Please stop collecting my data asap,privacy_request,0.36718958279756897,2025-02-06 15:21:58.104436
+I want to know what data you have about me,data_deletion,0.8520520952225002,2025-02-28 15:55:58.104436
+I request the deletion of my account,privacy_request,0.17945695574119505,2024-08-17 04:21:58.104436
+Please remove my information from your database,data_deletion,0.6127594665347337,2025-06-22 01:19:58.104436
+I don't want my data to be processed,data_deletion,0.9797773467359173,2024-10-10 04:05:58.104436
+I have a question about your products,other,0.21927550270797566,2024-11-19 16:59:58.104436
+Remove me from your mailing list please,data_deletion,0.7729331501074,2025-01-28 00:43:58.104436
+I need technical support,other,0.2807731056050715,2024-08-07 15:47:58.104436
+Please stop collecting my data,opt_out,0.7099412886252148,2025-07-05 19:40:58.104436
+Please stop collecting my data,privacy_request,0.5112213295030832,2025-05-09 09:34:58.104436
+Please remove my information from your database urgently,opt_out,0.36423646585306446,2024-10-14 11:33:58.104436
+Remove me from your mailing list please,privacy_request,0.7888252658280828,2024-08-25 01:52:58.104436
+Please provide a copy of my personal data,data_deletion,0.7028959234169214,2024-08-02 19:57:58.104436
+Please stop collecting my data,privacy_request,0.8987441465165953,2024-11-28 21:56:58.104436
+Please send me more details,other,0.13433542363993234,2024-11-11 07:05:58.104436
+I want to opt out of data collection,opt_out,0.3490319767968248,2024-11-21 13:17:58.104436
+What are your business hours?,other,0.833300015148637,2024-07-23 18:47:58.104436
+Please provide a copy of my personal data,data_deletion,0.8505515457557622,2024-09-20 01:02:58.104436
+Please stop collecting my data asap,opt_out,0.5524987938063828,2025-07-19 17:29:58.104436
+I want to know what data you have about me,opt_out,0.28736318379450826,2025-05-21 12:11:58.104436
+Delete all my personal information please,opt_out,0.8827699553325628,2025-02-03 19:33:58.104436
+Please remove my information from your database immediately,privacy_request,0.4972173984471364,2025-01-31 00:51:58.104436
+I want to delete my personal data immediately,privacy_request,0.49279268127064707,2024-09-03 04:22:58.104436
+Remove me from your mailing list,privacy_request,0.5987816912640339,2024-09-28 08:50:58.104436
+Can you explain your privacy policy?,other,0.41240801956680256,2025-01-09 12:56:58.104436
+I want to know what data you have about me immediately,privacy_request,0.9380253490175188,2025-02-17 19:08:58.104436
+I want to delete my personal data,data_deletion,0.53065011201659,2024-12-30 07:09:58.104436
+I request the deletion of my account,opt_out,0.47291227810872627,2024-09-01 12:35:58.104436
+I want to know what data you have about me,data_deletion,0.39826003388692205,2024-07-30 16:24:58.104436
+I want to delete my personal data,privacy_request,0.9729796822938319,2025-01-19 15:05:58.114074
+I request the deletion of my account,data_deletion,0.9897431466966834,2025-04-17 23:56:58.114175
+Can you explain your privacy policy?,other,0.2895127036630032,2025-05-04 10:59:58.114175
+Delete all my personal information urgently,data_deletion,0.4467170832916685,2025-07-05 20:39:58.114175
+Can you help me with my account?,other,0.3826450615080741,2025-05-29 14:53:58.114175
+Please remove my information from your database,privacy_request,0.35461082900320734,2025-04-28 02:28:58.114175
+I request the deletion of my account,opt_out,0.6827266968051706,2025-07-07 06:06:58.114175
+How do I contact customer service?,other,0.3126297416106906,2025-01-07 23:41:58.114175
+I want to know what data you have about me,opt_out,0.9194666213388838,2024-12-25 18:15:58.114175
+I request the deletion of my account urgently,opt_out,0.3669609685617873,2024-10-25 10:45:58.114175
+Please stop collecting my data,opt_out,0.8289065446457619,2025-07-13 19:46:58.114175
+I don't want my data to be processed,privacy_request,0.856670652877539,2025-06-26 16:46:58.114175
+Please remove my information from your database asap,privacy_request,0.810277130781605,2025-01-03 21:37:58.114175
+Can you help me with my account?,other,0.19067287646435765,2025-02-06 15:20:58.114175
+I have a question about your products please,other,0.5554015960724034,2025-04-27 10:38:58.114175
+Please provide a copy of my personal data,data_deletion,0.9370357034145672,2024-07-29 17:43:58.114175
+Please provide a copy of my personal data,data_deletion,0.3781376884914629,2025-03-27 09:39:58.114175
+Please provide a copy of my personal data,data_deletion,0.8903624001608699,2024-08-31 17:08:58.114175
+I request the deletion of my account,data_deletion,0.9639320451650697,2025-03-01 04:32:58.114175
+Delete all my personal information immediately,data_deletion,0.6472705686856896,2024-09-02 01:36:58.114175
+I request the deletion of my account,privacy_request,0.7940672592725372,2024-10-05 11:01:58.114175
+Delete all my personal information,data_deletion,0.9962447753750046,2024-12-03 18:10:58.114175
+Please remove my information from your database,opt_out,0.581289029943854,2025-04-07 12:42:58.114175
+Please provide a copy of my personal data,privacy_request,0.3891169060386781,2025-07-11 01:48:58.114175
+Remove me from your mailing list please,opt_out,0.12315293296257446,2025-07-19 00:38:58.114175
+Please provide a copy of my personal data immediately,privacy_request,0.5014187512707639,2024-11-29 04:00:58.114175
+I want to know what data you have about me,data_deletion,0.784661397866937,2025-06-14 18:00:58.114175
+I want to update my information,other,0.12407203178986818,2024-12-21 15:20:58.114175
+I want to delete my personal data,data_deletion,0.7697506578358665,2024-10-23 04:51:58.114175
+I request the deletion of my account please,privacy_request,0.8257232216253779,2024-09-26 17:22:58.114175
+Please stop collecting my data urgently,privacy_request,0.5319588823678971,2025-04-22 14:06:58.114175
+Please send me more details,other,0.11544031243249507,2025-03-18 04:03:58.114175
+How do I contact customer service?,other,0.17292683946437407,2025-01-22 16:06:58.114175
+Can you help me with my account? immediately,other,0.8481531651851584,2024-08-20 10:10:58.114175
+I don't want my data to be processed,data_deletion,0.3159771893658408,2025-01-13 16:43:58.114175
+Can you explain your privacy policy?,other,0.08139649506562897,2025-05-09 06:51:58.114175
+How do I contact customer service?,other,0.41900650879794765,2024-11-10 23:19:58.114175
+I want to delete my personal data,data_deletion,0.9421310222432121,2025-07-10 11:29:58.114175
+I want to opt out of data collection urgently,data_deletion,0.7232918289286889,2024-11-02 09:52:58.114175
+Please stop collecting my data,opt_out,0.5161708523677697,2024-11-17 15:37:58.114175
+I have a question about your products,other,0.35232690688953233,2025-05-05 07:25:58.114175
+I want to opt out of data collection,privacy_request,0.6699549001878746,2024-08-22 05:17:58.114175
+I want to opt out of data collection immediately,privacy_request,0.6419783884968675,2024-09-22 00:17:58.114175
+I don't want my data to be processed,opt_out,0.1737022149428696,2024-07-27 21:43:58.114175
+I want to opt out of data collection,opt_out,0.6869503905202053,2025-07-18 04:52:58.114175
+Please provide a copy of my personal data,opt_out,0.5385321274113216,2025-04-11 10:57:58.114175
+I want to delete my personal data asap,privacy_request,0.6908734884877002,2024-09-16 00:21:58.114175
+Please provide a copy of my personal data,privacy_request,0.9906557070146267,2025-06-30 07:29:58.114175
+I want to delete my personal data,privacy_request,0.843088307225627,2024-12-17 16:41:58.114175
+I request the deletion of my account,data_deletion,0.9982518192122385,2024-09-30 00:55:58.114175
+I don't want my data to be processed,opt_out,0.927879124763964,2025-03-13 14:55:58.114175
+I want to delete my personal data,opt_out,0.9676771552461,2025-06-17 12:20:58.114175
+I request the deletion of my account urgently,data_deletion,0.5344337889334569,2024-08-02 07:41:58.114175
+What are your business hours?,other,0.07730147552315382,2025-05-18 14:09:58.114175
+I don't want my data to be processed,opt_out,0.8992398571720979,2025-06-05 06:43:58.114175
+I want to delete my personal data,opt_out,0.8451348647936856,2024-12-06 17:29:58.114175
+I don't want my data to be processed,data_deletion,0.972805707812068,2025-04-09 01:02:58.114175
+Please provide a copy of my personal data,privacy_request,0.7101289405440998,2025-03-31 21:20:58.114175
+Remove me from your mailing list asap,privacy_request,0.7261031999452995,2025-02-02 04:29:58.114175
+Can you help me with my account?,other,0.40709529658407545,2024-11-10 14:47:58.114175
+I want to know what data you have about me,privacy_request,0.8645183884941748,2025-04-22 15:08:58.114175
+Please remove my information from your database asap,privacy_request,0.2658777745902888,2025-05-17 17:33:58.114175
+Please provide a copy of my personal data,opt_out,0.9580610097828824,2025-05-23 07:59:58.114175
+I request the deletion of my account please,data_deletion,0.9467880349919785,2025-06-07 09:13:58.114175
+I want to opt out of data collection,data_deletion,0.7078409105558944,2025-02-03 09:08:58.114175
+Please stop collecting my data,data_deletion,0.2277515678336671,2025-01-06 23:45:58.114175
+Please provide a copy of my personal data asap,opt_out,0.6855150856449613,2025-02-27 14:09:58.114175
+Please stop collecting my data,privacy_request,0.8647217994559994,2025-04-16 20:36:58.117415
+Remove me from your mailing list,privacy_request,0.35204951388792055,2024-08-29 16:22:58.117415
+Can you explain your privacy policy?,other,0.5737375998169456,2024-10-07 16:08:58.117415
+I don't want my data to be processed,opt_out,0.9030602402507341,2025-04-08 14:40:58.117674
+I want to opt out of data collection,opt_out,0.8120313008099698,2024-11-23 14:15:58.117674
+I want to update my information asap,other,0.369775125067117,2025-03-11 20:55:58.117674
+Remove me from your mailing list asap,data_deletion,0.9820170383857686,2025-05-14 21:23:58.117674
+Please provide a copy of my personal data,data_deletion,0.7303992594166854,2025-02-22 19:38:58.117674
+I want to know what data you have about me asap,privacy_request,0.7496856589222377,2024-10-28 08:54:58.117674
+Can you help me with my account?,other,0.10611039922613316,2024-08-31 11:57:58.117674
+I request the deletion of my account,opt_out,0.6518089713310634,2025-04-23 17:33:58.117674
+Please remove my information from your database asap,privacy_request,0.5513289834390338,2024-08-01 23:50:58.117674
+Can you help me with my account?,other,0.4157873200825175,2024-11-23 09:21:58.117674
+Please stop collecting my data,privacy_request,0.8348406518782162,2024-08-23 19:44:58.117674
+Please stop collecting my data,privacy_request,0.29152659954495397,2024-07-27 04:50:58.117674
+Delete all my personal information,opt_out,0.2689619649708231,2024-11-22 08:33:58.117674
+I have a question about your products,other,0.09052101801691194,2025-04-15 18:43:58.117674
+I want to delete my personal data,data_deletion,0.8097163736426051,2025-06-23 00:22:58.117674
+Remove me from your mailing list urgently,privacy_request,0.6168628321607411,2024-08-16 15:07:58.117674
+I want to know what data you have about me,opt_out,0.5561275839550978,2024-09-04 10:44:58.117674
+I request the deletion of my account asap,privacy_request,0.4599948426512682,2024-07-29 21:48:58.117674
+Can you help me with my account? please,other,0.3094809232792736,2024-11-20 10:37:58.117674
+Delete all my personal information,data_deletion,0.2885093328790011,2024-11-09 10:57:58.117674
+I'm interested in your services,other,0.05645268733555185,2025-01-16 17:30:58.117674
+I want to opt out of data collection,privacy_request,0.9552179643548364,2025-04-25 05:45:58.117674
+I request the deletion of my account,privacy_request,0.3689117144115879,2024-10-26 19:56:58.117674
+I want to opt out of data collection,privacy_request,0.6885793236041808,2024-10-21 14:06:58.117674
+Please remove my information from your database,data_deletion,0.5998070624489259,2025-07-06 02:12:58.117674
+How do I contact customer service?,other,0.23299215914461457,2025-01-09 01:35:58.117674
+Please provide a copy of my personal data immediately,opt_out,0.6181176769499591,2024-10-25 07:47:58.117674
+I request the deletion of my account please,privacy_request,0.8897485427724944,2024-10-13 15:20:58.117674
+I want to opt out of data collection,privacy_request,0.745903995468463,2025-05-30 10:08:58.117674
+Please remove my information from your database immediately,privacy_request,0.3555317708071483,2025-03-23 10:46:58.117674
+Can you explain your privacy policy? asap,other,0.042518934351230504,2025-06-29 21:51:58.117674
+Delete all my personal information,opt_out,0.21304767726973695,2025-01-23 01:23:58.117674
+I want to opt out of data collection,privacy_request,0.8152615626338889,2025-04-14 12:26:58.117674
+I want to opt out of data collection,privacy_request,0.8457501189111589,2024-11-22 07:23:58.117674
+I want to update my information,other,0.5760611395095839,2025-01-11 03:16:58.117674
+Please remove my information from your database,privacy_request,0.6379078434040948,2025-01-13 23:33:58.117674
+I don't want my data to be processed urgently,privacy_request,0.7072087748273217,2025-02-02 20:26:58.117674
+I want to opt out of data collection asap,opt_out,0.7071948475406528,2025-07-14 16:10:58.117674
+Please provide a copy of my personal data urgently,privacy_request,0.568407671598986,2025-06-11 09:39:58.117674
+I request the deletion of my account,data_deletion,0.5988164226141145,2025-03-10 21:01:58.117674
+Please stop collecting my data urgently,privacy_request,0.9575562698267566,2024-10-17 05:11:58.117674
+How do I contact customer service? please,other,0.06065737276841601,2025-01-05 12:24:58.117674
+How do I contact customer service?,other,0.2129245552139853,2024-12-25 21:27:58.117674
+Remove me from your mailing list,opt_out,0.5954642266847445,2024-09-22 09:15:58.117674
+Please provide a copy of my personal data,data_deletion,0.5080249683523418,2025-04-23 04:06:58.117674
+I want to opt out of data collection,privacy_request,0.3089296663414377,2024-12-12 20:03:58.117674
+Can you help me with my account?,other,0.2041029723320324,2024-11-02 12:38:58.117674
+Please provide a copy of my personal data urgently,privacy_request,0.900066299657128,2025-05-06 23:20:58.117674
+I don't want my data to be processed please,data_deletion,0.9283450705942492,2025-02-26 13:46:58.117674
+Thank you for your service,other,0.2758655933841899,2024-11-07 22:51:58.117674
+Please send me more details,other,0.38052687441719546,2024-11-29 12:37:58.117674
+I want to delete my personal data,privacy_request,0.9466194734244298,2025-02-19 10:02:58.117674
+Remove me from your mailing list,data_deletion,0.3667624292702297,2024-09-16 14:55:58.117674
+I want to update my information please,other,0.40729643325264503,2025-07-16 04:02:58.117674
+Please stop collecting my data,opt_out,0.807867465871913,2024-10-24 09:58:58.117674
+Please stop collecting my data,data_deletion,0.9639579297344272,2024-12-30 13:47:58.117674
+Please provide a copy of my personal data,opt_out,0.9784362870384447,2025-07-14 01:56:58.117674
+Please provide a copy of my personal data,data_deletion,0.9887243989777497,2025-03-28 07:06:58.117674
+I don't want my data to be processed,data_deletion,0.3757912072329911,2024-10-05 21:53:58.117674
+I don't want my data to be processed immediately,opt_out,0.8994549712309402,2024-12-11 04:33:58.117674
+I don't want my data to be processed,privacy_request,0.2988927048580346,2024-08-24 11:50:58.117674
+Remove me from your mailing list,privacy_request,0.8502150508760907,2025-03-31 20:14:58.117674
+I want to delete my personal data,data_deletion,0.4651728815009068,2024-08-10 21:50:58.117674
+I want to opt out of data collection,opt_out,0.599117972782758,2025-02-18 00:20:58.117674
+I don't want my data to be processed,opt_out,0.8496827251987817,2025-04-29 03:28:58.117674
+I want to delete my personal data asap,opt_out,0.5214641763504254,2025-02-18 19:37:58.117674
+Please provide a copy of my personal data,data_deletion,0.8523814279644827,2024-12-27 15:49:58.117674
+Please stop collecting my data,data_deletion,0.30401886901059916,2024-09-26 22:50:58.117674
+I want to know what data you have about me,data_deletion,0.6735421749740883,2025-07-17 23:02:58.117674
+Please remove my information from your database asap,privacy_request,0.6879055172410552,2025-03-02 03:20:58.117674
+Please provide a copy of my personal data asap,privacy_request,0.7886922986202262,2025-03-12 12:36:58.117674
+How do I contact customer service?,other,0.26896046527084677,2025-01-25 21:06:58.117674
+Please remove my information from your database,privacy_request,0.6721530289321141,2025-04-01 13:22:58.117674
+I want to update my information please,other,0.026100416910687,2025-04-01 23:01:58.117674
+Can you explain your privacy policy? urgently,other,0.18639881669831682,2024-12-07 12:13:58.117674
+How do I contact customer service?,other,0.40634396625930963,2024-07-31 18:05:58.117674
+I want to opt out of data collection,data_deletion,0.8487726277696024,2024-10-25 02:57:58.117674
+I want to update my information immediately,other,0.04084426962690365,2024-09-16 09:56:58.117674
+What are your business hours?,other,0.7812112633247357,2024-08-31 10:38:58.117674
+I want to know what data you have about me,data_deletion,0.4484970813817869,2025-03-04 12:26:58.117674
+I don't want my data to be processed,opt_out,0.9578638903380191,2025-01-14 22:14:58.117674
+I want to know what data you have about me asap,opt_out,0.8391131273993794,2025-07-08 04:32:58.117674
+What are your business hours?,other,0.020920451263185192,2025-01-01 11:39:58.117674
+I don't want my data to be processed,privacy_request,0.6294731661461397,2024-07-26 04:43:58.117674
+Please provide a copy of my personal data,opt_out,0.7040931626098395,2024-12-11 09:54:58.117674
+Please provide a copy of my personal data,privacy_request,0.8513138838332115,2024-08-18 09:53:58.117674
+I want to know what data you have about me,privacy_request,0.35325251876412117,2024-09-17 18:23:58.117674
+Please remove my information from your database,opt_out,0.9616289674380104,2025-02-24 21:51:58.117674
+I want to know what data you have about me,data_deletion,0.9196183690511994,2025-06-07 18:59:58.117674
+I need technical support,other,0.09026051943391704,2024-10-22 10:43:58.117674
+Please provide a copy of my personal data immediately,opt_out,0.936259468664127,2024-08-23 11:42:58.117674
+I want to delete my personal data please,data_deletion,0.9407734054825587,2025-02-02 00:28:58.117674
+I want to opt out of data collection immediately,data_deletion,0.2817793373781217,2024-08-01 11:33:58.117674
+I don't want my data to be processed urgently,data_deletion,0.8038697048372924,2025-07-02 02:21:58.117674
+Please provide a copy of my personal data,opt_out,0.4804128788092207,2025-01-11 21:09:58.117674
+Please stop collecting my data,privacy_request,0.46251210798251263,2025-03-07 06:53:58.117674
+Please remove my information from your database,data_deletion,0.9259046916653966,2024-10-26 08:02:58.117674
+I request the deletion of my account please,data_deletion,0.5259250019516507,2025-03-08 04:58:58.117674
+I have a question about your products asap,other,0.07185420953073923,2025-06-11 04:07:58.117674
+I want to opt out of data collection,privacy_request,0.7768833750336238,2024-12-22 15:22:58.117674
+Delete all my personal information,data_deletion,0.9638771250361723,2024-10-27 07:40:58.117674
+I don't want my data to be processed asap,privacy_request,0.4486711543675877,2025-01-10 19:07:58.117674
+I want to delete my personal data,opt_out,0.9609351141459384,2025-03-08 01:31:58.117674
+Please provide a copy of my personal data,data_deletion,0.853046852576643,2025-05-29 01:43:58.117674
+Remove me from your mailing list,data_deletion,0.6013912925031626,2025-05-11 14:52:58.117674
+Remove me from your mailing list,privacy_request,0.858643880570336,2025-02-27 23:03:58.117674
+I'm interested in your services,other,0.1992382444333729,2025-06-17 04:26:58.117674
+I want to delete my personal data urgently,opt_out,0.6561465824275459,2025-02-13 09:15:58.117674
+Please remove my information from your database,data_deletion,0.59857382677094,2024-11-12 11:43:58.117674
+Please provide a copy of my personal data,privacy_request,0.6319553399410607,2025-03-21 01:44:58.117674
+I'm interested in your services immediately,other,0.03159238521709631,2024-11-30 02:39:58.117674
+I want to know what data you have about me asap,opt_out,0.45583643413072994,2024-10-04 09:04:58.117674
+Please provide a copy of my personal data,data_deletion,0.3812886121446118,2024-12-31 18:54:58.117674
+Please provide a copy of my personal data,privacy_request,0.8845416000759924,2025-02-06 17:44:58.117674
+I want to delete my personal data,data_deletion,0.19444944959522545,2025-04-04 19:12:58.117674
+Please provide a copy of my personal data,opt_out,0.8415625889676898,2025-05-04 19:56:58.117674
+I don't want my data to be processed asap,privacy_request,0.9433927810862364,2025-04-15 17:58:58.117674
+Please send me more details,other,0.2356851024679304,2025-06-23 18:34:58.117674
+I want to know what data you have about me,opt_out,0.2538261551086121,2024-12-20 23:35:58.117674
+Can you explain your privacy policy?,other,0.6671256857169185,2025-01-11 01:29:58.117674
+I want to opt out of data collection,opt_out,0.8797858838707111,2024-09-01 17:26:58.117674
+I want to opt out of data collection,data_deletion,0.5655873576097108,2025-01-27 01:11:58.117674
+I want to know what data you have about me,privacy_request,0.8194848109331662,2025-01-08 19:57:58.117674
+I request the deletion of my account,data_deletion,0.9828916437574152,2024-08-26 19:15:58.117674
+I want to update my information,other,0.04093495840348475,2024-09-05 09:29:58.117674
+I request the deletion of my account,privacy_request,0.38389366957557625,2024-09-12 01:57:58.117674
+Please stop collecting my data,privacy_request,0.7889873327844522,2024-08-03 00:58:58.117674
+How do I contact customer service?,other,0.035274288724256905,2024-08-27 02:42:58.117674
+Delete all my personal information please,data_deletion,0.4697125893989942,2024-12-25 16:37:58.117674
+I request the deletion of my account urgently,privacy_request,0.6273773294984206,2025-03-03 16:36:58.117674
+I want to opt out of data collection,data_deletion,0.5809898559640237,2025-02-02 03:07:58.117674
+I want to opt out of data collection,data_deletion,0.5497259385209663,2025-05-12 07:33:58.124197
+Please provide a copy of my personal data,privacy_request,0.8766627628717364,2025-05-07 21:47:58.124197
+Please remove my information from your database,opt_out,0.7822834156687084,2024-12-10 20:57:58.124304
+I want to delete my personal data asap,privacy_request,0.33314149413924316,2024-12-27 00:37:58.124304
+Delete all my personal information,privacy_request,0.7400540007393366,2025-05-21 23:56:58.124304
+I want to delete my personal data,data_deletion,0.37544763321509045,2025-01-05 19:53:58.124304
+Please stop collecting my data urgently,privacy_request,0.640856431978623,2024-12-12 14:51:58.124304
+I request the deletion of my account,privacy_request,0.5119077900035928,2024-08-15 05:50:58.124304
+Remove me from your mailing list,privacy_request,0.9335531529640382,2024-10-26 10:23:58.124304
+Please stop collecting my data,opt_out,0.4324035731442494,2025-04-04 10:18:58.124304
+I want to delete my personal data,opt_out,0.7047068211230536,2024-10-26 07:58:58.124304
+Delete all my personal information urgently,privacy_request,0.9903429739984948,2024-09-19 15:28:58.124304
+I want to delete my personal data,opt_out,0.23067333824291678,2024-09-15 22:30:58.124304
+Delete all my personal information,privacy_request,0.6573075526958035,2024-07-23 23:34:58.124304
+I have a question about your products,other,0.8212950727536217,2025-06-28 23:24:58.124304
+I want to know what data you have about me,data_deletion,0.9496341831326964,2024-08-30 06:40:58.124304
+I request the deletion of my account urgently,data_deletion,0.5669600098458109,2025-07-09 21:44:58.124304
+I want to know what data you have about me immediately,data_deletion,0.5311423907623787,2024-08-19 03:11:58.124304
+Please provide a copy of my personal data,privacy_request,0.8571643417943966,2025-05-16 20:52:58.124304
+I want to delete my personal data,data_deletion,0.8662165042947589,2024-10-28 08:45:58.124304
+Remove me from your mailing list immediately,privacy_request,0.9101203171175629,2025-05-11 15:17:58.124304
+Please provide a copy of my personal data,data_deletion,0.9312639329053108,2025-04-10 22:52:58.124304
+I want to update my information asap,other,0.3100807130033233,2025-04-10 01:35:58.124304
+I want to update my information urgently,other,0.484221902673926,2025-05-28 23:41:58.124304
+I don't want my data to be processed,data_deletion,0.6304657409292472,2024-09-10 03:01:58.124304
+I request the deletion of my account,opt_out,0.7698436553601282,2024-07-25 17:38:58.124304
+Please send me more details,other,0.944083874151108,2024-12-01 23:48:58.124304
+I don't want my data to be processed,privacy_request,0.8267212696219467,2024-10-07 08:30:58.124304
+Please stop collecting my data,opt_out,0.9723154570912559,2025-05-02 10:17:58.124304
+How do I contact customer service?,other,0.4574018240241457,2025-05-12 06:25:58.124304
+Please provide a copy of my personal data,opt_out,0.920538985627569,2025-01-18 11:32:58.124304
+Can you help me with my account?,other,0.28185558046309095,2025-05-02 23:09:58.124304
+I want to delete my personal data,data_deletion,0.9324918436298525,2025-01-09 01:20:58.124304
+I have a question about your products,other,0.060536555570805416,2025-01-23 09:57:58.124304
+I want to update my information,other,0.15020603362384521,2025-06-15 17:26:58.124304
+Please provide a copy of my personal data,data_deletion,0.7035548583181939,2025-01-25 04:21:58.124304
+I want to update my information please,other,0.11530493954020939,2024-10-14 00:40:58.124304
+Delete all my personal information,opt_out,0.7465758378351088,2025-04-24 13:17:58.124304
+I'm interested in your services,other,0.37014238139728856,2025-06-10 19:12:58.124304
+Please provide a copy of my personal data,data_deletion,0.1613303204847709,2024-12-18 20:43:58.124304
+I want to update my information,other,0.26970158759200424,2024-12-14 04:30:58.124304
+Remove me from your mailing list,privacy_request,0.2691848442190745,2025-01-17 18:09:58.124304
+Can you explain your privacy policy? asap,other,0.848351972250393,2025-03-28 05:32:58.124304
+Please stop collecting my data asap,data_deletion,0.6249325605642141,2025-06-06 00:55:58.124304
+I want to opt out of data collection immediately,opt_out,0.6984825891598753,2024-08-01 02:15:58.124304
+Please send me more details,other,0.7017687656634406,2024-12-20 05:20:58.124304
+I want to delete my personal data please,privacy_request,0.6120205377830127,2025-05-23 17:56:58.124304
+Delete all my personal information,privacy_request,0.29664541928539473,2025-01-27 05:59:58.124304
+I want to delete my personal data asap,data_deletion,0.13248532021645432,2024-12-10 10:21:58.124304
+How do I contact customer service?,other,0.38029075613968294,2024-10-25 16:18:58.124304
+Please provide a copy of my personal data immediately,opt_out,0.6125769257204016,2025-01-23 21:24:58.124304
+I don't want my data to be processed,privacy_request,0.8660100688421081,2025-01-01 19:25:58.124304
+Please stop collecting my data,data_deletion,0.8472696026370984,2025-03-28 23:57:58.124304
+What are your business hours? urgently,other,0.8177918696982742,2024-12-07 15:47:58.124304
+Please provide a copy of my personal data,privacy_request,0.7745145178566535,2024-09-04 18:05:58.124304
+I want to know what data you have about me,data_deletion,0.8679560869944762,2025-07-22 01:01:58.124304
+Please provide a copy of my personal data immediately,privacy_request,0.5891312885039026,2025-05-31 03:23:58.124304
+I want to update my information asap,other,0.5330421473404577,2025-05-05 00:12:58.124304
+I don't want my data to be processed immediately,data_deletion,0.6654498398109898,2024-10-21 17:46:58.124304
+I want to delete my personal data asap,privacy_request,0.6350670748134681,2024-11-12 06:02:58.124304
+Delete all my personal information,privacy_request,0.633498450792465,2025-06-08 23:44:58.124304
+What are your business hours? urgently,other,0.4215223665415228,2024-09-27 01:05:58.124304
+Delete all my personal information immediately,data_deletion,0.49182006822174534,2025-05-10 20:03:58.124304
+Please remove my information from your database,opt_out,0.5584217988123918,2025-05-25 23:44:58.124304
+What are your business hours?,other,0.5215815361940696,2025-01-29 08:22:58.124304
+I don't want my data to be processed asap,opt_out,0.5120885997772696,2025-06-13 08:07:58.124304
+I want to know what data you have about me,opt_out,0.2921006977424501,2025-01-30 18:23:58.124304
+I want to know what data you have about me,data_deletion,0.3153749837143323,2025-05-29 16:07:58.124304
+I want to delete my personal data,opt_out,0.7139123830827321,2025-05-11 02:14:58.124304
+Please remove my information from your database urgently,privacy_request,0.7308837369782141,2024-12-11 09:12:58.124304
+Please send me more details,other,0.3760080452299086,2024-10-10 17:13:58.124304
+I don't want my data to be processed,privacy_request,0.4701494567034667,2025-03-14 09:40:58.124304
+I want to opt out of data collection,privacy_request,0.7677919668929131,2025-02-13 10:37:58.124304
+What are your business hours?,other,0.20054940709197533,2025-05-02 15:03:58.124304
+Please provide a copy of my personal data,privacy_request,0.46823184518573113,2024-11-23 21:42:58.124304
+Please remove my information from your database immediately,opt_out,0.7733138467386423,2025-07-02 16:20:58.124304
+I want to delete my personal data,privacy_request,0.8466898038360748,2025-07-15 10:43:58.124304
+Delete all my personal information please,opt_out,0.9424890984513516,2025-04-26 05:41:58.124304
+Can you help me with my account?,other,0.061563610069236746,2025-03-25 10:18:58.124304
+Please stop collecting my data urgently,data_deletion,0.8303977876277845,2025-05-14 10:14:58.124304
+Remove me from your mailing list,data_deletion,0.9158892552297536,2025-01-20 21:12:58.124304
+Delete all my personal information,opt_out,0.6970037370458579,2025-04-17 19:26:58.124304
+I want to know what data you have about me urgently,data_deletion,0.8852406170369411,2025-03-23 10:44:58.124304
+I want to know what data you have about me,data_deletion,0.7223551522875212,2024-08-20 10:26:58.124304
+Please send me more details,other,0.017090162580489187,2025-02-28 04:29:58.124304
+Please stop collecting my data please,opt_out,0.7248250378490613,2024-08-13 05:23:58.124304
+Delete all my personal information please,privacy_request,0.25693222254227144,2024-11-04 23:04:58.124304
+I want to delete my personal data,opt_out,0.6391022703466043,2024-12-25 17:16:58.124304
+Delete all my personal information,opt_out,0.48471434260108365,2025-04-20 17:00:58.124304
+Please stop collecting my data immediately,privacy_request,0.2189210181399048,2025-03-18 06:23:58.124304
+I don't want my data to be processed immediately,opt_out,0.5159179565178649,2024-08-16 00:32:58.124304
+Thank you for your service,other,0.6831160811411846,2025-03-21 01:46:58.124304
+I want to update my information please,other,0.36787896680625237,2024-12-23 09:35:58.124304
+Please send me more details,other,0.14204875299686237,2024-08-05 06:32:58.124304
+Remove me from your mailing list immediately,privacy_request,0.7244084509626527,2024-08-20 00:02:58.124304
+Please stop collecting my data,data_deletion,0.7676153956828001,2025-02-27 08:09:58.124304
+I want to delete my personal data urgently,opt_out,0.6562621766288999,2025-07-19 06:31:58.124304
+Remove me from your mailing list,opt_out,0.9938097166698687,2024-12-25 01:52:58.124304
+I don't want my data to be processed asap,data_deletion,0.2962214482646004,2024-07-23 21:54:58.124304
+I request the deletion of my account,opt_out,0.7564346964142236,2025-06-14 04:57:58.124304
+I want to delete my personal data asap,data_deletion,0.9205029254331931,2024-08-22 04:52:58.124304
+Can you help me with my account?,other,0.28009595014047906,2025-05-28 10:54:58.124304
+I want to know what data you have about me please,data_deletion,0.28413999591011896,2025-03-09 07:04:58.124304
+How do I contact customer service? urgently,other,0.1527780508198222,2025-07-06 05:27:58.124304
+Remove me from your mailing list,privacy_request,0.4014834347307166,2025-05-29 15:48:58.129322
+I don't want my data to be processed please,opt_out,0.5970777421532684,2025-07-19 07:50:58.129322
+I want to opt out of data collection urgently,opt_out,0.7370231482518657,2025-02-01 20:05:58.129322
+I don't want my data to be processed urgently,privacy_request,0.39648311830942506,2025-06-21 07:03:58.129322
+Delete all my personal information urgently,opt_out,0.504953051609075,2025-03-01 11:40:58.129322
+What are your business hours?,other,0.08377948207326537,2025-06-10 08:19:58.129322
+I want to delete my personal data,privacy_request,0.7293032239106243,2024-08-05 04:02:58.129322
+Please remove my information from your database,opt_out,0.9296962507235053,2024-11-21 08:15:58.129322
+I'm interested in your services urgently,other,0.4189006204664943,2025-01-13 20:44:58.129322
+Please stop collecting my data,privacy_request,0.7386524508645819,2024-09-09 07:47:58.129322
+Please remove my information from your database urgently,opt_out,0.6071542686885916,2025-02-10 02:15:58.129322
+I don't want my data to be processed,opt_out,0.8702867286488253,2025-01-11 00:57:58.129322
+Remove me from your mailing list please,data_deletion,0.8557459572533729,2025-01-20 05:17:58.129322
+Can you explain your privacy policy? asap,other,0.3109856712591482,2024-11-02 00:38:58.129322
+Can you help me with my account?,other,0.703070801253645,2025-06-28 00:19:58.129322
+I request the deletion of my account immediately,data_deletion,0.4219580687433073,2025-02-27 20:08:58.129322
+I want to delete my personal data,data_deletion,0.8632447436437896,2024-07-31 02:33:58.129322
+Delete all my personal information,privacy_request,0.8114330675235291,2024-08-24 23:44:58.129322
+Please send me more details,other,0.12010315299223316,2025-03-11 09:56:58.129322
+Please provide a copy of my personal data,privacy_request,0.9658733045907842,2024-08-30 23:14:58.129322
+Delete all my personal information,privacy_request,0.8390410836680668,2025-02-06 10:25:58.129322
+What are your business hours? urgently,other,0.39886480358740023,2025-07-04 22:16:58.129322
+Please send me more details,other,0.1367913585884321,2024-11-29 22:15:58.129322
+Can you explain your privacy policy?,other,0.5690078266207491,2025-02-19 19:58:58.129322
+I request the deletion of my account,privacy_request,0.906092250055569,2025-03-17 23:40:58.129322
+Please provide a copy of my personal data urgently,privacy_request,0.761976369970111,2025-02-16 07:46:58.129322
+I don't want my data to be processed immediately,privacy_request,0.9294954351185499,2025-07-15 15:35:58.129322
+I request the deletion of my account asap,data_deletion,0.7432435608675697,2025-02-24 23:34:58.129322
+I want to know what data you have about me,data_deletion,0.839971592237041,2025-02-20 17:03:58.129322
+I want to delete my personal data,data_deletion,0.727736936684466,2024-09-22 15:00:58.129322
+Please remove my information from your database,privacy_request,0.851953604838324,2025-01-05 09:39:58.129322
+Please provide a copy of my personal data please,opt_out,0.9423173408351325,2025-02-26 01:16:58.129322
+I request the deletion of my account,data_deletion,0.8340869676705758,2024-07-24 16:54:58.129322
+I want to know what data you have about me immediately,privacy_request,0.9236358142276596,2025-07-13 23:38:58.129322
+Can you explain your privacy policy?,other,0.03456121162209747,2025-06-19 10:37:58.129322
+Please stop collecting my data,opt_out,0.9645658809707611,2025-07-11 22:17:58.129322
+Please stop collecting my data please,data_deletion,0.5487962968297573,2025-03-19 19:46:58.129322
+Please send me more details,other,0.023881286485174937,2025-02-28 14:47:58.129322
+Please remove my information from your database,privacy_request,0.7913627801334755,2024-08-23 01:30:58.129322
+I'm interested in your services please,other,0.1654200494605514,2024-10-04 18:54:58.129322
+How do I contact customer service?,other,0.10796493135430986,2024-09-19 00:45:58.129322
+I want to delete my personal data,data_deletion,0.8522502076197257,2025-02-18 04:35:58.129322
+Please provide a copy of my personal data,privacy_request,0.5035115173857865,2025-07-07 13:02:58.129322
+Please stop collecting my data,privacy_request,0.6802449783166254,2025-04-02 17:22:58.129322

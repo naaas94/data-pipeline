@@ -46,28 +46,30 @@ class PipelineLogger:
     
     def _init_metrics(self):
         """Initialize Prometheus metrics."""
-        self.metrics = {
-            'records_processed': Counter(
-                'pipeline_records_processed_total',
-                'Total number of records processed',
-                ['pipeline_name', 'stage']
-            ),
-            'processing_time': Histogram(
-                'pipeline_processing_duration_seconds',
-                'Time spent processing data',
-                ['pipeline_name', 'stage']
-            ),
-            'data_quality_score': Gauge(
-                'pipeline_data_quality_score',
-                'Data quality score (0-1)',
-                ['pipeline_name']
-            ),
-            'errors_total': Counter(
-                'pipeline_errors_total',
-                'Total number of errors',
-                ['pipeline_name', 'error_type']
-            )
-        }
+        if not hasattr(self, 'metrics_initialized') or not self.metrics_initialized:
+            self.metrics = {
+                'records_processed': Counter(
+                    'pipeline_records_processed_total',
+                    'Total number of records processed',
+                    ['pipeline_name', 'stage']
+                ),
+                'processing_time': Histogram(
+                    'pipeline_processing_duration_seconds',
+                    'Time spent processing data',
+                    ['pipeline_name', 'stage']
+                ),
+                'data_quality_score': Gauge(
+                    'pipeline_data_quality_score',
+                    'Data quality score (0-1)',
+                    ['pipeline_name']
+                ),
+                'errors_total': Counter(
+                    'pipeline_errors_total',
+                    'Total number of errors',
+                    ['pipeline_name', 'error_type']
+                )
+            }
+            self.metrics_initialized = True
     
     def info(self, message: str, **kwargs):
         """Log info message with structured data."""

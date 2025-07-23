@@ -11,6 +11,16 @@ import tempfile
 import os
 import yaml
 from unittest.mock import Mock, patch, MagicMock
+import prometheus_client
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Example of adding logging to a test
+logging.debug("Starting test_pipeline_initialization")
+logging.debug("Pipeline initialized")
+logging.debug("test_pipeline_initialization completed")
 
 # Add src to path for imports
 import sys
@@ -20,6 +30,14 @@ from data_pipeline import EnterpriseDataPipeline
 from utils.sampling import AdvancedSampler
 from validators.schema_validator import SchemaValidator
 from validators.quality_checks import DataQualityChecker
+
+
+@pytest.fixture(autouse=True)
+def reset_prometheus_registry():
+    """Reset Prometheus registry before each test."""
+    yield
+    prometheus_client.REGISTRY._collector_to_names.clear()
+    prometheus_client.REGISTRY._names_to_collectors.clear()
 
 
 class TestEnterpriseDataPipeline:
@@ -137,15 +155,17 @@ class TestEnterpriseDataPipeline:
         with tempfile.NamedTemporaryFile(mode='w', suffix='.yaml', delete=False) as f:
             yaml.dump(sample_config, f)
             temp_path = f.name
-        
-        yield temp_path
-        
-        # Cleanup
-        os.unlink(temp_path)
+        try:
+            yield temp_path
+        finally:
+            # Cleanup
+            if os.path.exists(temp_path):
+                os.unlink(temp_path)
     
     def test_pipeline_initialization(self, temp_config_file):
-        """Test pipeline initialization with config."""
+        print("Starting test_pipeline_initialization")
         pipeline = EnterpriseDataPipeline(temp_config_file)
+        print("Pipeline initialized")
         
         assert pipeline.config is not None
         assert pipeline.processing_engine == 'pandas'
@@ -153,30 +173,38 @@ class TestEnterpriseDataPipeline:
         assert pipeline.sampler is not None
         assert pipeline.schema_validator is not None
         assert pipeline.quality_checker is not None
+        print("test_pipeline_initialization completed")
+
+    test_pipeline_initialization.timeout = 10  # Timeout in seconds
     
     def test_synthetic_data_generation(self, temp_config_file):
-        """Test synthetic data generation."""
+        print("Starting test_synthetic_data_generation")
         pipeline = EnterpriseDataPipeline(temp_config_file)
         
         df = pipeline.generate_synthetic_data(n_samples=100)
+        print("Synthetic data generated")
         
         assert len(df) == 100
         assert all(col in df.columns for col in ['text', 'intent', 'confidence', 'timestamp'])
         assert all(intent in ['privacy_request', 'data_deletion', 'opt_out', 'other'] 
                   for intent in df['intent'])
         assert all(0.0 <= conf <= 1.0 for conf in df['confidence'])
+        print("test_synthetic_data_generation completed")
     
     def test_data_processing_pandas(self, temp_config_file, sample_data):
-        """Test data processing with pandas engine."""
+        print("Starting test_data_processing_pandas")
         pipeline = EnterpriseDataPipeline(temp_config_file)
+        print("Pipeline initialized for pandas processing")
         
         processed_df = pipeline._process_with_pandas(sample_data)
+        print("Data processed with pandas")
         
         assert len(processed_df) == len(sample_data)
         assert 'text_length' in processed_df.columns
         assert 'word_count' in processed_df.columns
         assert all(processed_df['text_length'] > 0)
         assert all(processed_df['word_count'] > 0)
+        print("test_data_processing_pandas completed")
     
     @patch('pyspark.sql.SparkSession')
     def test_data_processing_spark(self, mock_spark, temp_config_file, sample_data):
@@ -205,15 +233,17 @@ class TestEnterpriseDataPipeline:
         mock_spark_instance.createDataFrame.assert_called_once()
     
     def test_data_validation(self, temp_config_file, sample_data):
-        """Test data validation."""
+        print("Starting test_data_validation")
         pipeline = EnterpriseDataPipeline(temp_config_file)
         
         validation_results = pipeline.validate_data(sample_data)
+        print("Data validated")
         
         assert 'schema_validation' in validation_results
         assert 'quality_checks' in validation_results
         assert 'overall_valid' in validation_results
         assert isinstance(validation_results['overall_valid'], bool)
+        print("test_data_validation completed")
     
     def test_data_sampling(self, temp_config_file, sample_data):
         """Test data sampling."""
@@ -528,4 +558,4 @@ class TestDataQualityChecker:
 
 
 if __name__ == "__main__":
-    pytest.main([__file__]) 
+    pytest.main([__file__, '--maxfail=1', '--tb=short']) 

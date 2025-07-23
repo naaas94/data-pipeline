@@ -6,69 +6,27 @@ Supports complex validation rules, custom checks, and detailed reporting.
 import pandas as pd
 import pandera as pa
 from pandera.typing import Series
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 from typing import Any, Dict, List, Optional, Union
 import numpy as np
 from datetime import datetime
 
 
-class PrivacyIntentSchema(pa.SchemaModel):
-    """Pandera schema for privacy intent classification data."""
-    
-    text: Series[str] = pa.Field(
-        nullable=False,
-        description="Input text for classification"
-    )
-    
-    intent: Series[str] = pa.Field(
-        nullable=False,
-        isin=["privacy_request", "data_deletion", "opt_out", "other"],
-        description="Target intent classification"
-    )
-    
-    confidence: Series[float] = pa.Field(
-        nullable=False,
-        ge=0.0,
-        le=1.0,
-        description="Confidence score for the intent"
-    )
-    
-    timestamp: Series[datetime] = pa.Field(
-        nullable=False,
-        description="Timestamp of the data point"
-    )
-    
-    @pa.check("text")
-    def text_not_empty(cls, series: pd.Series) -> bool:
-        """Check that text is not empty."""
-        return series.str.len() > 0
-    
-    @pa.check("text")
-    def text_max_length(cls, series: pd.Series) -> bool:
-        """Check that text doesn't exceed maximum length."""
-        return series.str.len() <= 10000
-    
-    @pa.check("confidence")
-    def confidence_valid_range(cls, series: pd.Series) -> bool:
-        """Check that confidence is in valid range."""
-        return (series >= 0.0) & (series <= 1.0)
-
-
-class PydanticDataPoint(BaseModel):
-    """Pydantic model for individual data point validation."""
+class PrivacyIntentSchema(BaseModel):
+    """Pydantic schema for privacy intent classification data."""
     
     text: str = Field(..., min_length=1, max_length=10000)
-    intent: str = Field(..., regex="^(privacy_request|data_deletion|opt_out|other)$")
+    intent: str = Field(..., pattern="^(privacy_request|data_deletion|opt_out|other)$")
     confidence: float = Field(..., ge=0.0, le=1.0)
     timestamp: datetime
     
-    @validator('text')
+    @field_validator('text')
     def validate_text(cls, v):
         if not v.strip():
             raise ValueError('Text cannot be empty or whitespace only')
         return v.strip()
     
-    @validator('timestamp')
+    @field_validator('timestamp')
     def validate_timestamp(cls, v):
         if v > datetime.now():
             raise ValueError('Timestamp cannot be in the future')
@@ -76,51 +34,36 @@ class PydanticDataPoint(BaseModel):
 
 
 class SchemaValidator:
-    """Enterprise schema validator with multiple validation engines."""
+    """Enterprise schema validator using Pydantic."""
     
     def __init__(self, config: Dict[str, Any]):
         self.config = config
         self.schema_config = config.get('validation', {}).get('schema', [])
-        self.pandera_schema = PrivacyIntentSchema
         self.validation_results = []
     
-    def validate_pandera(self, df: pd.DataFrame) -> Dict[str, Any]:
-        """Validate DataFrame using Pandera schema."""
-        try:
-            # Apply pandera validation
-            validated_df = self.pandera_schema.validate(df)
-            
-            return {
-                'valid': True,
-                'validated_rows': len(validated_df),
-                'errors': [],
-                'warnings': []
-            }
-        except pa.errors.SchemaError as e:
-            return {
-                'valid': False,
-                'validated_rows': 0,
-                'errors': [str(e)],
-                'warnings': []
-            }
-    
     def validate_pydantic(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Validate data using Pydantic models."""
+        """Validate data using Pydantic schema."""
         errors = []
-        valid_count = 0
-        
-        for i, item in enumerate(data):
+        for item in data:
             try:
-                PydanticDataPoint(**item)
-                valid_count += 1
-            except Exception as e:
-                errors.append(f"Row {i}: {str(e)}")
-        
+                PrivacyIntentSchema(**item)
+            except ValueError as e:
+                errors.append(str(e))
         return {
             'valid': len(errors) == 0,
-            'validated_rows': valid_count,
-            'errors': errors,
-            'warnings': []
+            'errors': errors
+        }
+
+    def validate_schema(self, df: pd.DataFrame) -> Dict[str, Any]:
+        """Validate DataFrame using Pydantic schema."""
+        data = df.to_dict(orient='records')
+        pydantic_results = self.validate_pydantic(data)
+        
+        # Add overall_valid and total_errors keys
+        return {
+            'overall_valid': pydantic_results['valid'],
+            'total_errors': len(pydantic_results['errors']),
+            'errors': pydantic_results['errors']
         }
     
     def validate_custom_rules(self, df: pd.DataFrame) -> Dict[str, Any]:
@@ -171,26 +114,6 @@ class SchemaValidator:
             'errors': errors,
             'warnings': warnings
         }
-    
-    def validate_schema(self, df: pd.DataFrame) -> Dict[str, Any]:
-        """Comprehensive schema validation using multiple engines."""
-        results = {
-            'pandera': self.validate_pandera(df),
-            'custom_rules': self.validate_custom_rules(df),
-            'overall_valid': True,
-            'total_errors': 0,
-            'total_warnings': 0
-        }
-        
-        # Aggregate results
-        for engine_result in [results['pandera'], results['custom_rules']]:
-            if not engine_result['valid']:
-                results['overall_valid'] = False
-            results['total_errors'] += len(engine_result['errors'])
-            results['total_warnings'] += len(engine_result['warnings'])
-        
-        self.validation_results.append(results)
-        return results
     
     def get_validation_summary(self) -> Dict[str, Any]:
         """Get summary of all validation runs."""
