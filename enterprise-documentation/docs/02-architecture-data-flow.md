@@ -1,6 +1,6 @@
 # Architecture and Data Flow
 
-![System Architecture Diagram](../images/system_architecture.png)
+![System Architecture Diagram](enterprise-documentation\images\system_architecture.png)
 
 ## System Architecture
 
