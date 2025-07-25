@@ -36,8 +36,8 @@ jobs:
         
     - name: 🧪 Run core tests
       run: |
-        python -m pytest tests/test_pipeline.py::TestEnterpriseDataPipeline::test_pipeline_initialization -v
-        python -m pytest tests/test_pipeline.py::TestEnterpriseDataPipeline::test_synthetic_data_generation -v
+        python -m pytest tests/test_pipeline.py::TestPCCDataPipeline::test_pipeline_initialization -v
+        python -m pytest tests/test_pipeline.py::TestPCCDataPipeline::test_synthetic_data_generation -v
         
     - name: ✅ Quick validation
       run: |

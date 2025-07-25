@@ -1,0 +1,342 @@
+{
+  "experiment_id": "624617d6-2067-4d23-9088-eba8a05bfb3d",
+  "pipeline_version": "2.0.0",
+  "created_at": "2025-07-25T11:46:19.463163+00:00",
+  "stages": [
+    {
+      "stage_id": "0fcd8bb9-9dfb-4f56-821a-eb962bdcb76d",
+      "name": "synthetic_data_generation",
+      "timestamp": "2025-07-25T11:46:19.490338+00:00",
+      "inputs": [],
+      "outputs": [
+        "c698e6040e79d9da"
+      ],
+      "parameters": {
+        "n_samples": 10000,
+        "generator": "enhanced"
+      },
+      "metrics": {},
+      "artifacts": {},
+      "execution_time": 0.5,
+      "status": "completed",
+      "completed_at": "2025-07-25T11:46:20.299557+00:00"
+    },
+    {
+      "stage_id": "68e5957f-1aff-42f2-98ae-c6d706cb5f15",
+      "name": "pandas_processing",
+      "timestamp": "2025-07-25T11:46:20.682920+00:00",
+      "inputs": [
+        "c698e6040e79d9da"
+      ],
+      "outputs": [
+        "c698e6040e79d9da"
+      ],
+      "parameters": {
+        "engine": "pandas",
+        "operations": [
+          "cleaning",
+          "feature_engineering"
+        ]
+      },
+      "metrics": {},
+      "artifacts": {},
+      "execution_time": 0.8,
+      "status": "completed",
+      "completed_at": "2025-07-25T11:46:21.067564+00:00"
+    },
+    {
+      "stage_id": "b461b917-4526-4106-b962-2960e04b19a1",
+      "name": "text_feature_extraction",
+      "timestamp": "2025-07-25T11:46:21.453985+00:00",
+      "inputs": [
+        "c698e6040e79d9da"
+      ],
+      "outputs": [],
+      "parameters": {
+        "feature_extractor": "advanced_nlp"
+      },
+      "metrics": {},
+      "artifacts": {},
+      "execution_time": 0,
+      "status": "failed",
+      "completed_at": "2025-07-25T11:46:21.454986+00:00",
+      "error_info": "\n**********************************************************************\n  Resource \u001b[93mpunkt_tab\u001b[0m not found.\n  Please use the NLTK Downloader to obtain the resource:\n\n  \u001b[31m>>> import nltk\n  >>> nltk.download('punkt_tab')\n  \u001b[0m\n  For more information see: https://www.nltk.org/data.html\n\n  Attempted to load \u001b[93mtokenizers/punkt_tab/english/\u001b[0m\n\n  Searched in:\n    - 'C:\\\\Users\\\\aleja/nltk_data'\n    - 'C:\\\\Users\\\\aleja\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\nltk_data'\n    - 'C:\\\\Users\\\\aleja\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\share\\\\nltk_data'\n    - 'C:\\\\Users\\\\aleja\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\lib\\\\nltk_data'\n    - 'C:\\\\Users\\\\aleja\\\\AppData\\\\Roaming\\\\nltk_data'\n    - 'C:\\\\nltk_data'\n    - 'D:\\\\nltk_data'\n    - 'E:\\\\nltk_data'\n**********************************************************************\n"
+    }
+  ],
+  "datasets": {
+    "c698e6040e79d9da": {
+      "dataset_id": "c698e6040e79d9da",
+      "name": "input_for_features",
+      "stage": "feature_extraction",
+      "timestamp": "2025-07-25T11:46:21.448375+00:00",
+      "type": "DataFrame",
+      "metadata": {},
+      "shape": [
+        10000,
+        9
+      ],
+      "columns": [
+        "text",
+        "intent",
+        "confidence",
+        "timestamp",
+        "text_length",
+        "word_count",
+        "has_personal_info",
+        "formality_score",
+        "urgency_score"
+      ],
+      "dtypes": {
+        "text": "object",
+        "intent": "object",
+        "confidence": "float64",
+        "timestamp": "datetime64[ns]",
+        "text_length": "int64",
+        "word_count": "int64",
+        "has_personal_info": "bool",
+        "formality_score": "float64",
+        "urgency_score": "float64"
+      },
+      "memory_usage": "1991301",
+      "null_counts": {
+        "text": 0,
+        "intent": 0,
+        "confidence": 0,
+        "timestamp": 0,
+        "text_length": 0,
+        "word_count": 0,
+        "has_personal_info": 0,
+        "formality_score": 0,
+        "urgency_score": 0
+      },
+      "sample_data": {
+        "text": {
+          "0": "I opt out",
+          "1": "I'm frustrated with my privacy. I don't want you to collect my data, if possible",
+          "2": "I want access to my data"
+        },
+        "intent": {
+          "0": "opt_out",
+          "1": "opt_out",
+          "2": "privacy_request"
+        },
+        "confidence": {
+          "0": 0.566,
+          "1": 0.952,
+          "2": 0.999
+        },
+        "timestamp": {
+          "0": "2025-05-08 13:25:52.732895",
+          "1": "2025-04-04 15:40:49.708380",
+          "2": "2025-06-13 18:34:47.571890"
+        },
+        "text_length": {
+          "0": 9,
+          "1": 80,
+          "2": 24
+        },
+        "word_count": {
+          "0": 3,
+          "1": 15,
+          "2": 6
+        },
+        "has_personal_info": {
+          "0": false,
+          "1": false,
+          "2": false
+        },
+        "formality_score": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "urgency_score": {
+          "0": 0.07777777777777777,
+          "1": 0.017499999999999998,
+          "2": 0.029166666666666664
+        }
+      }
+    }
+  },
+  "models": {},
+  "metrics": {},
+  "artifacts": {},
+  "config": {
+    "data_source": {
+      "type": "synthetic",
+      "path": null,
+      "kafka": {
+        "bootstrap_servers": [
+          "localhost:9092"
+        ],
+        "topic": "privacy-intent-data",
+        "group_id": "data-pipeline-consumer"
+      },
+      "bigquery": {
+        "project_id": "your-project-id",
+        "dataset": "privacy_intent",
+        "table": "raw_data"
+      }
+    },
+    "processing": {
+      "engine": "pandas",
+      "distributed": {
+        "enabled": false,
+        "num_workers": 4,
+        "memory_per_worker": "2g"
+      },
+      "streaming": {
+        "enabled": false,
+        "checkpoint_location": "checkpoints/",
+        "watermark_delay": "1 minute"
+      }
+    },
+    "features": {
+      "extract_text_features": true,
+      "feature_extractor": {
+        "privacy_keywords": true,
+        "sentiment_analysis": true,
+        "linguistic_features": true,
+        "statistical_features": true
+      }
+    },
+    "embeddings": {
+      "generate_embeddings": true,
+      "embedding_type": "privacy_domain",
+      "models": {
+        "sentence_transformer": {
+          "model_name": "all-MiniLM-L6-v2",
+          "batch_size": 32
+        },
+        "tfidf": {
+          "max_features": 5000,
+          "ngram_range": [
+            1,
+            2
+          ]
+        },
+        "cache_dir": "cache/embeddings"
+      }
+    },
+    "synthetic_data": {
+      "variation_level": 0.3,
+      "intent_distribution": {
+        "privacy_request": 0.25,
+        "data_deletion": 0.2,
+        "opt_out": 0.25,
+        "other": 0.3
+      },
+      "time_patterns": {
+        "business_hours": [
+          9,
+          17
+        ],
+        "weekdays_only": true,
+        "seasonal_variation": true
+      }
+    },
+    "validation": {
+      "schema": [
+        {
+          "column": "text",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "column": "intent",
+          "type": "string",
+          "nullable": false,
+          "allowed_values": [
+            "privacy_request",
+            "data_deletion",
+            "opt_out",
+            "other"
+          ]
+        },
+        {
+          "column": "confidence",
+          "type": "float",
+          "nullable": false,
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        {
+          "column": "timestamp",
+          "type": "datetime",
+          "nullable": false
+        }
+      ],
+      "quality_checks": [
+        {
+          "check_type": "completeness",
+          "threshold": 0.95
+        },
+        {
+          "check_type": "uniqueness",
+          "threshold": 0.99
+        },
+        {
+          "check_type": "validity",
+          "threshold": 0.98
+        },
+        {
+          "check_type": "consistency",
+          "threshold": 0.95
+        }
+      ]
+    },
+    "sampling": {
+      "strategy": "stratified",
+      "by": "intent",
+      "n": 10000,
+      "balance_classes": true,
+      "oversampling_method": "smote"
+    },
+    "partitioning": {
+      "enabled": true,
+      "strategy": "date",
+      "column": "timestamp",
+      "format": "YYYY-MM-DD"
+    },
+    "output": {
+      "format": "parquet",
+      "path": "output/curated_training_data.parquet",
+      "compression": "snappy",
+      "bigquery": {
+        "project_id": "your-project-id",
+        "dataset": "privacy_intent",
+        "table": "curated_data",
+        "write_disposition": "WRITE_TRUNCATE"
+      }
+    },
+    "lineage": {
+      "enabled": true,
+      "storage_dir": "metadata/lineage",
+      "track_datasets": true,
+      "track_stages": true,
+      "track_metrics": true
+    },
+    "contracts": {
+      "enabled": true,
+      "validation_enabled": true,
+      "contracts_dir": "contracts",
+      "export_documentation": true
+    },
+    "monitoring": {
+      "log_level": "INFO",
+      "metrics_enabled": true,
+      "mlflow": {
+        "tracking_uri": "http://localhost:5000",
+        "experiment_name": "privacy-intent-pipeline"
+      }
+    },
+    "performance": {
+      "batch_size": 10000,
+      "cache_intermediates": true,
+      "optimize_joins": true
+    },
+    "version": "2.0.0",
+    "pipeline_name": "privacy-intent-data-pipeline",
+    "description": "Enhanced enterprise data pipeline for privacy intent classification"
+  }
+}

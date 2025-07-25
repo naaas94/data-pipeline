@@ -1,240 +1,214 @@
-# Enterprise Data Pipeline for Privacy Intent Classification
+# PCC Data Pipeline - Data Pipeline
 
-A **production-ready, enterprise-grade data pipeline** for generating, validating, and curating training datasets for privacy intent classification. Built with **distributed processing**, **streaming capabilities**, **advanced validation**, and **cloud integration**.
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-## **Enterprise Architecture**
+**An enterprise-grade data preparation pipeline for privacy intent classification, designed as part of a microservices ML architecture.**
 
-### **Distributed Processing**
-- **Apache Spark**: Large-scale data processing with SQL, MLlib, and Streaming
-- **Apache Beam**: Portable, unified batch and streaming processing
-- **Ray**: Distributed computing for ML workloads and data processing
+## 🎯 What This Project IS
 
-### **Streaming Capabilities**
-- **Apache Kafka**: Real-time data streaming and event processing
-- **Apache Pulsar**: Multi-tenant, high-performance messaging
-- **Apache Flink**: Stateful stream processing with exactly-once semantics
+This is the **first pipeline** in a **3-pipeline PCC Data Pipeline ecosystem**:
 
-### **Data Validation**
-- **Pandera**: Statistical data validation with pandas
-- **Great Expectations**: Data quality monitoring and validation
-- **Pydantic**: Data validation using Python type annotations
+```
+📊 Data Pipeline (THIS) → 🤖 Training Pipeline → 🚀 Inference Pipeline
+    ↓                        ↓                     ↓
+Data Preparation        Model Training        Real-time Classification
+Feature Engineering     Hyperparameter Tuning    Model Serving
+Quality Validation      Model Evaluation      Prediction API
+Synthetic Data Gen.     Model Versioning      A/B Testing
+```
 
-### **Partitioning & Cloud Integration**
-- **BigQuery**: Serverless, highly scalable data warehouse
-- **dbt**: Data transformation and modeling
-- **Dagster**: Data orchestration and pipeline management
+### **Core Purpose**
+- **Generate** high-quality synthetic privacy intent data
+- **Extract** advanced NLP features for downstream ML training
+- **Validate** data quality with enterprise-grade checks
+- **Prepare** training-ready datasets with embeddings
+- **Track** complete data lineage for compliance and debugging
 
-## **Quick Start**
+### **Key Capabilities**
+✅ **Advanced Text Features** - 25+ NLP features (sentiment, privacy keywords, linguistic patterns)  
+✅ **Multi-Modal Embeddings** - Sentence transformers + TF-IDF with domain-specific weighting  
+✅ **Enhanced Synthetic Data** - Template-based generation with realistic variations  
+✅ **Complete Data Lineage** - Full provenance tracking for regulatory compliance  
+✅ **Pipeline Contracts** - Type-safe interfaces between microservices  
+✅ **Enterprise Validation** - Schema + quality + business rules checking  
+✅ **Distributed Processing** - Spark, Ray, Beam support for scale  
 
-### **1. Local Development**
+## 🚫 What This Project is NOT
+
+- ❌ **Not a complete ML solution** - This handles data prep only
+- ❌ **Not model training** - Use the companion training pipeline
+- ❌ **Not inference/serving** - Use the companion inference pipeline  
+- ❌ **Not a monolithic ML platform** - Designed for microservices architecture
+
+## 🏗️ Architecture & Design Philosophy
+
+### **Microservices ML Pattern**
+This follows **production ML best practices** by separating concerns:
+- **Data Pipeline**: Focus on data quality and preparation
+- **Training Pipeline**: Focus on model development and evaluation  
+- **Inference Pipeline**: Focus on serving and monitoring
+
+### **Enterprise-Grade Features**
+- **Observability**: Complete lineage tracking with Prometheus metrics
+- **Quality Gates**: Multi-layer validation with configurable thresholds
+- **Contracts**: Type-safe interfaces between pipeline boundaries
+- **Scalability**: Multiple processing engines (Spark, Ray, Beam, Pandas)
+- **Compliance**: Audit trails and metadata for regulatory requirements
+
+## 🚀 Quick Start
+
+### **1. Installation**
 ```bash
-# Clone repository
 git clone <repository-url>
-cd data-pipeline
+cd enterprise-data-pipeline
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run pipeline with default config
+# Optional: Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+### **2. Basic Usage**
+```bash
+# Generate training dataset with all features
 python src/data_pipeline.py --config config.yaml
 
-# Run tests
-pytest tests/ -v
+# Extract only text features
+python src/data_pipeline.py --config config.yaml --features-only
 
-# Run with specific options
+# Generate only embeddings  
+python src/data_pipeline.py --config config.yaml --embeddings-only
+
+# Validate data quality
 python src/data_pipeline.py --config config.yaml --validate-only
-python src/data_pipeline.py --config config.yaml --sample-only
 ```
 
-### **2. Docker Deployment**
-```bash
-# Build and run with Docker Compose
-docker-compose up -d
+### **3. Outputs**
+The pipeline generates:
+- **Training Dataset**: `output/curated_training_data.parquet`
+- **Embeddings**: `output/embeddings/` (multiple formats)
+- **Lineage Data**: `metadata/lineage/` (JSON reports)
+- **Contracts**: `contracts/` (JSON schemas)
+- **Documentation**: `metadata/contract_documentation.md`
 
-# Run development environment
-docker-compose --profile development up -d
+## 📊 Data Features
 
-# Access services
-# - MLflow: http://localhost:5000
-# - Spark UI: http://localhost:8080
-# - Grafana: http://localhost:3000 (admin/admin)
-# - Prometheus: http://localhost:9090
+### **Generated Text Features (25+)**
+```python
+# Privacy-specific features
+- deletion_keywords, request_keywords, opt_out_keywords
+- data_keywords, urgency_keywords, privacy_keyword_density
+
+# Sentiment & emotion
+- sentiment_positive, sentiment_negative, sentiment_compound
+- formal_language_score, urgency_score
+
+# Linguistic patterns  
+- text_length, word_count, avg_word_length, sentence_count
+- stopword_ratio, unique_word_ratio, readability_score
+
+# Security & PII detection
+- personal_info_detected, email_pattern, phone_pattern
 ```
 
-### **3. Kubernetes Deployment**
-```bash
-# Deploy to Kubernetes
-kubectl apply -f k8s/
+### **Embedding Types**
+- **Sentence Transformers**: `all-MiniLM-L6-v2` (384 dimensions)
+- **TF-IDF**: Statistical features with SVD reduction (200 dimensions)  
+- **Privacy Domain**: Weighted combination (584 dimensions)
 
-# Check deployment status
-kubectl get pods -n data-pipeline
-```
+### **Synthetic Data Realism**
+- **Template-based generation** with intent-specific patterns
+- **Realistic variations**: typos, urgency, formality levels
+- **Temporal patterns**: business hours, weekday bias
+- **Confidence modeling**: based on text characteristics
 
-## **Pipeline Features**
+## ⚙️ Configuration
 
-### **Data Sources**
-- **Synthetic Data Generation**: Realistic privacy intent data for testing
-- **CSV/Parquet Files**: Local and cloud storage support
-- **Apache Kafka**: Real-time streaming data ingestion
-- **BigQuery**: Cloud data warehouse integration
-- **Custom Connectors**: Extensible for any data source
-
-### **Processing Engines**
-- **Pandas**: Fast in-memory processing for small datasets
-- **Apache Spark**: Distributed processing for large datasets
-- **Ray**: Parallel processing for ML workloads
-- **Apache Beam**: Portable batch and streaming processing
-
-### **Data Validation**
-- **Schema Validation**: Type checking, constraints, and business rules
-- **Quality Checks**: Completeness, uniqueness, validity, consistency
-- **Statistical Analysis**: Outlier detection, distribution analysis
-- **Great Expectations**: Automated data quality monitoring
-
-### **Sampling & Balancing**
-- **Stratified Sampling**: Maintain class distribution
-- **Class Balancing**: SMOTE, ADASYN, undersampling
-- **Cross-Validation**: Train/validation/test splits
-- **Custom Strategies**: Extensible sampling algorithms
-
-### **Output Formats**
-- **Parquet**: Columnar storage for analytics
-- **CSV**: Universal format for compatibility
-- **BigQuery**: Cloud data warehouse
-- **Custom Sinks**: Extensible output formats
-
-## **Configuration**
-
-### **Basic Configuration**
 ```yaml
-# config.yaml
-data_source:
-  type: "synthetic"  # synthetic, csv, parquet, kafka, bigquery
-  path: null
+# Enhanced Features
+features:
+  extract_text_features: true
+  feature_extractor:
+    privacy_keywords: true
+    sentiment_analysis: true
+    linguistic_features: true
 
-processing:
-  engine: "spark"  # spark, beam, ray, pandas
-  distributed:
-    enabled: true
-    num_workers: 4
+embeddings:
+  generate_embeddings: true
+  embedding_type: "privacy_domain"
+  models:
+    sentence_transformer:
+      model_name: "all-MiniLM-L6-v2"
 
-validation:
-  schema:
-    - column: "text"
-      type: "string"
-      nullable: false
-  quality_checks:
-    - check_type: "completeness"
-      threshold: 0.95
+synthetic_data:
+  variation_level: 0.3
+  intent_distribution:
+    privacy_request: 0.25
+    data_deletion: 0.20
+    opt_out: 0.25
+    other: 0.30
 
-sampling:
-  strategy: "stratified"
-  by: "intent"
-  n: 10000
-  balance_classes: true
-```
-
-### **Advanced Configuration**
-```yaml
-# Enterprise features
-streaming:
+# Enterprise Features
+lineage:
   enabled: true
-  kafka:
-    bootstrap_servers: ["localhost:9092"]
-    topic: "privacy-intent-data"
+  track_datasets: true
+  track_stages: true
 
-monitoring:
-  mlflow:
-    tracking_uri: "http://localhost:5000"
-    experiment_name: "privacy-intent-pipeline"
-  
-  prometheus:
-    enabled: true
-    port: 9090
-
-partitioning:
+contracts:
   enabled: true
-  strategy: "date"
-  column: "timestamp"
+  validation_enabled: true
 ```
 
-## **Monitoring & Observability**
+## 🔗 PCC Ecosystem Integration
 
-### **MLflow Integration**
-- **Experiment Tracking**: Log parameters, metrics, and artifacts
-- **Model Registry**: Version and deploy models
-- **UI Dashboard**: Visualize experiments and results
+### **Pipeline Contracts**
+This pipeline implements **type-safe contracts** for seamless integration:
 
-### **Prometheus Metrics**
-- **Processing Metrics**: Records processed, processing time
-- **Quality Metrics**: Data quality scores, validation results
-- **System Metrics**: Memory usage, CPU utilization
-
-### **Grafana Dashboards**
-- **Pipeline Health**: Real-time monitoring dashboard
-- **Data Quality**: Quality metrics and trends
-- **Performance**: Processing performance and bottlenecks
-
-### **Structured Logging**
-- **JSON Logs**: Machine-readable log format
-- **Log Levels**: DEBUG, INFO, WARNING, ERROR
-- **Context Tracking**: Request tracing and correlation
-
-## **Testing**
-
-### **Unit Tests**
-```bash
-# Run all tests
-pytest tests/ -v
-
-# Run specific test categories
-pytest tests/test_pipeline.py -v
-pytest tests/test_sampling.py -v
-pytest tests/test_validation.py -v
-
-# Run with coverage
-pytest tests/ --cov=src --cov-report=html
+```python
+# Training Data Contract (Output)
+{
+  "schema": [
+    {"name": "text", "type": "string", "nullable": false},
+    {"name": "intent", "type": "string", "constraints": {"allowed_values": [...]}},
+    {"name": "embeddings", "type": "array", "description": "Pre-computed features"}
+  ],
+  "quality_requirements": {
+    "completeness": 0.99,
+    "validity": 0.98
+  }
+}
 ```
 
-### **Integration Tests**
-```bash
-# Test with real data sources
-pytest tests/test_integration.py -v
+### **Data Lineage**
+Complete tracking for downstream pipelines:
+- **Dataset fingerprinting** for version control
+- **Quality metrics** for training pipeline validation  
+- **Processing lineage** for debugging and compliance
+- **Feature provenance** for model interpretability
 
-# Test distributed processing
-pytest tests/test_distributed.py -v
-
-# Test streaming capabilities
-pytest tests/test_streaming.py -v
-```
-
-### **Performance Tests**
-```bash
-# Benchmark processing performance
-pytest tests/test_performance.py -v
-
-# Load testing
-pytest tests/test_load.py -v
-```
-
-## **Deployment Options**
+## 🏢 Production Deployment
 
 ### **Docker**
 ```bash
-# Production build
-docker build -t privacy-intent-pipeline:latest .
+# Build production image
+docker build -t pcc-data-pipeline:latest .
 
-# Run container
-docker run -v $(pwd)/output:/app/output privacy-intent-pipeline:latest
+# Run with volume mounts
+docker run -v $(pwd)/output:/app/output pcc-data-pipeline:latest
 ```
 
 ### **Docker Compose**
 ```bash
-# Full stack deployment
-docker-compose up -d
-
-# Development environment
+# Full development stack
 docker-compose --profile development up -d
+
+# Production deployment
+docker-compose up -d
 ```
 
 ### **Kubernetes**
@@ -242,111 +216,96 @@ docker-compose --profile development up -d
 # Deploy to cluster
 kubectl apply -f k8s/
 
-# Scale pipeline
-kubectl scale deployment data-pipeline --replicas=3
+# Monitor deployment
+kubectl get pods -n pcc-pipeline
 ```
 
-### **Cloud Platforms**
-- **Google Cloud Platform**: BigQuery, Dataflow, Cloud Run
-- **Amazon Web Services**: EMR, Kinesis, Lambda
-- **Microsoft Azure**: Databricks, Event Hubs, Functions
+## 📈 Monitoring & Observability
 
-## **API Reference**
+### **Metrics Dashboard**
+- **Grafana**: http://localhost:3000 (admin/admin)
+- **Prometheus**: http://localhost:9090
+- **MLflow**: http://localhost:5000
 
-### **Pipeline Configuration**
-```python
-from src.data_pipeline import EnterpriseDataPipeline
+### **Key Metrics**
+- **Data Quality Score**: Overall pipeline health
+- **Processing Throughput**: Records per second
+- **Feature Coverage**: Percentage of successful feature extraction
+- **Embedding Quality**: Statistical measures of embedding space
 
-# Initialize pipeline
-pipeline = EnterpriseDataPipeline("config.yaml")
+## 🧪 Testing
 
-# Run complete pipeline
-success = pipeline.run_pipeline()
+```bash
+# Run all tests
+pytest tests/ -v
 
-# Run specific stages
-df = pipeline.load_data()
-processed_df = pipeline.process_data(df)
-validation_results = pipeline.validate_data(processed_df)
-sampled_df = pipeline.sample_data(processed_df)
-pipeline.save_data(sampled_df)
+# Test with coverage
+pytest tests/ --cov=src --cov-report=html
+
+# Performance benchmarks
+pytest tests/test_performance.py -v
 ```
 
-### **Sampling**
-```python
-from src.utils.sampling import AdvancedSampler
+## 📦 Project Structure
 
-sampler = AdvancedSampler(config)
-sampled_df = sampler.stratified_sample(df, 'intent', 1000)
-balanced_df = sampler.balance_classes(df, 'intent')
+```
+enterprise-data-pipeline/
+├── src/
+│   ├── data_pipeline.py          # Main enhanced pipeline
+│   ├── features/
+│   │   ├── text_features.py      # Advanced NLP features
+│   │   └── embeddings.py         # Multi-modal embeddings
+│   ├── data/
+│   │   └── synthetic_generator.py # Enhanced synthetic data
+│   ├── contracts/
+│   │   └── pipeline_contracts.py # Inter-pipeline contracts
+│   ├── utils/
+│   │   ├── lineage.py            # Data provenance tracking
+│   │   ├── sampling.py           # Advanced sampling
+│   │   └── logger.py             # Enterprise logging
+│   └── validators/
+│       ├── schema_validator.py   # Schema validation
+│       └── quality_checks.py     # Data quality checks
+├── output/                       # Generated datasets
+├── metadata/                     # Lineage and contracts
+├── contracts/                    # Pipeline interface definitions
+├── config.yaml                  # Enhanced configuration
+└── docker-compose.yml           # Development stack
 ```
 
-### **Validation**
-```python
-from src.validators.schema_validator import SchemaValidator
-from src.validators.quality_checks import DataQualityChecker
+## 🎓 Learning & Portfolio Value
 
-# Schema validation
-validator = SchemaValidator(config)
-schema_results = validator.validate_schema(df)
+### **Demonstrates ML Engineering Skills**
+- **System Design**: Microservices ML architecture understanding
+- **Data Engineering**: Enterprise-grade data processing pipelines
+- **Quality Engineering**: Multi-layer validation and monitoring
+- **DevOps Integration**: Container-ready, cloud-native design
+- **Compliance**: Audit trails and regulatory considerations
 
-# Quality checks
-checker = DataQualityChecker(config)
-quality_results = checker.check_quality(df)
-```
+### **Production-Ready Patterns**
+- **Contract-Driven Development**: Type-safe pipeline interfaces
+- **Observability**: Complete lineage and metrics collection
+- **Scalability**: Multiple processing engines and caching
+- **Maintainability**: Modular design with clear separation of concerns
 
-## **Security & Compliance**
-
-### **Data Security**
-- **Encryption**: Data encryption at rest and in transit
-- **Access Control**: Role-based access control (RBAC)
-- **Audit Logging**: Comprehensive audit trails
-- **Data Masking**: PII protection and anonymization
-
-### **Compliance**
-- **GDPR**: Privacy-by-design and data protection
-- **CCPA**: California Consumer Privacy Act compliance
-- **SOC 2**: Security and availability controls
-- **ISO 27001**: Information security management
-
-## **Contributing**
+## 🤝 Contributing
 
 ### **Development Setup**
 ```bash
-# Clone repository
-git clone <repository-url>
-cd data-pipeline
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or
-venv\Scripts\activate  # Windows
-
 # Install development dependencies
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
-# Run pre-commit hooks
-pre-commit install
-```
-
-### **Code Quality**
-```bash
-# Format code
+# Code formatting
 black src/ tests/
 
-# Lint code
+# Linting
 flake8 src/ tests/
 
 # Type checking
 mypy src/
-
-# Run tests
-pytest tests/ -v
 ```
 
-
----
-
-
- 
+### **Adding Features**
+1. **Text Features**: Extend `TextFeatureEngineer` class
+2. **Embeddings**: Add new embedding types to `

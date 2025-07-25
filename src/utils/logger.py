@@ -7,14 +7,14 @@ import logging
 import structlog
 import time
 from typing import Any, Dict, Optional
-from prometheus_client import Counter, Histogram, Gauge
+from prometheus_client import Counter, Histogram, Gauge, REGISTRY
 import mlflow
 
 
 class PipelineLogger:
     """Enterprise logger with structured logging and metrics."""
     
-    def __init__(self, name: str, config: Dict[str, Any]):
+    def __init__(self, name: str, config: Optional[Dict[str, Any]] = None):
         self.name = name
         self.config = config
         self.metrics_enabled = config.get('monitoring', {}).get('metrics_enabled', True)
@@ -49,19 +49,19 @@ class PipelineLogger:
         if not hasattr(self, 'metrics_initialized') or not self.metrics_initialized:
             self.metrics = {
                 'records_processed': Counter(
-                    'pipeline_records_processed_total',
-                    'Total number of records processed',
-                    ['pipeline_name', 'stage']
-                ),
-                'processing_time': Histogram(
-                    'pipeline_processing_duration_seconds',
-                    'Time spent processing data',
+                    'pipeline_records_processed',
+                    'Total number of records processed by the pipeline',
                     ['pipeline_name', 'stage']
                 ),
                 'data_quality_score': Gauge(
                     'pipeline_data_quality_score',
-                    'Data quality score (0-1)',
+                    'Data quality score',
                     ['pipeline_name']
+                ),
+                'operation_duration': Histogram(
+                    'pipeline_operation_duration_seconds',
+                    'Duration of pipeline operations in seconds',
+                    ['pipeline_name', 'operation_name']
                 ),
                 'errors_total': Counter(
                     'pipeline_errors_total',
@@ -93,12 +93,22 @@ class PipelineLogger:
         """Log debug message with structured data."""
         self.logger.debug(message, **kwargs)
     
-    def log_metric(self, metric_name: str, value: float, labels: Optional[Dict[str, str]] = None):
-        """Log custom metric."""
-        if self.metrics_enabled and metric_name in self.metrics:
-            label_dict = labels or {}
-            label_dict['pipeline_name'] = self.name
-            self.metrics[metric_name].labels(**label_dict).observe(value)
+    def log_metric(self, name: str, value: float, labels: Optional[Dict[str, str]] = None):
+        """Log a metric value."""
+        if self.metrics_enabled and name in self.metrics:
+            metric = self.metrics[name]
+            
+            # Add labels if provided
+            if labels:
+                metric_with_labels = metric.labels(**labels)
+            else:
+                metric_with_labels = metric
+            
+            # Use the correct method based on metric type
+            if isinstance(metric, Counter):
+                metric_with_labels.inc(value)
+            elif isinstance(metric, Histogram):
+                metric_with_labels.observe(value)
     
     def log_mlflow_metric(self, metric_name: str, value: float, step: Optional[int] = None):
         """Log metric to MLflow."""

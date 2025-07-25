@@ -51,21 +51,8 @@ Add any other context about the problem here.
 ## 🧪 Reproduction Code
 ```python
 # Minimal code to reproduce the issue
-from src.data_pipeline import EnterpriseDataPipeline
+from src.pcc_pipeline import PCCDataPipeline
 
-pipeline = EnterpriseDataPipeline("config.yaml")
+pipeline = PCCDataPipeline("config.yaml")
 # ... your code here
 ```
-
-## 📝 Checklist
-- [ ] I have searched existing issues for duplicates
-- [ ] I have provided all required information
-- [ ] I have included relevant logs and error messages
-- [ ] I have tested with the latest version
-- [ ] I have provided a minimal reproduction example 
-noteId: "7680aea0630011f0bd1fd1485572b42d"
-tags: []
-
----
-
- 

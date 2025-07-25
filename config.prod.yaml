@@ -1,0 +1,48 @@
+# Production Configuration for PCC Data Pipeline
+
+# Processing settings
+processing:
+  engine: 'spark' # Use Spark for distributed processing in production
+  streaming:
+    enabled: true
+    kafka:
+      bootstrap_servers: '${KAFKA_BOOTSTRAP_SERVERS}'
+      topic: 'privacy-requests'
+      group_id: 'pcc-data-pipeline'
+
+# Data source settings
+data_source:
+  type: 'kafka'
+
+# Output settings
+output:
+  format: 'parquet'
+  path: 'gs://pcc-data-pipeline-output/curated_training_data.parquet' # Google Cloud Storage for production output
+  bigquery:
+    project_id: '${GCP_PROJECT_ID}'
+    dataset: 'pcc_data'
+    table: 'privacy_intent_data'
+    write_disposition: 'WRITE_APPEND'
+
+# Feature engineering and embedding settings
+features:
+  engineer_text_features: true
+embeddings:
+  generate_embeddings: true
+
+# Validation and sampling settings
+validation:
+  schema:
+    # Production schema should be defined here
+  quality_checks:
+    # Production quality checks should be defined here
+sampling:
+  strategy: 'stratified'
+  n: 100000
+  stratify_by: 'intent'
+
+# Logging and monitoring settings
+logging:
+  level: 'INFO'
+monitoring:
+  metrics_enabled: true 
