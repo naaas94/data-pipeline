@@ -10,10 +10,8 @@ def process_and_upload_dataset(df, bucket_name='pcc-datasets'):
     # Generate embeddings for the dataset
     embeddings = embedding_generator.generate_privacy_domain_embeddings(df['text'].tolist())
 
-    # Split embeddings into separate columns
-    embedding_columns = [f'embedding_{i}' for i in range(embeddings.shape[1])]
-    embeddings_df = pd.DataFrame(embeddings, columns=embedding_columns)
-    df = pd.concat([df, embeddings_df], axis=1)
+    # Store embeddings as a JSON string in a single column
+    df['embeddings'] = embeddings.tolist()
 
     # Save dataset locally
     today = date.today().strftime('%Y%m%d')
