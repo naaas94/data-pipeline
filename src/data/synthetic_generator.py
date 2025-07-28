@@ -11,6 +11,8 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Any, Optional, Tuple
 import json
 from collections import defaultdict
+from google.cloud import storage
+from datetime import date
 
 
 class PrivacyTextGenerator:
@@ -571,6 +573,32 @@ class EnhancedSyntheticDataGenerator:
             }
         
         return stats
+
+
+def upload_to_gcs(local_file, bucket_name, dataset_type, fmt='csv'):
+    client = storage.Client()
+    bucket = client.get_bucket(bucket_name)
+    today = date.today().strftime('%Y%m%d')
+    blob = bucket.blob(f"{dataset_type}_{today}.{fmt}")
+    blob.upload_from_filename(local_file)
+    print(f"Uploaded to gs://{bucket.name}/{blob.name}")
+
+
+def save_and_upload_datasets(train_df, val_df, test_df, bucket_name='pcc-datasets'):
+    # Save datasets locally
+    today = date.today().strftime('%Y%m%d')
+    train_file = f"training_{today}.csv"
+    val_file = f"validation_{today}.csv"
+    test_file = f"test_{today}.csv"
+
+    train_df.to_csv(train_file, index=False)
+    val_df.to_csv(val_file, index=False)
+    test_df.to_csv(test_file, index=False)
+
+    # Upload to GCS
+    upload_to_gcs(train_file, bucket_name, 'training')
+    upload_to_gcs(val_file, bucket_name, 'validation')
+    upload_to_gcs(test_file, bucket_name, 'test')
 
 
 def generate_enhanced_synthetic_data(n_samples: int = 10000,
