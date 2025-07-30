@@ -150,13 +150,16 @@ class DataQualityChecker:
         
         # Check timestamp consistency
         if 'timestamp' in df.columns:
+            # Convert timestamp column to datetime if it's string
+            timestamp_col = pd.to_datetime(df['timestamp'], errors='coerce')
+            
             # Check for future timestamps
-            future_timestamps = df['timestamp'] > pd.Timestamp.now()
+            future_timestamps = timestamp_col > pd.Timestamp.now()
             if future_timestamps.sum() > 0:
                 consistency_issues.append(f"Found {future_timestamps.sum()} future timestamps")
             
             # Check for very old timestamps (older than 5 years)
-            old_timestamps = df['timestamp'] < (pd.Timestamp.now() - pd.DateOffset(years=5))
+            old_timestamps = timestamp_col < (pd.Timestamp.now() - pd.DateOffset(years=5))
             if old_timestamps.sum() > 0:
                 consistency_issues.append(f"Found {old_timestamps.sum()} very old timestamps")
         

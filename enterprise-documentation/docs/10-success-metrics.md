@@ -24,6 +24,45 @@ Accuracy measures the correctness of data processing. It can be evaluated by per
 ### Uptime
 Uptime refers to the availability of the pipeline. High uptime ensures that the pipeline is operational and accessible when needed. Monitoring tools like Prometheus can be used to track uptime and alert on any downtime.
 
+## Vector Store Metrics
+
+### Search Performance
+- **Search Latency**: Time to return similarity search results
+- **Search Accuracy**: Relevance of search results (similarity scores)
+- **Query Throughput**: Number of searches per second
+
+```python
+# Measure search performance
+import time
+
+start_time = time.time()
+results = vector_store.search_similar(query_embedding, top_k=5)
+search_time = time.time() - start_time
+avg_similarity = sum(r['similarity_score'] for r in results) / len(results)
+
+print(f"Search time: {search_time:.3f}s, Avg similarity: {avg_similarity:.3f}")
+```
+
+### Storage Metrics
+- **Storage Efficiency**: Space used per conversation (target: ~1KB)
+- **Daily Growth Rate**: New conversations added per day
+- **Retention Compliance**: Conversations cleaned up according to policy
+
+```python
+# Monitor storage metrics
+info = vector_store.get_store_info()
+storage_efficiency = info['current_embeddings'] / info['current_conversations']
+daily_growth = info['daily_counts'].get(today, 0)
+
+print(f"Storage efficiency: {storage_efficiency:.2f} KB/conversation")
+print(f"Daily growth: {daily_growth} conversations")
+```
+
+### Cost Savings
+- **Monthly Savings**: $0 vs. cloud vector store costs
+- **API Call Savings**: No external API calls required
+- **Data Transfer Savings**: No data leaving infrastructure
+
 ## Examples and Tools
 - **Prometheus**: A powerful monitoring tool that can be used to collect and query metrics from your data pipeline.
 - **Grafana**: A visualization tool that can be used to create dashboards for monitoring pipeline metrics.

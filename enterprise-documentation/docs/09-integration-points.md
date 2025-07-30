@@ -2,6 +2,36 @@
 
 ## External Services
 
+### Local Vector Store
+The pipeline includes a built-in local vector store for daily conversations. This provides similarity search capabilities without external dependencies or cloud service costs.
+
+**Features:**
+- **Local Storage**: All data stored locally in `vector_store/` directory
+- **Similarity Search**: Cosine similarity with configurable top-k results
+- **Daily Conversations**: Store up to 50 conversations per day
+- **Automatic Cleanup**: Configurable retention policies (default: 30 days)
+- **Statistics Tracking**: Daily conversation counts and store metrics
+
+**Example:**
+```python
+from src.utils.vector_store import LocalVectorStore
+
+# Initialize vector store
+store = LocalVectorStore("my_vector_store")
+
+# Add conversations with embeddings
+conversations = [{"text": "I need help", "user_id": "user_123"}]
+embeddings = generate_embeddings([conv["text"] for conv in conversations])
+store.add_conversations(conversations, embeddings)
+
+# Search similar conversations
+query_embedding = generate_embeddings(["I need help with my account"])
+results = store.search_similar(query_embedding[0], top_k=5)
+
+# Get daily statistics
+stats = store.get_daily_stats()
+```
+
 ### Google Cloud BigQuery
 The pipeline integrates with Google Cloud BigQuery for data storage and retrieval. This integration is enabled through the `google.cloud.bigquery` library. The pipeline can load data from BigQuery using the `_load_from_bigquery` method, which executes a SQL query and returns the results as a DataFrame. Similarly, data can be saved to BigQuery using the `_save_to_bigquery` method.
 

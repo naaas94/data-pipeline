@@ -28,6 +28,8 @@ class PrivacyIntentSchema(BaseModel):
     
     @field_validator('timestamp')
     def validate_timestamp(cls, v):
+        if isinstance(v, str):
+            v = datetime.fromisoformat(v)
         if v > datetime.now():
             raise ValueError('Timestamp cannot be in the future')
         return v

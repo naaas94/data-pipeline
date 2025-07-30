@@ -16,6 +16,7 @@ graph LR
     A3[Embedding Generation] --> A
     A4[Quality Validation] --> A
     A5[Lineage Tracking] --> A
+    A6[Local Vector Store] --> A
     
     B1[Model Training] --> B
     B2[Hyperparameter Tuning] --> B
@@ -120,6 +121,7 @@ graph TD
 - **Sentence Transformers**: Capture semantic meaning for privacy intents
 - **TF-IDF + SVD**: Statistical patterns and term importance
 - **Weighted Combination**: 70% semantic + 30% statistical for domain optimization
+- **Vector Store Integration**: Embeddings used for local conversation similarity search
 
 ## Enhanced Data Flow
 
@@ -197,6 +199,71 @@ class AdvancedSampler:
 - **SMOTE/ADASYN** for handling class imbalance
 - **Custom strategies** for privacy intent classification
 - **Statistical validation** of sampling quality
+
+## Local Vector Store Architecture
+
+### **Vector Store Components**
+
+```mermaid
+graph TD
+    A[Daily Conversations] --> B[Embedding Generation]
+    B --> C[Local Storage]
+    C --> D[Similarity Search]
+    D --> E[Search Results]
+    
+    F[Query Text] --> G[Query Embedding]
+    G --> D
+    
+    H[Cleanup Process] --> C
+```
+
+### **Vector Store Features**
+
+1. **LocalStorageManager**:
+   - **File-based storage**: JSON metadata + pickle embeddings
+   - **Automatic directory creation**: Self-initializing store structure
+   - **Data persistence**: Survives application restarts
+   - **Version control**: Timestamped data with metadata
+
+2. **SimilaritySearchEngine**:
+   - **Cosine similarity**: Normalized vector comparison
+   - **Configurable top-k**: Adjustable result count
+   - **Batch processing**: Efficient search across large datasets
+   - **Score ranking**: Results sorted by similarity score
+
+3. **DailyConversationManager**:
+   - **Template-based generation**: Realistic conversation variations
+   - **Automatic cleanup**: Configurable retention policies
+   - **Statistics tracking**: Daily conversation counts and metrics
+   - **Metadata enrichment**: User IDs, timestamps, session tracking
+
+### **Vector Store Integration**
+
+```python
+class LocalVectorStore:
+    def add_conversations(self, conversations, embeddings):
+        # Store conversations with embeddings
+        # Update metadata and statistics
+        # Handle data persistence
+        
+    def search_similar(self, query_embedding, top_k=5):
+        # Load stored embeddings
+        # Calculate cosine similarities
+        # Return ranked results with scores
+        
+    def get_daily_stats(self, target_date=None):
+        # Filter conversations by date
+        # Calculate daily statistics
+        # Return comprehensive metrics
+```
+
+### **Vector Store Benefits**
+
+- **Zero External Dependencies**: No cloud services or API keys required
+- **Cost Effective**: No monthly fees or usage-based pricing
+- **Privacy Compliant**: All data stays on your infrastructure
+- **High Performance**: Local storage with fast similarity search
+- **Easy Integration**: Simple API for adding and searching conversations
 
 ### **Stage 5: Enhanced Output Generation**
 

@@ -1,0 +1,81 @@
+# Daily Conversations Vector Store Configuration
+# Simple local vector store for storing daily conversations
+
+# Data Source
+source:
+  type: "daily_conversations"
+  conversations_per_day: 50
+  conversation_templates: [
+    "Hi, I need help with my account",
+    "Can you help me understand your privacy policy?",
+    "I want to delete my data",
+    "How do I opt out of marketing emails?",
+    "I have a question about data collection",
+    "Can you explain your terms of service?",
+    "I need to update my personal information",
+    "How do I access my data?",
+    "I want to know what information you have about me",
+    "Can you help me with a billing issue?"
+  ]
+
+# Processing Configuration
+processing:
+  engine: "pandas"
+  batch_size: 50
+
+# Vector Store Configuration
+vector_store:
+  enabled: true
+  store_path: "vector_store"
+  max_conversations_per_day: 50
+  cleanup_old_days: 30
+  search_top_k: 5
+
+# Embeddings Configuration
+embeddings:
+  generate_embeddings: true
+  embedding_type: "sentence_transformer"
+  models:
+    sentence_transformer:
+      model_name: "all-MiniLM-L6-v2"
+      batch_size: 32
+    cache_dir: "cache/embeddings"
+
+# Data Validation
+validation:
+  schema:
+    - column: "text"
+      type: "string"
+      nullable: false
+    - column: "timestamp"
+      type: "datetime"
+      nullable: false
+    - column: "user_id"
+      type: "string"
+      nullable: false
+    - column: "session_id"
+      type: "string"
+      nullable: false
+
+  quality_checks:
+    - check_type: "completeness"
+      threshold: 0.95
+    - check_type: "uniqueness"
+      threshold: 0.99
+
+# Output Configuration
+output:
+  format: "vector_store"
+  save_conversations: true
+  save_embeddings: true
+
+# Monitoring
+monitoring:
+  log_level: "INFO"
+  track_daily_stats: true
+  track_similarity_searches: true
+
+# Version and Metadata
+version: "1.0.0"
+pipeline_name: "daily-conversations-vector-store"
+description: "Simple local vector store for daily conversations" 
