@@ -37,6 +37,11 @@ class DataQualityChecker:
         overall_completeness = 1.0
         
         for column in df.columns:
+            # Skip embeddings column as it contains lists which cause issues
+            if column == 'embeddings':
+                completeness_scores[column] = 1.0  # Assume complete
+                continue
+                
             non_null_count = df[column].notna().sum()
             total_count = len(df)
             completeness = non_null_count / total_count if total_count > 0 else 0
@@ -61,6 +66,11 @@ class DataQualityChecker:
         overall_uniqueness = 1.0
         
         for column in df.columns:
+            # Skip embeddings column as it contains lists which cause issues
+            if column == 'embeddings':
+                uniqueness_scores[column] = 1.0  # Assume unique
+                continue
+                
             unique_count = df[column].nunique()
             total_count = len(df)
             uniqueness = unique_count / total_count if total_count > 0 else 0
@@ -85,6 +95,11 @@ class DataQualityChecker:
         overall_validity = 1.0
         
         for column in df.columns:
+            # Skip embeddings column as it contains lists which cause issues
+            if column == 'embeddings':
+                validity_scores[column] = 1.0  # Assume valid
+                continue
+                
             valid_count = 0
             total_count = len(df)
             

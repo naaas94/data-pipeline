@@ -1,0 +1,10 @@
+[33mba8b4df[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Remove large CSV files from tracking and update .gitignore to exclude data files
+[33m277dc92[m updates
+[33m4ac1ce7[m update embeddings
+[33m3a315bb[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m updates export logic - dataset generation
+[33m2a6ebe2[m fixes
+[33m42291df[m update
+[33mf36cf20[m update
+[33mab6539b[m omg gcs fixed
+[33m1abd586[m fighting the sets generation and single gcs upload
+[33m3f8a422[m Merge branch 'main' of https://github.com/naaas94/data-pipeline

@@ -288,8 +288,12 @@ class PCCDataPipeline:
                 texts = df['text'].tolist()
                 features_df = self.text_feature_engineer.extract_all_features(texts)
                 
+                # Remove duplicate columns from features_df that already exist in df
+                existing_columns = set(df.columns)
+                features_df_filtered = features_df.drop(columns=[col for col in features_df.columns if col in existing_columns], errors='ignore')
+                
                 # Combine with original data
-                enhanced_df = pd.concat([df.reset_index(drop=True), features_df], axis=1)
+                enhanced_df = pd.concat([df.reset_index(drop=True), features_df_filtered], axis=1)
                 
                 # Track output dataset
                 output_dataset_id = self.lineage_tracker.track_dataset(
