@@ -13,18 +13,19 @@ from typing import Any, Dict, List, Optional, Union
 import os
 import sys
 
-# Add src to path for imports
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Setup project paths for imports
+from src.utils.path_setup import setup_project_paths
+setup_project_paths()
 
-from utils.logger import get_logger
-from utils.sampling import AdvancedSampler
-from utils.lineage import DataLineageTracker, DataProvenanceManager
-from validators.schema_validator import SchemaValidator
-from validators.quality_checks import DataQualityChecker
-from features.text_features import TextFeatureEngineer
-from features.embeddings import EmbeddingGenerator, save_embeddings_for_training
-from data.synthetic_generator import EnhancedSyntheticDataGenerator
-from contracts.pcc_contracts import PCCEcosystemContracts
+from src.utils.logger import get_logger
+from src.utils.sampling import AdvancedSampler
+from src.utils.lineage import DataLineageTracker, DataProvenanceManager
+from src.validators.schema_validator import SchemaValidator
+from src.validators.quality_checks import DataQualityChecker
+from src.features.text_features import TextFeatureEngineer
+from src.features.embeddings import EmbeddingGenerator, save_embeddings_for_training
+from src.data.synthetic_generator import EnhancedSyntheticDataGenerator
+from src.contracts.pcc_contracts import PCCEcosystemContracts
 
 # Import distributed processing libraries
 try:

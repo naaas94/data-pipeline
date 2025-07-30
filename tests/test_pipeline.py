@@ -10,6 +10,10 @@ import yaml
 import os
 import prometheus_client
 
+# Setup project paths for imports
+from src.utils.path_setup import setup_project_paths
+setup_project_paths()
+
 from src.pcc_pipeline import PCCDataPipeline
 from src.features.text_features import TextFeatureEngineer
 from src.utils.sampling import AdvancedSampler
