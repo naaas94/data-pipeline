@@ -1,14 +1,13 @@
-#!/usr/bin/env python3
 """
+Vector Store Demo Functionality
 Simple demo of the local vector store functionality.
-Shows basic operations without validation issues.
 """
 
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from src.utils.vector_store import LocalVectorStore, create_daily_conversation_data
+from .core import LocalVectorStore, create_daily_conversation_data
 from src.features.embeddings import EmbeddingGenerator
 
 

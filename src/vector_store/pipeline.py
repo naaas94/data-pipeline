@@ -17,7 +17,7 @@ from src.utils.path_setup import setup_project_paths
 setup_project_paths()
 
 from src.utils.logger import get_logger
-from src.vector_store.core import LocalVectorStore, create_daily_conversation_data
+from .core import LocalVectorStore, create_daily_conversation_data
 from src.features.embeddings import EmbeddingGenerator
 from src.validators.schema_validator import SchemaValidator
 from src.validators.quality_checks import DataQualityChecker
@@ -98,70 +98,65 @@ class DailyConversationsPipeline:
         self.logger.info(f"Vector store info: {info['current_conversations']} conversations, {info['current_embeddings']} embeddings")
         return info
     
-    def cleanup_old_conversations(self, days_to_keep: Optional[int] = None):
-        """Clean up old conversations."""
-        if days_to_keep is None:
-            days_to_keep = self.config.get('vector_store', {}).get('cleanup_old_days', 30)
-        
-        remaining = self.vector_store.cleanup_old_conversations(days_to_keep)
-        self.logger.info(f"Cleanup completed. {remaining} conversations remaining")
-        return remaining
-    
     def validate_conversations(self, conversations: List[Dict]) -> Dict[str, Any]:
-        """Validate conversation data."""
-        if not conversations:
-            return {'valid': False, 'error': 'No conversations provided'}
+        """Validate conversation data quality."""
+        self.logger.info(f"Validating {len(conversations)} conversations")
         
         # Convert to DataFrame for validation
         df = pd.DataFrame(conversations)
         
-        # Schema validation
+        # Run schema validation
         schema_results = self.schema_validator.validate_schema(df)
         
-        # Quality checks
-        quality_results = self.quality_checker.check_quality(df)
+        # Run quality checks
+        quality_results = self.quality_checker.run_quality_checks(df)
         
-        return {
-            'schema_validation': schema_results,
-            'quality_checks': quality_results,
-            'valid': schema_results['overall_valid'] and quality_results['overall_passed']
+        validation_results = {
+            "schema_validation": schema_results,
+            "quality_checks": quality_results,
+            "total_conversations": len(conversations),
+            "validation_passed": schema_results.get("valid", False) and quality_results.get("overall_score", 0) > 0.9
         }
+        
+        self.logger.info(f"Validation results: {validation_results['validation_passed']}")
+        return validation_results
     
     def run_daily_pipeline(self):
         """Run the complete daily pipeline."""
+        self.logger.info("Starting daily conversations pipeline")
+        
         try:
-            self.logger.info("Starting daily conversations pipeline")
-            
-            # Generate daily conversations
+            # Generate conversations
             conversations = self.generate_daily_conversations()
             
-            # Validate conversations
+            # Validate data quality
             validation_results = self.validate_conversations(conversations)
             
-            if not validation_results['valid']:
-                self.logger.error("Conversation validation failed")
-                return False
-            
-            # Get daily stats
+            # Get final statistics
             stats = self.get_daily_stats()
+            store_info = self.get_store_info()
             
-            # Cleanup old conversations (optional)
-            if self.config.get('vector_store', {}).get('auto_cleanup', False):
-                self.cleanup_old_conversations()
+            self.logger.info("Daily pipeline completed successfully")
+            self.logger.info(f"Final stats: {stats}")
+            self.logger.info(f"Store info: {store_info}")
             
-            self.logger.info("Daily conversations pipeline completed successfully")
-            return True
+            return {
+                "conversations_generated": len(conversations),
+                "validation_results": validation_results,
+                "daily_stats": stats,
+                "store_info": store_info
+            }
             
         except Exception as e:
-            self.logger.error(f"Daily conversations pipeline failed: {e}")
-            return False
+            self.logger.error(f"Pipeline failed: {e}")
+            raise
     
     def run_search_demo(self):
         """Run a search demonstration."""
         self.logger.info("Running search demonstration")
         
-        # Sample queries
-        sample_queries = [
+        # Sample queries for demonstration
+        demo_queries = [
             "I need help with my account",
             "How do I delete my data?",
             "What's your privacy policy?",
@@ -169,27 +164,26 @@ class DailyConversationsPipeline:
             "Can you help me with billing?"
         ]
         
-        for query in sample_queries:
-            print(f"\n--- Searching for: '{query}' ---")
-            results = self.search_similar_conversations(query, top_k=3)
-            
-            for i, result in enumerate(results, 1):
-                print(f"{i}. Similarity: {result['similarity_score']:.3f}")
-                print(f"   Text: {result['text']}")
-                print(f"   User: {result['user_id']}")
-                print()
+        results = {}
+        for query in demo_queries:
+            search_results = self.search_similar_conversations(query, top_k=3)
+            results[query] = search_results
+        
+        self.logger.info("Search demonstration completed")
+        return results
 
 
 def main():
-    """Main entry point for daily conversations pipeline."""
-    parser = argparse.ArgumentParser(description="Daily Conversations Vector Store Pipeline")
+    """Main entry point for the daily conversations pipeline."""
+    parser = argparse.ArgumentParser(description="Daily Conversations Pipeline")
     parser.add_argument("--config", required=True, help="Path to configuration file")
     parser.add_argument("--generate", action="store_true", help="Generate daily conversations")
     parser.add_argument("--search", type=str, help="Search for similar conversations")
     parser.add_argument("--stats", action="store_true", help="Show daily statistics")
-    parser.add_argument("--info", action="store_true", help="Show vector store information")
-    parser.add_argument("--cleanup", action="store_true", help="Clean up old conversations")
+    parser.add_argument("--info", action="store_true", help="Show store information")
     parser.add_argument("--demo", action="store_true", help="Run search demonstration")
+    parser.add_argument("--cleanup", action="store_true", help="Clean up old conversations")
+    parser.add_argument("--n-conversations", type=int, help="Number of conversations to generate")
     
     args = parser.parse_args()
     
@@ -198,33 +192,50 @@ def main():
     
     try:
         if args.generate:
-            pipeline.run_daily_pipeline()
+            n_conv = args.n_conversations or None
+            conversations = pipeline.generate_daily_conversations(n_conv)
+            print(f"Generated {len(conversations)} conversations")
+            
         elif args.search:
             results = pipeline.search_similar_conversations(args.search)
             print(f"Found {len(results)} similar conversations:")
             for i, result in enumerate(results, 1):
-                print(f"{i}. {result['text']} (similarity: {result['similarity_score']:.3f})")
+                print(f"{i}. Similarity: {result['similarity_score']:.3f}")
+                print(f"   Text: {result['text']}")
+                print(f"   User: {result['user_id']}")
+                
         elif args.stats:
             stats = pipeline.get_daily_stats()
             print("Daily Statistics:")
             for key, value in stats.items():
                 print(f"  {key}: {value}")
+                
         elif args.info:
             info = pipeline.get_store_info()
-            print("Vector Store Information:")
+            print("Store Information:")
             for key, value in info.items():
                 print(f"  {key}: {value}")
-        elif args.cleanup:
-            remaining = pipeline.cleanup_old_conversations()
-            print(f"Cleanup completed. {remaining} conversations remaining.")
-        elif args.demo:
-            pipeline.run_search_demo()
-        else:
-            # Default: run daily pipeline
-            success = pipeline.run_daily_pipeline()
-            if not success:
-                sys.exit(1)
                 
+        elif args.demo:
+            results = pipeline.run_search_demo()
+            print("Search Demonstration Results:")
+            for query, search_results in results.items():
+                print(f"\nQuery: '{query}'")
+                for i, result in enumerate(search_results, 1):
+                    print(f"  {i}. Similarity: {result['similarity_score']:.3f} - {result['text']}")
+                    
+        elif args.cleanup:
+            days_to_keep = pipeline.config.get('vector_store', {}).get('cleanup_old_days', 30)
+            pipeline.vector_store.cleanup_old_conversations(days_to_keep)
+            print(f"Cleaned up conversations older than {days_to_keep} days")
+            
+        else:
+            # Run full pipeline
+            results = pipeline.run_daily_pipeline()
+            print("Pipeline completed successfully")
+            print(f"Generated: {results['conversations_generated']} conversations")
+            print(f"Validation passed: {results['validation_results']['validation_passed']}")
+            
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)

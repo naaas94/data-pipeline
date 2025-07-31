@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Test script for the local vector store functionality.
 Demonstrates basic operations and search capabilities.
@@ -6,9 +5,9 @@ Demonstrates basic operations and search capabilities.
 
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from src.utils.vector_store import LocalVectorStore, create_daily_conversation_data
+from src.vector_store.core import LocalVectorStore, create_daily_conversation_data
 from src.features.embeddings import EmbeddingGenerator
 
 
@@ -81,7 +80,7 @@ def test_daily_pipeline():
     print("=" * 50)
     
     try:
-        from src.daily_conversations_pipeline import DailyConversationsPipeline
+        from src.vector_store.pipeline import DailyConversationsPipeline
         
         # Initialize pipeline
         pipeline = DailyConversationsPipeline("config_daily_conversations.yaml")
@@ -101,24 +100,35 @@ def test_daily_pipeline():
         stats = pipeline.get_daily_stats()
         print(f"✅ Daily stats: {stats['total_conversations']} conversations")
         
+        # Get store info
+        print("\n📋 Getting store info...")
+        info = pipeline.get_store_info()
+        print(f"✅ Store info: {info['current_conversations']} conversations")
+        
         print("\n✅ Daily pipeline test completed successfully!")
         
     except Exception as e:
         print(f"❌ Pipeline test failed: {e}")
 
 
-if __name__ == "__main__":
-    print("🎯 Local Vector Store Demo")
+def test_demo():
+    """Test the demo functionality."""
+    print("\n🎯 Testing Vector Store Demo")
     print("=" * 50)
     
-    # Test basic vector store functionality
+    try:
+        from src.vector_store.demo import demo_vector_store
+        demo_vector_store()
+        print("\n✅ Demo test completed successfully!")
+        
+    except Exception as e:
+        print(f"❌ Demo test failed: {e}")
+
+
+if __name__ == "__main__":
+    # Run all tests
     test_vector_store()
-    
-    # Test daily pipeline
     test_daily_pipeline()
+    test_demo()
     
-    print("\n🎉 All tests completed!")
-    print("\n💡 You can now use the vector store with:")
-    print("   python src/daily_conversations_pipeline.py --config config_daily_conversations.yaml --generate")
-    print("   python src/daily_conversations_pipeline.py --config config_daily_conversations.yaml --search 'your query'")
-    print("   python src/daily_conversations_pipeline.py --config config_daily_conversations.yaml --demo") 
+    print("\n🎉 All vector store tests completed!") 
