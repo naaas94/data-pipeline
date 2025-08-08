@@ -64,10 +64,9 @@ sed "s|privacy-intent-pipeline:latest|$IMAGE_FULL_NAME|g" k8s/deployment.yaml | 
 echo "🔌 Applying services..."
 kubectl apply -f k8s/services.yaml -n $NAMESPACE
 
-# Wait for deployments to be ready
-echo "⏳ Waiting for deployments to be ready..."
+# Wait for deployment to be ready
+echo "⏳ Waiting for deployment to be ready..."
 kubectl wait --for=condition=available --timeout=300s deployment/privacy-intent-pipeline -n $NAMESPACE
-kubectl wait --for=condition=available --timeout=300s deployment/daily-conversations-pipeline -n $NAMESPACE
 
 # Show deployment status
 echo "📊 Deployment status:"
@@ -82,7 +81,6 @@ echo "✅ EKS deployment completed successfully!"
 echo ""
 echo "🔗 Access points:"
 echo "  - Pipeline logs: kubectl logs -f deployment/privacy-intent-pipeline -n $NAMESPACE"
-echo "  - Daily conversations: kubectl logs -f deployment/daily-conversations-pipeline -n $NAMESPACE"
 echo "  - Pod status: kubectl get pods -n $NAMESPACE"
 echo "  - Services: kubectl get services -n $NAMESPACE"
 echo ""

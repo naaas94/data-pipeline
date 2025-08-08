@@ -98,6 +98,28 @@ sampling:
   by: "intent"
   n: 10000
   balance_classes: true
+
+# Dataset Generation Settings
+dataset_generation:
+  # Dataset size for generation
+  n_samples: 10000
+  min_samples_per_class: 1000
+  
+  # Intent distribution
+  intent_distribution:
+    privacy_request: 0.25
+    data_deletion: 0.20
+    opt_out: 0.25
+    other: 0.30
+  
+  # Text generation quality
+  variation_level: 0.3
+  include_metadata: true
+  
+  # Output settings
+  gcs_bucket: "pcc-datasets"
+  gcs_dataset_type: "balanced_dataset"
+  local_file_prefix: "df"
   oversampling_method: "smote"
 
 # Partitioning

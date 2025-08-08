@@ -1,4 +1,4 @@
-# PCC Data Pipeline Stack
+# Enterprise Data Pipeline Stack
 # Complete infrastructure for distributed processing and streaming
 
 version: '3.8'
@@ -13,20 +13,35 @@ services:
     environment:
       - ENVIRONMENT=production
       - LOG_LEVEL=INFO
-      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-      - SPARK_MASTER=spark://spark-master:7077
+      - PYTHONPATH=/app
+      - KAFKA_BOOTSTRAP_SERVERS=${KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      - MLFLOW_TRACKING_URI=${MLFLOW_TRACKING_URI:-http://mlflow:5000}
     volumes:
-      - ./output:/app/output
-      - ./logs:/app/logs
-      - ./checkpoints:/app/checkpoints
+      - pipeline-output:/app/output
+      - pipeline-logs:/app/logs
+      - pipeline-checkpoints:/app/checkpoints
+      - pipeline-cache:/app/cache
+      - pipeline-metadata:/app/metadata
     depends_on:
       - kafka
-      - spark-master
-      - spark-worker
       - mlflow
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
 
   # Development Pipeline Service
   data-pipeline-dev:
@@ -37,15 +52,25 @@ services:
     environment:
       - ENVIRONMENT=development
       - LOG_LEVEL=DEBUG
+      - PYTHONPATH=/app
     volumes:
-      - ./src:/app/src
-      - ./tests:/app/tests
-      - ./output:/app/output
-      - ./logs:/app/logs
+      - ./src:/app/src:ro
+      - ./tests:/app/tests:ro
+      - pipeline-output:/app/output
+      - pipeline-logs:/app/logs
+      - pipeline-cache:/app/cache
     networks:
       - data-pipeline-network
     profiles:
       - development
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
 
   # Apache Kafka for streaming
   zookeeper:
@@ -57,6 +82,14 @@ services:
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.25'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
 
   kafka:
     image: confluentinc/cp-kafka:7.3.0
@@ -77,45 +110,14 @@ services:
     networks:
       - data-pipeline-network
     restart: unless-stopped
-
-  # Apache Spark Cluster
-  spark-master:
-    image: bitnami/spark:3.4.0
-    container_name: spark-master
-    environment:
-      - SPARK_MODE=master
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
-    ports:
-      - "8080:8080"
-      - "7077:7077"
-    volumes:
-      - spark-master-data:/bitnami/spark
-    networks:
-      - data-pipeline-network
-    restart: unless-stopped
-
-  spark-worker:
-    image: bitnami/spark:3.4.0
-    container_name: spark-worker
-    environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-      - SPARK_WORKER_MEMORY=1G
-      - SPARK_WORKER_CORES=1
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
-    depends_on:
-      - spark-master
-    volumes:
-      - spark-worker-data:/bitnami/spark
-    networks:
-      - data-pipeline-network
-    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+        reservations:
+          memory: 512M
+          cpus: '0.25'
 
   # MLflow for experiment tracking
   mlflow:
@@ -131,6 +133,14 @@ services:
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.25'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
 
   # Prometheus for metrics
   prometheus:
@@ -139,7 +149,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus-data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -151,6 +161,14 @@ services:
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.25'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
 
   # Grafana for visualization
   grafana:
@@ -162,13 +180,21 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
       - grafana-data:/var/lib/grafana
-      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
-      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
     depends_on:
       - prometheus
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.25'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
 
   # Redis for caching (optional)
   redis:
@@ -181,6 +207,14 @@ services:
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.1'
+        reservations:
+          memory: 128M
+          cpus: '0.05'
 
   # PostgreSQL for metadata storage (optional)
   postgres:
@@ -189,7 +223,7 @@ services:
     environment:
       POSTGRES_DB: privacy_intent
       POSTGRES_USER: pipeline
-      POSTGRES_PASSWORD: pipeline123
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pipeline123}
     ports:
       - "5432:5432"
     volumes:
@@ -197,15 +231,36 @@ services:
     networks:
       - data-pipeline-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.25'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
 
 volumes:
-  spark-master-data:
-  spark-worker-data:
+  pipeline-output:
+    driver: local
+  pipeline-logs:
+    driver: local
+  pipeline-checkpoints:
+    driver: local
+  pipeline-cache:
+    driver: local
+  pipeline-metadata:
+    driver: local
   mlflow-data:
+    driver: local
   prometheus-data:
+    driver: local
   grafana-data:
+    driver: local
   redis-data:
+    driver: local
   postgres-data:
+    driver: local
 
 networks:
   data-pipeline-network:
