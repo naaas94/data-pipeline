@@ -1,8 +1,8 @@
-# CI/CD Migration: From Complex to Simple
+# CI/CD Migration: From Complex to Streamlined
 
 ## Overview
 
-This document tracks the migration from a complex, multi-job CI/CD pipeline to a simplified, maintainable approach.
+This document tracks the migration from a complex, multi-job CI/CD pipeline to a streamlined, maintainable approach.
 
 ## The Old CI/CD Pipeline
 
@@ -34,15 +34,15 @@ This document tracks the migration from a complex, multi-job CI/CD pipeline to a
 - ❌ **Over-engineered**: Features not needed for current scale
 - ❌ **Deprecated Actions**: Using `actions/upload-artifact@v3` (deprecated)
 
-## The New Simplified CI/CD Pipeline
+## The New Streamlined CI/CD Pipeline
 
-### File: `.github/workflows/simple-ci.yml` (75 lines)
+### File: `.github/workflows/ci.yml` (75 lines)
 
-**Simplified Approach:**
+**Streamlined Approach:**
 - **2 jobs** total (test + build)
 - **Single Python version** (3.9)
 - **Essential testing only** (unit tests, linting, formatting)
-- **Simple Docker build** with single-stage Dockerfile
+- **Streamlined Docker build** with single-stage Dockerfile
 - **No complex deployments** (manual deployment script)
 
 **Jobs Breakdown:**
@@ -50,7 +50,7 @@ This document tracks the migration from a complex, multi-job CI/CD pipeline to a
 2. **Build Docker Image** - Build and push to registry (main branch only)
 
 **Benefits of New Approach:**
-- ✅ **Simple**: 2 jobs, 75 lines of YAML
+- ✅ **Streamlined**: 2 jobs, 75 lines of YAML
 - ✅ **Fast**: 5-10 minutes for full pipeline
 - ✅ **Reliable**: Fewer failure points
 - ✅ **Easy to Debug**: Clear, linear workflow
@@ -191,8 +191,8 @@ aws ecs update-service --cluster data-pipeline --service privacy-intent-pipeline
 ## Files Changed
 
 ### New Files Created:
-- `.github/workflows/simple-ci.yml` - New simplified CI/CD
-- `Dockerfile.simple` - Simplified Docker image
+- `.github/workflows/ci.yml` - New streamlined CI/CD
+- `Dockerfile` - Streamlined Docker image
 - `deploy.sh` - Manual deployment script
 - `CI-CD-SETUP.md` - Setup documentation
 - `CI-CD-MIGRATION.md` - This migration document
@@ -200,7 +200,7 @@ aws ecs update-service --cluster data-pipeline --service privacy-intent-pipeline
 ### Files to Consider Removing:
 - `.github/workflows/ci-cd.yml` - Old complex CI/CD
 - `.github/workflows/quick-test.yml` - Redundant with new approach
-- `Dockerfile` - Old complex multi-stage Dockerfile
+- `Dockerfile.simple` - Redundant with main Dockerfile
 
 ### Files Updated:
 - `README.md` - Updated deployment section

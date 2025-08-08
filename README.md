@@ -244,14 +244,14 @@ Complete tracking for downstream pipelines:
 
 ## Production Deployment
 
-### Simple CI/CD Pipeline
-We've simplified the CI/CD to focus on essentials:
+### CI/CD Pipeline
+We've streamlined the CI/CD to focus on essentials:
 
 ```bash
 # Automatic CI/CD (GitHub Actions)
 # - Push to main/develop branches triggers automatic testing
 # - Main branch builds and pushes Docker image
-# - See .github/workflows/simple-ci.yml for details
+# - See .github/workflows/ci.yml for details
 
 # Manual deployment
 ./deploy.sh
@@ -262,8 +262,8 @@ REGISTRY=ghcr.io/your-org ./deploy.sh
 
 ### Docker
 ```bash
-# Build with simplified Dockerfile
-docker build -f Dockerfile.simple -t pcc-data-pipeline:latest .
+# Build with streamlined Dockerfile
+docker build -f Dockerfile -t pcc-data-pipeline:latest .
 
 # Run with volume mounts
 docker run -v $(pwd)/output:/app/output pcc-data-pipeline:latest
@@ -317,7 +317,7 @@ black --check src/ tests/
 flake8 src/ tests/ --max-line-length=88
 
 # Test in Docker container
-docker build -f Dockerfile.simple -t test .
+docker build -f Dockerfile -t test .
 docker run --rm test python -m pytest tests/ -v
 ```
 

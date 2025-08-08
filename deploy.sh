@@ -13,7 +13,7 @@ fi
 
 # Build Docker image
 echo "🐳 Building Docker image..."
-docker build -f Dockerfile.simple -t enterprise-data-pipeline:latest .
+docker build -f Dockerfile -t enterprise-data-pipeline:latest .
 
 # Run tests in container
 echo "🧪 Running tests in container..."

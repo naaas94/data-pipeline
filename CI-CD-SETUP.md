@@ -1,10 +1,10 @@
-# Simplified CI/CD Setup
+# CI/CD Setup
 
-This document explains the simplified CI/CD pipeline for the Enterprise Data Pipeline.
+This document explains the streamlined CI/CD pipeline for the Enterprise Data Pipeline.
 
 ## Overview
 
-The original CI/CD was overly complex with multiple jobs, security scanning, performance testing, and AWS ECS deployment. We've simplified it to focus on the essentials:
+The original CI/CD was overly complex with multiple jobs, security scanning, performance testing, and AWS ECS deployment. We've streamlined it to focus on the essentials:
 
 1. **Testing** - Run unit tests and code quality checks
 2. **Building** - Create Docker image and push to registry
@@ -12,15 +12,15 @@ The original CI/CD was overly complex with multiple jobs, security scanning, per
 
 ## Files
 
-### `.github/workflows/simple-ci.yml`
+### `.github/workflows/ci.yml`
 - **Purpose**: Main CI/CD workflow
 - **Triggers**: Push to main/develop branches, pull requests
 - **Jobs**:
   - `test`: Runs tests, linting, and code formatting
   - `build`: Builds and pushes Docker image (only on main branch)
 
-### `Dockerfile.simple`
-- **Purpose**: Simplified Docker image for the pipeline
+### `Dockerfile`
+- **Purpose**: Streamlined Docker image for the pipeline
 - **Features**: Single-stage build, security best practices, non-root user
 
 ### `deploy.sh`
@@ -60,13 +60,13 @@ docker run --rm enterprise-data-pipeline:latest python -m pytest tests/ -v
 docker run --rm enterprise-data-pipeline:latest
 ```
 
-## Benefits of Simplified Approach
+## Benefits of Streamlined Approach
 
-1. **Easier to Understand**: Clear, linear workflow
-2. **Faster**: Fewer jobs, quicker feedback
-3. **Maintainable**: Less complexity, easier to debug
+1. **Clear Workflow**: Linear, easy-to-follow process
+2. **Faster Execution**: Fewer jobs, quicker feedback
+3. **Maintainable**: Reduced complexity, easier debugging
 4. **Flexible**: Can be extended as needed
-5. **Reliable**: Fewer points of failure
+5. **Reliable**: Fewer potential failure points
 
 ## Migration from Complex CI/CD
 
@@ -122,12 +122,12 @@ docker run --rm test python -m pytest tests/ -v
 
 ## Next Steps
 
-1. **Review the simplified workflow** in `.github/workflows/simple-ci.yml`
+1. **Review the streamlined workflow** in `.github/workflows/ci.yml`
 2. **Test the deployment script** with `./deploy.sh`
 3. **Update your README** to reflect the new CI/CD approach
 4. **Consider removing** the old complex CI/CD files when you're confident
 
-This simplified approach gives you a solid foundation that you can build upon as your needs grow!
+This streamlined approach provides a solid foundation that can be extended as your needs grow!
 noteId: "5e2cf1c0744311f0ab4ead757d2417ec"
 tags: []
 
