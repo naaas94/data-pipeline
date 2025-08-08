@@ -1,0 +1,44 @@
+# Docker Compose for Dataset Generator
+# Standalone configuration for dataset generation and GCS upload
+
+version: '3.8'
+
+services:
+  dataset-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile.dataset-generator
+    container_name: dataset-generator
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+      - PYTHONPATH=/app
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/service-account-key.json
+    volumes:
+      # Mount Google Cloud credentials
+      - ./credentials:/app/credentials:ro
+      # Mount output directory for generated datasets
+      - ./output:/app/output
+      # Mount logs directory
+      - ./logs:/app/logs
+    restart: "no"  # Run once and exit
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '1.0'
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  output:
+    driver: local
+  logs:
+    driver: local
