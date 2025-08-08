@@ -244,10 +244,26 @@ Complete tracking for downstream pipelines:
 
 ## Production Deployment
 
+### Simple CI/CD Pipeline
+We've simplified the CI/CD to focus on essentials:
+
+```bash
+# Automatic CI/CD (GitHub Actions)
+# - Push to main/develop branches triggers automatic testing
+# - Main branch builds and pushes Docker image
+# - See .github/workflows/simple-ci.yml for details
+
+# Manual deployment
+./deploy.sh
+
+# Deploy to specific registry
+REGISTRY=ghcr.io/your-org ./deploy.sh
+```
+
 ### Docker
 ```bash
-# Build production image
-docker build -t pcc-data-pipeline:latest .
+# Build with simplified Dockerfile
+docker build -f Dockerfile.simple -t pcc-data-pipeline:latest .
 
 # Run with volume mounts
 docker run -v $(pwd)/output:/app/output pcc-data-pipeline:latest
@@ -262,13 +278,16 @@ docker-compose --profile development up -d
 docker-compose up -d
 ```
 
-### Kubernetes
+### Local Development
 ```bash
-# Deploy to cluster
-kubectl apply -f k8s/
+# Install dependencies
+pip install -r requirements.txt
 
-# Monitor deployment
-kubectl get pods -n pcc-pipeline
+# Run tests
+pytest tests/ -v
+
+# Run pipeline
+python -m src.pcc_pipeline --config config_test.yaml
 ```
 
 ## Monitoring & Observability
@@ -293,8 +312,13 @@ pytest tests/ -v
 # Test with coverage
 pytest tests/ --cov=src --cov-report=html
 
-# Performance benchmarks
-pytest tests/test_performance.py -v
+# Code quality checks
+black --check src/ tests/
+flake8 src/ tests/ --max-line-length=88
+
+# Test in Docker container
+docker build -f Dockerfile.simple -t test .
+docker run --rm test python -m pytest tests/ -v
 ```
 
 ## Project Structure
