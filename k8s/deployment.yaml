@@ -1,91 +1,33 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: privacy-intent-pipeline
+  name: dataset-generation-job
   labels:
-    app: privacy-intent-pipeline
-    tier: data-pipeline
+    app: dataset-generator
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: privacy-intent-pipeline
   template:
-    metadata:
-      labels:
-        app: privacy-intent-pipeline
-        tier: data-pipeline
     spec:
       containers:
-      - name: data-pipeline
-        image: privacy-intent-pipeline:latest
-        imagePullPolicy: Always
-        command: ["python", "-m", "src.pcc_pipeline", "--config", "config.yaml"]
+      - name: dataset-generator
+        image: dataset-generator:latest
+        command: ["python", "src/data/dataset_generator.py"]
         env:
-        - name: ENVIRONMENT
-          value: "production"
-        - name: LOG_LEVEL
-          value: "INFO"
         - name: PYTHONPATH
           value: "/app"
-        - name: KAFKA_BOOTSTRAP_SERVERS
-          value: "kafka:9092"
-        - name: MLFLOW_TRACKING_URI
-          value: "http://mlflow:5000"
-        - name: PROMETHEUS_ENDPOINT
-          value: "http://prometheus:9090"
-        ports:
-        - containerPort: 8080
-          name: http
+        - name: ENVIRONMENT
+          value: "production"
         resources:
           requests:
             memory: "512Mi"
-            cpu: "500m"
+            cpu: "250m"
           limits:
-            memory: "2Gi"
-            cpu: "1000m"
+            memory: "1Gi"
+            cpu: "500m"
         volumeMounts:
-        - name: pipeline-output
+        - name: output-volume
           mountPath: /app/output
-        - name: pipeline-logs
-          mountPath: /app/logs
-        - name: pipeline-checkpoints
-          mountPath: /app/checkpoints
-        - name: pipeline-cache
-          mountPath: /app/cache
-        - name: pipeline-metadata
-          mountPath: /app/metadata
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 60
-          periodSeconds: 30
-          timeoutSeconds: 10
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 5
-          failureThreshold: 3
       volumes:
-      - name: pipeline-output
-        persistentVolumeClaim:
-          claimName: pipeline-output-pvc
-      - name: pipeline-logs
-        persistentVolumeClaim:
-          claimName: pipeline-logs-pvc
-      - name: pipeline-checkpoints
-        persistentVolumeClaim:
-          claimName: pipeline-checkpoints-pvc
-      - name: pipeline-cache
-        persistentVolumeClaim:
-          claimName: pipeline-cache-pvc
-      - name: pipeline-metadata
-        persistentVolumeClaim:
-          claimName: pipeline-metadata-pvc
-      restartPolicy: Always
+      - name: output-volume
+        emptyDir: {}
+      restartPolicy: Never
 
