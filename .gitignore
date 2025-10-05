@@ -189,3 +189,6 @@ Thumbs.db
 # CI/CD Migration Documentation (keep these files)
 !CI-CD-SETUP.md
 !CI-CD-MIGRATION.md
+
+# Diagnostic and Summary Reports
+summary_*.md
